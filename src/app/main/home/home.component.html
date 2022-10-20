@@ -1,0 +1,308 @@
+<app-intro
+   introType="home"
+   introSubTitle="Kutib oling!"
+   introBigTitle="Fulfil education"
+   introDescription="Xalqaro darajadagi o'zbekona onlayn maktab"
+   [introStatistic]="statistics"
+></app-intro>
+
+<section class="section video">
+   <div class="container">
+      <h2 class="video__heading">
+         “<span>Onlayn maktab, menga qanday foydasi bor?</span>”..... deysizmi? unda videoni ko’ring!
+      </h2>
+      <div class="video__animation">
+         <svg width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect x="0.5" width="50" height="50" fill="url(#pattern0)"/>
+            <defs>
+               <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                  <use xlink:href="#image0_417_2949" transform="scale(0.00195312)"/>
+               </pattern>
+               <image id="image0_417_2949" width="512" height="512"
+                      xlink:href="data:image/png;base64,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"/>
+            </defs>
+         </svg>
+      </div>
+      <div class="video__iframe">
+         <iframe
+            src="https://www.youtube.com/embed/IYw61DTysBg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+      </div>
+   </div>
+</section>
+
+<section class="section our-courses">
+   <div class="container">
+      <div class="section__header center">
+         <div class="section__subtitle">Kurslar</div>
+         <h2 class="section__title">Bizning zamonaviy <span class="highlight decorated">kurslarimiz</span></h2>
+      </div>
+      <div class="section__body our-courses__cards">
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/python.svg" alt="">
+            <p>Python Backend</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/ai.svg" alt="">
+            <p>Sun'iy intellekt</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/android.svg" alt="">
+            <p>Android</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/fr-re.svg" alt="">
+            <p>Frontend <br> ReactJS</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/node.svg" alt="">
+            <p>JavaScript <br> NodeJS</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/frontend.svg" alt="">
+            <p>Frontend videolar</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/react.svg" alt="">
+            <p>ReactJS</p>
+         </div>
+         <div class="our-courses__card">
+            <img src="/assets/images/home-page/our-courses/ai-videos.svg" alt="">
+            <p>Sun'iy intellekt <br> videolar</p>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="section course-benefit">
+   <div class="container">
+      <div class="course-benefit__left">
+         <div class="section__header">
+            <div class="section__subtitle">O’ylab ko’ring!</div>
+            <h2 class="section__title">Fulfil education kurslaridan <span class="highlight">nima olasiz?</span></h2>
+         </div>
+         <picture>
+            <source media="(min-width: 1000px)" srcset="/assets/images/home-page/course-benefit/course-benefit@desktop.webp">
+            <source media="(min-width: 1000px)" srcset="/assets/images/home-page/course-benefit/course-benefit@desktop.png">
+            <source srcset="/assets/images/home-page/course-benefit/course-benefit@mobile.webp">
+            <source srcset="/assets/images/home-page/course-benefit/course-benefit@mobile.png">
+            <img src="/assets/images/home-page/course-benefit/course-benefit@mobile.png" alt="">
+         </picture>
+      </div>
+      <div class="course-benefit__right">
+         <ul class="details">
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Xalqaro bilimlar</p>
+            </li>
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Butun umrlik video darslar</p>
+            </li>
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Amaliyot va real loyihalar</p>
+            </li>
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Kuchli portfolio</p>
+            </li>
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Hamkor kompaniyalar</p>
+            </li>
+            <li class="details__item">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">Yopiq "Fulfil - Team" jamiyati</p>
+            </li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="section why-we">
+   <div class="container">
+      <div class="section__header">
+         <div class="section__subtitle">Bizning afzallikimiz</div>
+         <h2 class="section__title">Nega <span class="highlight decorated">aynan biz?</span></h2>
+      </div>
+      <div class="section__body why-we__cards">
+         <div class="why-we__card">
+            <div class="why-we__icon">
+               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.3" d="M17.5 12.2368V52.5H12.5V7.5H27.5V12.2368H17.5Z" fill="#3CB27F"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M25.4457 5.61867L45.4457 9.24271C46.6352 9.45823 47.5 10.4939 47.5 11.7026V48.2976C47.5 49.5064 46.6352 50.542 45.4457 50.7575L25.4457 54.3816C24.0872 54.6278 22.7862 53.726 22.5401 52.3674C22.5134 52.2203 22.5 52.0711 22.5 51.9216V8.07861C22.5 6.6979 23.6193 5.57861 25 5.57861C25.1495 5.57861 25.2987 5.59202 25.4457 5.61867ZM29.7917 32.2651C31.5176 32.2651 32.9167 30.744 32.9167 28.8676C32.9167 26.9912 31.5176 25.4701 29.7917 25.4701C28.0658 25.4701 26.6667 26.9912 26.6667 28.8676C26.6667 30.744 28.0658 32.2651 29.7917 32.2651Z" fill="#3CB27F"/>
+               </svg>
+            </div>
+            <div class="why-we__text">
+               Bepul ochiq darslar
+            </div>
+         </div>
+         <div class="why-we__card">
+            <div class="why-we__icon">
+               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M37.5 25V47.5L34.6185 48.4605C31.5595 49.4802 28.3561 50 25.1317 50H16.1485C12.5734 50 9.49531 47.4766 8.79417 43.9709L6.92118 34.6059C6.10884 30.5442 8.74297 26.593 12.8047 25.7807C13.4527 25.6511 14.115 25.6077 14.7744 25.6516L23.75 26.25L22.8395 16.2346C22.6683 14.351 24.0564 12.6853 25.94 12.5141C26.043 12.5047 26.1465 12.5 26.25 12.5C28.5765 12.5 30.7324 13.7207 31.9294 15.7156L37.5 25Z" fill="#3CB27F"/>
+                  <path opacity="0.3" d="M45 22.5H52.5C53.8807 22.5 55 23.6193 55 25V47.5C55 48.8807 53.8807 50 52.5 50H45C43.6193 50 42.5 48.8807 42.5 47.5V25C42.5 23.6193 43.6193 22.5 45 22.5Z" fill="#3CB27F"/>
+               </svg>
+            </div>
+            <div class="why-we__text">
+               Xalqaro darajadagi ustozlar
+            </div>
+         </div>
+         <div class="why-we__card">
+            <div class="why-we__icon">
+               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M10 10L29.0786 6.4228C29.6875 6.30861 30.3125 6.30861 30.9214 6.4228L50 10V33.2076C50 40.5435 46.2209 47.362 40 51.25L31.325 56.6719C30.5143 57.1786 29.4857 57.1786 28.675 56.6719L20 51.25C13.7791 47.362 10 40.5435 10 33.2076V10Z" fill="#3CB27F"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9375 36.875C27.3385 36.875 26.7396 36.6354 26.2604 36.1562L21.4687 31.3646C20.5104 30.4062 20.5104 28.9687 21.4687 28.0104C22.4271 27.0521 23.9844 27.0521 24.8229 28.0104L27.9375 31.125L35.8437 23.2188C36.8021 22.2604 38.2396 22.2604 39.1979 23.2188C40.1562 24.1771 40.1562 25.6146 39.1979 26.5729L29.6146 36.1562C29.1354 36.6354 28.5365 36.875 27.9375 36.875Z" fill="#3CB27F"/>
+               </svg>
+            </div>
+            <div class="why-we__text">
+               Kafolatlangan ta’lim
+            </div>
+         </div>
+         <div class="why-we__card">
+            <div class="why-we__icon">
+               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M33.75 52.5V45C33.75 43.6193 32.6307 42.5 31.25 42.5H28.75C27.3693 42.5 26.25 43.6193 26.25 45V52.5H12.5V10C12.5 7.23858 14.7386 5 17.5 5H42.5C45.2614 5 47.5 7.23858 47.5 10V52.5H33.75ZM22.5 10C21.1193 10 20 11.1193 20 12.5V15C20 16.3807 21.1193 17.5 22.5 17.5H25C26.3807 17.5 27.5 16.3807 27.5 15V12.5C27.5 11.1193 26.3807 10 25 10H22.5ZM35 10C33.6193 10 32.5 11.1193 32.5 12.5V15C32.5 16.3807 33.6193 17.5 35 17.5H37.5C38.8807 17.5 40 16.3807 40 15V12.5C40 11.1193 38.8807 10 37.5 10H35ZM22.5 20C21.1193 20 20 21.1193 20 22.5V25C20 26.3807 21.1193 27.5 22.5 27.5H25C26.3807 27.5 27.5 26.3807 27.5 25V22.5C27.5 21.1193 26.3807 20 25 20H22.5ZM22.5 30C21.1193 30 20 31.1193 20 32.5V35C20 36.3807 21.1193 37.5 22.5 37.5H25C26.3807 37.5 27.5 36.3807 27.5 35V32.5C27.5 31.1193 26.3807 30 25 30H22.5ZM35 30C33.6193 30 32.5 31.1193 32.5 32.5V35C32.5 36.3807 33.6193 37.5 35 37.5H37.5C38.8807 37.5 40 36.3807 40 35V32.5C40 31.1193 38.8807 30 37.5 30H35Z" fill="#3CB27F"/>
+                  <path d="M37.5 20H35C33.6193 20 32.5 21.1193 32.5 22.5V25C32.5 26.3807 33.6193 27.5 35 27.5H37.5C38.8807 27.5 40 26.3807 40 25V22.5C40 21.1193 38.8807 20 37.5 20Z" fill="white"/>
+                  <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M10 52.5H50C51.3807 52.5 52.5 53.6193 52.5 55V56C52.5 56.8284 51.8284 57.5 51 57.5H9C8.17157 57.5 7.5 56.8284 7.5 56V55C7.5 53.6193 8.61929 52.5 10 52.5Z" fill="#3CB27F"/>
+               </svg>
+            </div>
+            <div class="why-we__text">
+               Ishga kirish uchun kompaniyalar
+            </div>
+         </div>
+         <div class="why-we__card">
+            <div class="why-we__icon">
+               <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21.0824 17.9357L23.5196 19.6422C23.7404 19.7969 23.9054 20.0188 23.9898 20.2749C24.2059 20.9305 23.8496 21.6372 23.1939 21.8533L14.727 24.6442C14.6117 24.6822 14.4915 24.7032 14.3702 24.7066C13.6801 24.7257 13.1052 24.1817 13.0861 23.4916L12.8403 14.6C12.8328 14.3317 12.9119 14.0682 13.0658 13.8484C13.4618 13.2829 14.2412 13.1455 14.8067 13.5415L16.8228 14.9531C20.4137 11.8046 25.06 10 30 10C41.0457 10 50 18.9543 50 30C50 41.0457 41.0457 50 30 50C18.9543 50 10 41.0457 10 30H15C15 38.2843 21.7157 45 30 45C38.2843 45 45 38.2843 45 30C45 21.7157 38.2843 15 30 15C26.7213 15 23.6192 16.0571 21.0824 17.9357Z" fill="#3CB27F"/>
+               </svg>
+
+            </div>
+            <div class="why-we__text">
+               Pulni 100% qaytarib olish imkoniyati
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="section why-online">
+   <div class="container">
+      <div class="section__header">
+         <div class="section__subtitle">O’ylab ko’rganmisiz?</div>
+         <h2 class="section__title">Nega <span class="highlight decorated">onlayn ta’lim</span> olishingiz kerak?</h2>
+      </div>
+      <div class="section__body why-online__cards">
+         <div class="why-online__card">
+            <div class="why-online__text">Vaqtingiz tejaladi</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/1.svg" alt="">
+            </div>
+         </div>
+         <div class="why-online__card">
+            <div class="why-online__text">Pulingiz cho'ntakda qoladi</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/2.svg" alt="">
+            </div>
+         </div>
+         <div class="why-online__card">
+            <div class="why-online__text">Ortiqcha ovora bo'lmaysiz</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/3.svg" alt="">
+            </div>
+         </div>
+         <div class="why-online__card">
+            <div class="why-online__text">Kuchli mutaxassislardan ta'lim olasiz</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/4.svg" alt="">
+            </div>
+         </div>
+         <div class="why-online__card">
+            <div class="why-online__text">Istalgan vaqtda, istalgan joyda o'rganasiz</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/5.svg" alt="">
+            </div>
+         </div>
+         <div class="why-online__card">
+            <div class="why-online__text">Viloyatda va chet eldan ham o'rgana olasiz</div>
+            <div class="why-online__icon">
+               <img src="/assets/images/home-page/why-online/6.svg" alt="">
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="section feedbacks">
+   <div class="container">
+      <div class="section__header">
+         <h2 class="section__title">Kursimiz haqida <span class="highlight">izohlar</span></h2>
+      </div>
+      <div class="section__body">
+         <app-carousel></app-carousel>
+      </div>
+   </div>
+</section>
+
+<section class="section companies">
+   <div class="container">
+      <div class="section__header center">
+         <h2 class="section__title">Bitiruvchilarimiz ishlayotgan <span class="highlight">kompaniyalar</span></h2>
+      </div>
+      <div class="section__body companies__cards">
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+         <a class="companies__card" href="#">
+            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+         </a>
+      </div>
+   </div>
+</section>

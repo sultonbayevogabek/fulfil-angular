@@ -1,0 +1,30 @@
+<section class="section students-projects">
+   <div class="container">
+      <div class="section__header section__header--with-text">
+         <div>
+            <div class="section__subtitle">Loyihalar</div>
+            <h2 class="section__title"><span class="highlight decorated">O’quvchilar</span> loyihalari</h2>
+         </div>
+         <div>
+            Bizning o’quvchilarimiz bajargan real loyihalar bilan tanishib chiqing!
+         </div>
+      </div>
+
+      <div class="students-projects__cards cards">
+         <div class="card" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+            <div class="card__img">
+               <img src="https://picsum.photos/380?random={{ item }}" alt="image">
+            </div>
+            <div class="card__body">
+               <div class="card__avatar">
+                  <img src="https://i.pravatar.cc/52?img={{ item }}" alt="">
+               </div>
+               <div class="card__info">
+                  <h3>Eshonov Fakhriyor</h3>
+                  <p>{{ item }}- o’quvchi</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

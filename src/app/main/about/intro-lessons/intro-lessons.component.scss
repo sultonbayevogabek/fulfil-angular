@@ -1,0 +1,83 @@
+.cards {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 30px;
+}
+
+.card {
+   padding: 24px;
+   background-color: #FFFFFF;
+   border-radius: 12px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card__img {
+   border-radius: 12px;
+   overflow: hidden;
+}
+
+.teacher {
+   display: flex;
+   align-items: center;
+   padding-top: 12px;
+}
+
+.teacher__avatar {
+   width: 50px;
+   height: 50px;
+   margin-right: 12px;
+   border-radius: 50%;
+   overflow: hidden;
+   flex-shrink: 0;
+}
+
+.teacher__info {
+   div {
+      margin-bottom: 5px;
+      font-weight: 400;
+      font-size: 14px;
+      color: #55645E;
+   }
+
+   h3  {
+      font-weight: 500;
+      font-size: 16px;
+   }
+}
+
+.card__body {
+   padding-top: 18px;
+
+   p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.2;
+   }
+}
+
+.card__footer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-top: 18px;
+
+   div:first-child {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #C3C8C6;
+
+      svg {
+         margin-right: 12px;
+      }
+   }
+
+   div:last-child {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #3CB27F;
+   }
+}

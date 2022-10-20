@@ -1,0 +1,19 @@
+.enroll-form {
+   position: relative;
+   display: grid;
+   grid-template-columns: 1.6fr 1fr 1.2fr 1fr;
+   grid-gap: 25px;
+   padding: 30px;
+   background-color: #FFFFFF;
+   border: 1px solid #C6E0D5;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 12px;
+}
+
+.enroll-form__send {
+   padding-top: 32.4px;
+
+   .button {
+      width: 100%;
+   }
+}

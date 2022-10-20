@@ -1,0 +1,45 @@
+<section class="section intro-lessons">
+   <div class="container">
+      <div class="section__header section__header--with-text">
+         <div>
+            <div class="section__subtitle">Ochiq darslar</div>
+            <h2 class="section__title"><span class="highlight decorated">Bepul</span> ochiq darslar</h2>
+         </div>
+         <div>
+            Bepul ochiq darslar ro’yxati bilan tanishib chiqing!
+         </div>
+      </div>
+
+      <div class="intro-lessons__cards cards">
+         <div class="card" *ngFor="let lesson of introLessons; let i = index">
+            <div class="card__img">
+               <img src="https://picsum.photos/330/245?random={{ i + 1 }}" alt="">
+            </div>
+            <div class="card__teacher teacher">
+               <div class="teacher__avatar">
+                  <img src="https://i.pravatar.cc/50?img={{ i + 1 }}" alt="">
+               </div>
+               <div class="teacher__info">
+                  <div>Ustoz</div>
+                  <h3>Eshonov Fakhriyor</h3>
+               </div>
+            </div>
+            <div class="card__body">
+               <p>Lorem Ipsum is simply dummy text of the </p>
+            </div>
+            <div class="card__footer">
+               <div>
+                  <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M14.266 9.0162C15.2579 8.2487 15.2579 6.7513 14.266 5.9838C11.2685 3.6644 7.92133 1.83625 4.34979 0.567772L3.69732 0.336032C2.44904 -0.107308 1.13053 0.737252 0.961542 2.0258C0.489382 5.626 0.489382 9.374 0.961542 12.9742C1.13053 14.2628 2.44904 15.1073 3.69731 14.664L4.34979 14.4322C7.92133 13.1638 11.2685 11.3356 14.266 9.0162Z" fill="#C3C8C6"/>
+                  </svg>
+
+                  <span>Davomiyligi</span>
+               </div>
+               <div>
+                  5 soat 50 daqiqa
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>

@@ -1,0 +1,120 @@
+.intro {
+   padding-top: 60px;
+}
+
+.intro__top {
+   display: grid;
+   grid-template-columns: 1.1fr 1fr;
+   grid-gap: 60px;
+}
+
+.intro__subtitle {
+   margin-bottom: 20px;
+   font-weight: 600;
+   font-size: 20px;
+   letter-spacing: 0.01em;
+   text-transform: uppercase;
+   color: #10985D;
+}
+
+.intro__title {
+   margin-bottom: 48px;
+   font-weight: 700;
+   font-size: 60px;
+   color: #193C3F;
+}
+
+.decorated {
+   position: relative;
+   color: #3CB27F;
+
+   &::after, &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 98%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #3CB27F;
+      transform: rotate(1deg);
+   }
+
+   &::before {
+      bottom: 0;
+   }
+
+   &::after {
+      bottom: 5px;
+   }
+}
+
+.intro__description {
+   margin-bottom: 36px;
+   font-weight: 400;
+   font-size: 24px;
+   color: #55645E;
+}
+
+.intro__button {
+   height: 52px;
+   padding-left: 55px;
+   padding-right: 55px;
+   background-color: #09A964;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-weight: 500;
+   font-size: 16px;
+   letter-spacing: 0.02em;
+   color: #FFFFFF;
+   transition: 0.1s all ease-out;
+   outline-offset: 1px;
+
+   &:hover {
+      background-color: #098D54;
+   }
+
+   &:focus {
+      background-color: #056A3F;
+      outline: 2px solid rgba(60, 178, 127, 0.5);
+   }
+}
+
+.intro__statistics {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 30px;
+   padding-top: 60px;
+}
+
+.statistics__item {
+   padding: 20px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 8px;
+   text-align: center;
+}
+
+.statistics__value {
+   margin-bottom: 12px;
+   font-weight: 700;
+   font-size: 40px;
+   line-height: 60px;
+   color: #000000;
+
+   span {
+      color: #3CB27F;
+   }
+}
+
+.statistics__title {
+   line-height: 24px;
+   color: #000000;
+}
+
+.intro__course-details {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 20px;
+   padding-top: 70px;
+}

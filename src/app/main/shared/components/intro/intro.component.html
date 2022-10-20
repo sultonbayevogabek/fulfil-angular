@@ -1,0 +1,46 @@
+<section class="intro">
+   <div class="container">
+      <div class="intro__top">
+         <div class="intro__left">
+            <div class="intro__subtitle">{{ introSubTitle }}</div>
+            <h1 class="intro__title">
+               <span class="decorated">{{ introBigTitle.split(' ')[0] }}</span>
+               {{ introBigTitle.split(' ').slice(1).join(' ') }}
+            </h1>
+            <p class="intro__description">{{ introDescription }}</p>
+            <button class="intro__button button">Darsni boshlash</button>
+            <div class="intro__statistics statistics">
+               <div
+                  class="statistics__item"
+                  *ngFor="let statistic of introStatistic"
+               >
+                  <div class="statistics__value">
+                     {{ statistic.statisticNumber }}<span>+</span>
+                  </div>
+                  <div class="statistics__title">{{ statistic.statisticTitle }}</div>
+               </div>
+            </div>
+         </div>
+         <div class="intro__right">
+            <picture *ngIf="introType === 'home'">
+               <source media="(min-width: 1000px)" srcset="/assets/images/home-page/intro/intro@desktop.webp">
+               <source media="(min-width: 1000px)" srcset="/assets/images/home-page/intro/intro@desktop.png">
+               <source srcset="/assets/images/home-page/intro/intro@mobile.webp">
+               <source srcset="/assets/images/home-page/intro/intro@mobile.png">
+               <img src="/assets/images/home-page/intro/intro@desktop.png" alt="">
+            </picture>
+            <img *ngIf="introType === 'course'" [src]="introImgUrl" alt="Course Intro Image">
+         </div>
+      </div>
+      <div class="intro__bottom">
+         <ul class="intro__course-details details">
+            <li class="details__item" *ngFor="let info of introCourseInfo">
+               <div class="details__icon">
+                  <img src="/assets/icons/checked.svg" alt="Checked icon">
+               </div>
+               <p class="details__text">{{ info }}</p>
+            </li>
+         </ul>
+      </div>
+   </div>
+</section>

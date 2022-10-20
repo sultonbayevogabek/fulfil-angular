@@ -1,1 +1,329 @@
-/* You can add global styles to this file, and also import other style files */
+/* =================== IMPORT FONTS FROM GOOGLE FONTS SERVICE =================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+/* =================== GLOBAL STYLES =================== */
+html {
+   box-sizing: border-box;
+}
+
+*, *::after, *::before {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   background-image: linear-gradient(180deg, #F8FFFC 0%, #FFFFFF 100%);
+   font-family: "Poppins", Arial, sans-serif;
+   line-height: 1;
+}
+
+h1, h2, h3, h4, ul, ol, p {
+   margin: 0;
+}
+
+ul {
+   padding: 0;
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+img {
+   max-width: 100%;
+   vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+
+input[type=number] {
+   -moz-appearance: textfield;
+}
+
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   text-indent: 1px;
+   text-overflow: '';
+}
+
+select::-ms-expand {
+   display: none;
+}
+
+.container {
+   max-width: 100%;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.flex-container {
+   display: flex;
+   @extend .container;
+}
+
+.button {
+   height: 48px;
+   padding-left: 77px;
+   padding-right: 77px;
+   background-color: #09A964;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-weight: 600;
+   font-size: 16px;
+   color: #FFFFFF;
+   outline-offset: 2px;
+
+   &:hover {
+      background-color: #098D54;
+   }
+
+   &:focus {
+      background-color: #056A3F;
+      outline: 1px solid rgba(60, 178, 127, 0.5);
+   }
+}
+
+.form-label {
+   display: block;
+   width: 100%;
+
+   span {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #55645E;
+   }
+}
+
+.form-label--phone {
+   position: relative;
+
+   &::before {
+      content: "+998";
+      position: absolute;
+      top: 45.5px;
+      left: 17px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: #000000;
+   }
+
+   .form-control {
+      padding-left: 60px;
+   }
+}
+
+.form-label--select {
+   position: relative;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 53.5px;
+      left: 17px;
+      width: 11px;
+      height: 7px;
+      background-image: url('/assets/icons/arrow-down.svg');
+   }
+
+   .form-control {
+      padding-left: 40px;
+   }
+}
+
+.form-control {
+   display: block;
+   width: 100%;
+   height: 48px;
+   padding-left: 17px;
+   padding-right: 17px;
+   background-color: #EEF8F7;
+   border: 1px solid #BACFC6;
+   border-radius: 4px;
+   outline-color: rgba(60, 178, 127, 0.2);
+   font-family: "Poppins", sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 22px;
+   color: #000000;
+
+   &::placeholder {
+      color: #CFD0D0;
+   }
+
+   &:focus {
+      outline: 1px solid rgba(60, 178, 127, 0.2);
+      outline-offset: 2px;
+      background-color: #fff;
+   }
+}
+
+.highlight {
+   color: #3CB27F;
+}
+
+.section {
+   padding-top: 80px;
+}
+
+.section__header {
+   margin-bottom: 40px;
+
+   &.center {
+      text-align: center;
+   }
+}
+
+.section__header--with-text {
+   display: flex;
+   justify-content: space-between;
+
+   div:last-child {
+      width: 35%;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 24px;
+      color: #55645E;
+   }
+}
+
+.section__title {
+   font-weight: 700;
+   font-size: 40px;
+   line-height: 130%;
+   color: #193C3F;
+
+   .decorated {
+      position: relative;
+
+      &::after, &::before {
+         content: "";
+         position: absolute;
+         left: 0;
+         width: 98%;
+         height: 2px;
+         border-radius: 1px;
+         background-color: #3CB27F;
+         transform: rotate(1deg);
+      }
+
+      &::before {
+         bottom: 0;
+      }
+
+      &::after {
+         bottom: 4px;
+      }
+   }
+}
+
+.section__subtitle {
+   margin-bottom: 8px;
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 24px;
+   text-transform: uppercase;
+   color: #10985D;
+}
+
+.details__item {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.details__icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   width: 34px;
+   height: 34px;
+   margin-right: 18px;
+   background-color: #E9FFF5;
+   border-radius: 8px;
+}
+
+.details__text {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 20px;
+   letter-spacing: 0.02em;
+   color: #193C3F;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+   display: inline-block;
+   width: 40px;
+   height: 12px;
+   margin: 0;
+   padding: 0;
+   cursor: pointer;
+   background-color: transparent;
+
+   &:hover {
+      background-color: transparent;
+   }
+}
+
+.owl-theme .owl-nav {
+   position: absolute;
+   top: -70px;
+   right: 0;
+   margin-top: 0;
+}
+
+.owl-theme .owl-nav .owl-prev {
+   margin-right: 24px;
+   background-image: url('/assets/icons/prev.svg');
+
+   &:hover {
+      background-image: url('/assets/icons/prev.svg');
+   }
+}
+
+.owl-theme .owl-nav .owl-next {
+   background-image: url('/assets/icons/next.svg');
+
+   &:hover {
+      background-image: url('/assets/icons/next.svg');
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .container, .flex-container {
+      max-width: 720px;
+   }
+}
+
+@media screen and (min-width: 992px) {
+   .container, .flex-container {
+      max-width: 960px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   .container, .flex-container {
+      max-width: 1140px;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+   .container, .flex-container {
+      max-width: 1230px;
+   }
+}

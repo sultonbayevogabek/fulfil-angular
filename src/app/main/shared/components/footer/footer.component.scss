@@ -1,0 +1,151 @@
+.footer {
+   padding-top: 60px;
+}
+
+.footer__enroll {
+   padding-top: 70px;
+   background-color: #193C3F;
+
+   .container {
+      background-image: url("/assets/bg-images/bg-footer.png");
+      background-repeat: no-repeat;
+      background-position: center 0;
+      background-size: 100%;
+   }
+
+   h2 {
+      margin-bottom: 17px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 140%;
+      text-align: center;
+      color: #FFFFFF;
+   }
+
+   p {
+      margin-bottom: 60px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #FFFFFF;
+   }
+}
+
+.info {
+   margin-top: -70px;
+   padding-top: 120px;
+   padding-bottom: 40px;
+   background-color: #1D4245;
+
+   .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-gap: 150px;
+   }
+}
+
+.info__logo {
+   display: block;
+   margin-bottom: 34px;
+}
+
+.info__contact {
+   padding: 24px;
+   background-color: #193C3F;
+   border: 1px solid #295154;
+   border-radius: 12px;
+}
+
+.contact__label {
+   margin-bottom: 4px;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 22px;
+   letter-spacing: 0.02em;
+   color: #91A29B;
+}
+
+.contact__phone {
+   display: flex;
+   align-items: center;
+
+   svg {
+      width: 24px;
+      margin-right: 13px;
+   }
+
+   span {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      color: #FFFFFF;
+   }
+}
+
+.contact__item:not(:last-child) {
+   margin-bottom: 24px;
+}
+
+.contact__text {
+   font-size: 18px;
+   line-height: 140%;
+   color: #FFFFFF;
+}
+
+.info__col {
+   h3 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: #FFFFFF;
+   }
+}
+
+.info__list {
+   padding-top: 24px;
+}
+
+.info__item {
+   margin-bottom: 24px;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 140%;
+   color: #FFFFFF;
+   cursor: pointer;
+}
+
+.footer__bottom {
+   padding-top: 27px;
+   padding-bottom: 54px;
+   background-color: #1D4245;
+   border-top: 1px solid #295154;
+
+   .flex-container {
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   div {
+      display: flex;
+      align-items: center;
+   }
+
+   p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 25px;
+      color: #91A19B;
+   }
+
+   a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      background: #D9D9D9;
+   }
+}

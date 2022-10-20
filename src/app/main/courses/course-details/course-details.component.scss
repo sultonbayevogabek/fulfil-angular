@@ -1,0 +1,245 @@
+.what-we-learn .container {
+   display: grid;
+   grid-template-columns: 1fr 1.2fr;
+   grid-gap: 60px;
+}
+
+.what-we-learn__item {
+   position: relative;
+   padding-left: 18px;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 140%;
+   letter-spacing: 0.02em;
+   color: #193C3F;
+
+   &::after, &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      border-radius: 1px;
+      background-color: #3CB27F;
+      transform: rotate(1deg);
+   }
+
+   &::before {
+      left: -5px;
+   }
+
+   &::after {
+      left: 0;
+   }
+
+   &:not(:last-child) {
+      margin-bottom: 30px;
+   }
+}
+
+.topics__heading {
+   margin-bottom: 30px;
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 130%;
+   color: #193C3F;
+}
+
+.topics__body {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 20px;
+}
+
+.topics__col {
+   padding: 24px 24px 40px 70px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.topics__list {
+   position: relative;
+   list-style-type: disc;
+   font-weight: 400;
+   font-size: 20px;
+   line-height: 140%;
+   color: #193C3F;
+
+   li:not(:last-child) {
+      margin-bottom: 20px;
+   }
+
+   &::after, &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      border-radius: 1px;
+      transform: rotate(1deg);
+   }
+
+   &.blue::after, &.blue::before {
+      background-color: #4F52FF;
+   }
+
+   &.red::after, &.red::before {
+      background-color: #FE7062;
+   }
+
+   &.green::after, &.green::before {
+      background-color: #3CB27F;
+   }
+
+   &::before {
+      left: -45px;
+   }
+
+   &::after {
+      left: -40px;
+      transform: rotate(1deg) translateY(15px);
+   }
+
+   &:not(:last-child) {
+      margin-bottom: 30px;
+   }
+}
+
+.topics__text {
+   padding-top: 30px;
+   text-align: right;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 130%;
+   color: #193C3F;
+}
+
+.projects {
+   .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+   }
+}
+
+.projects__right {
+   padding-top: 50px;
+}
+
+.course-for .container {
+   display: grid;
+   grid-template-columns: 1fr 1.5fr;
+   grid-gap: 70px;
+   align-items: center;
+}
+
+.course-enroll {
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.why-teach {
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: top center;
+}
+
+.why-teach__cards {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 30px;
+}
+
+.why-teach__card {
+   padding: 24px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 12px;
+}
+
+.why-teach__text {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 140%;
+}
+
+.why-teach__icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 75px;
+   height: 75px;
+   margin-bottom: 20px;
+   background-color: #F3FFFA;
+   border-radius: 12px;
+}
+
+.faq {
+   .container {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      grid-gap: 90px;
+   }
+}
+
+.faq__list {
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.faq__item {
+   margin-bottom: 18px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 4px;
+
+   svg {
+      transition: 0.2s transform linear;
+      transform-origin: center;
+   }
+
+   &--open .faq__wrapper {
+      max-height: 1000px;
+      transition: 1.5s max-height linear;
+   }
+
+   &--open svg {
+      transform: rotate(180deg);
+   }
+}
+
+.faq__question {
+   display: flex;
+   align-items: center;
+   padding: 12px 24px;
+   cursor: pointer;
+   user-select: none;
+
+   svg {
+      margin-right: 20px;
+   }
+
+   h3 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+   }
+}
+
+.faq__wrapper {
+   max-height: 0;
+   overflow: hidden;
+   transition: 0.5s max-height linear;
+}
+
+.faq__answer {
+   padding: 12px 24px;
+   border-top: 1px solid #E0E0E0;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 22px;
+   letter-spacing: 0.02em;
+}

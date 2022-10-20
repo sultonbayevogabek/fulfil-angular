@@ -1,0 +1,58 @@
+.mentor {
+   display: grid;
+   align-items: center;
+   grid-gap: 100px;
+   margin-bottom: 60px;
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: center top;
+
+   &:nth-child(odd) {
+      grid-template-columns: 1fr 1.2fr;
+   }
+
+   &:nth-child(even) {
+      grid-template-columns: 1.2fr 1fr;
+   }
+}
+
+.mentor__img {
+   border-radius: 50%;
+   overflow: hidden;
+
+   img {
+      width: 100%;
+   }
+}
+
+.mentor__name {
+   margin-bottom: 24px;
+   font-weight: 600;
+   font-size: 36px;
+}
+
+.mentor__main {
+   div:first-child {
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 20px;
+   }
+
+   div:last-child {
+      font-weight: 400;
+      font-size: 18px;
+      color: #55645E;
+   }
+}
+
+.mentor__history {
+   padding-top: 48px;
+
+   .details__icon {
+      margin-right: 16px;
+   }
+
+   .details__text {
+      font-size: 16px;
+   }
+}

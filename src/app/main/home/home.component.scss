@@ -1,0 +1,158 @@
+.video__heading {
+   margin-bottom: 40px;
+   text-align: center;
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 130%;
+   letter-spacing: 0.02em;
+   color: #193C3F;
+
+   span {
+      color: #3CB27F;
+   }
+}
+
+.video__animation {
+   margin-bottom: 40px;
+   text-align: center;
+}
+
+.video__iframe {
+   position: relative;
+   padding-bottom: 56.25%;
+   border-radius: 12px;
+   overflow: hidden;
+
+   iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.our-courses__cards {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 30px;
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: repeat-x;
+   background-position: 0 50%;
+}
+
+.our-courses__card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 40px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 12px;
+
+   img {
+      margin-bottom: 20px;
+   }
+
+   p {
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+      color: #000000;
+   }
+}
+
+.course-benefit .container  {
+   display: grid;
+   grid-template-columns: 1.8fr 1fr;
+   grid-gap: 90px;
+   align-items: center;
+}
+
+.why-we {
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: 20% 50%;
+}
+
+.why-we__cards {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-gap: 44px;
+}
+
+.why-we__icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 120px;
+   height: 120px;
+   margin-bottom: 18px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 8px;
+}
+
+.why-we__text {
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 30px;
+   letter-spacing: 0.01em;
+   color: #000000;
+}
+
+.why-online__cards {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 30px;
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+   background-position: 20% 50%;
+}
+
+.why-online__card {
+   padding: 24px;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 12px;
+}
+
+.why-online__text {
+   margin-bottom: 20px;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 140%;
+}
+
+.why-online__icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 75px;
+   height: 75px;
+   background-color: #F3FFFA;
+   border-radius: 12px;
+}
+
+.feedbacks {
+   background-image: url('/assets/bg-images/bg-blur.png');
+   background-repeat: no-repeat;
+      background-position: 50% 20%;
+}
+
+.companies__cards {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 30px;
+   background-image: url('/assets/bg-images/bg-blur.png');
+}
+
+.companies__card {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #FFFFFF;
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+   border-radius: 8px;
+}
