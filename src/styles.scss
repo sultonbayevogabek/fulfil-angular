@@ -4,6 +4,10 @@
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 /* =================== GLOBAL STYLES =================== */
+:root {
+   font-size: 16px;
+}
+
 html {
    box-sizing: border-box;
 }
@@ -79,7 +83,7 @@ select::-ms-expand {
    border-radius: 4px;
    cursor: pointer;
    font-weight: 600;
-   font-size: 16px;
+   font-size: 1rem;
    color: #FFFFFF;
    outline-offset: 2px;
 
@@ -102,7 +106,7 @@ select::-ms-expand {
       width: 100%;
       margin-bottom: 10px;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 140%;
       color: #55645E;
    }
@@ -117,8 +121,8 @@ select::-ms-expand {
       top: 45.5px;
       left: 17px;
       font-weight: 400;
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 1rem;
+      line-height: 1.375rem;
       color: #000000;
    }
 
@@ -157,8 +161,8 @@ select::-ms-expand {
    outline-color: rgba(60, 178, 127, 0.2);
    font-family: "Poppins", sans-serif;
    font-weight: 400;
-   font-size: 16px;
-   line-height: 22px;
+   font-size: 1rem;
+   line-height: 1.375rem;
    color: #000000;
 
    &::placeholder {
@@ -172,8 +176,20 @@ select::-ms-expand {
    }
 }
 
+textarea.form-control {
+   padding-top: 10px;
+}
+
 .highlight {
    color: #3CB27F;
+}
+
+.red {
+   color: #FF0000;
+}
+
+.cursor-pointer {
+   cursor: pointer;
 }
 
 .section {
@@ -195,15 +211,15 @@ select::-ms-expand {
    div:last-child {
       width: 35%;
       font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
       color: #55645E;
    }
 }
 
 .section__title {
    font-weight: 700;
-   font-size: 40px;
+   font-size: 2.5rem;
    line-height: 130%;
    color: #193C3F;
 
@@ -234,8 +250,8 @@ select::-ms-expand {
 .section__subtitle {
    margin-bottom: 8px;
    font-weight: 600;
-   font-size: 18px;
-   line-height: 24px;
+   font-size: 1.125rem;
+   line-height: 1.5rem;
    text-transform: uppercase;
    color: #10985D;
 }
@@ -260,8 +276,8 @@ select::-ms-expand {
 
 .details__text {
    font-weight: 500;
-   font-size: 20px;
-   line-height: 20px;
+   font-size: 1.25rem;
+   line-height: 1.25rem;
    letter-spacing: 0.02em;
    color: #193C3F;
 }
@@ -317,7 +333,7 @@ select::-ms-expand {
 }
 
 @media screen and (min-width: 1200px) {
-   .container, .flex-container {
+   .container, .flex-container  {
       max-width: 1140px;
    }
 }
@@ -325,5 +341,68 @@ select::-ms-expand {
 @media screen and (min-width: 1400px) {
    .container, .flex-container {
       max-width: 1230px;
+   }
+}
+
+@media screen and (max-width: 1200px) {
+   :root {
+      font-size: 14px;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .section  {
+      padding-top: 50px;
+   }
+
+   .section__header {
+      margin-bottom: 24px;
+   }
+
+   .section__subtitle {
+      margin-bottom: 0;
+      font-size: 0.85rem;
+   }
+
+   .section__title {
+      font-size: 1.7rem;
+   }
+
+   .details__item {
+      margin-bottom: 12px;
+   }
+
+   .details__icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+
+      img {
+         width: 12px;
+      }
+   }
+
+   .details__text {
+      font-size: 1rem;
+   }
+
+   .owl-theme .owl-nav {
+      top: -45px;
+   }
+
+   .section__header--with-text {
+      flex-wrap: wrap;
+
+      div:last-child {
+         width: 100%;
+         padding-top: 12px;
+         font-size: 1rem;
+      }
+   }
+}
+
+@media only screen and (max-width: 578px) {
+   .owl-theme .owl-nav {
+      display: none;
    }
 }

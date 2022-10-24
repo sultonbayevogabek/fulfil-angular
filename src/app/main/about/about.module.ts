@@ -7,7 +7,9 @@ import { StudentsProjectsComponent } from './students-projects/students-projects
 import { NgForOf, NgIf } from '@angular/common'
 import { EmployedStudentsComponent } from './employed-students/employed-students.component'
 import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component'
-import { HelpToWorkComponent } from './help-to-work/help-to-work.component';
+import { HelpToWorkComponent } from './help-to-work/help-to-work.component'
+import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component'
+import { ContactUsComponent } from './contact-us/contact-us.component'
 
 const routes: Routes = [
    {
@@ -33,6 +35,14 @@ const routes: Routes = [
          {
             path: 'help-to-work',
             component: HelpToWorkComponent
+         },
+         {
+            path: 'what-is-fulfil',
+            component: WhatIsFulfilComponent
+         },
+         {
+            path: 'contact-us',
+            component: ContactUsComponent
          }
       ]
    }
@@ -45,7 +55,9 @@ const routes: Routes = [
       StudentsProjectsComponent,
       EmployedStudentsComponent,
       IntroLessonsComponent,
-      HelpToWorkComponent
+      HelpToWorkComponent,
+      WhatIsFulfilComponent,
+      ContactUsComponent
    ],
    imports: [
       SharedModule,
@@ -53,7 +65,8 @@ const routes: Routes = [
       NgForOf,
       NgIf
    ],
-   exports: [ RouterModule ]
+   exports: [RouterModule]
 })
 
-export class AboutModule {}
+export class AboutModule {
+}

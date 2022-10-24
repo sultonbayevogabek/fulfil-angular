@@ -23,8 +23,8 @@
          </div>
          <div class="intro__right">
             <picture *ngIf="introType === 'home'">
-               <source media="(min-width: 1000px)" srcset="/assets/images/home-page/intro/intro@desktop.webp">
-               <source media="(min-width: 1000px)" srcset="/assets/images/home-page/intro/intro@desktop.png">
+               <source media="(min-width: 992px)" srcset="/assets/images/home-page/intro/intro@desktop.webp">
+               <source media="(min-width: 992px)" srcset="/assets/images/home-page/intro/intro@desktop.png">
                <source srcset="/assets/images/home-page/intro/intro@mobile.webp">
                <source srcset="/assets/images/home-page/intro/intro@mobile.png">
                <img src="/assets/images/home-page/intro/intro@desktop.png" alt="">
@@ -32,7 +32,7 @@
             <img *ngIf="introType === 'course'" [src]="introImgUrl" alt="Course Intro Image">
          </div>
       </div>
-      <div class="intro__bottom">
+      <div class="intro__bottom" *ngIf="introCourseInfo?.length">
          <ul class="intro__course-details details">
             <li class="details__item" *ngFor="let info of introCourseInfo">
                <div class="details__icon">

@@ -1,14 +1,14 @@
 .what-we-learn .container {
    display: grid;
    grid-template-columns: 1fr 1.2fr;
-   grid-gap: 60px;
+   grid-column-gap: 60px;
 }
 
 .what-we-learn__item {
    position: relative;
    padding-left: 18px;
    font-weight: 400;
-   font-size: 20px;
+   font-size: 1.25rem;
    line-height: 140%;
    letter-spacing: 0.02em;
    color: #193C3F;
@@ -40,7 +40,7 @@
 .topics__heading {
    margin-bottom: 30px;
    font-weight: 700;
-   font-size: 28px;
+   font-size: 1.75rem;
    line-height: 130%;
    color: #193C3F;
 }
@@ -61,7 +61,7 @@
    position: relative;
    list-style-type: disc;
    font-weight: 400;
-   font-size: 20px;
+   font-size: 1.25rem;
    line-height: 140%;
    color: #193C3F;
 
@@ -109,7 +109,7 @@
    padding-top: 30px;
    text-align: right;
    font-weight: 400;
-   font-size: 16px;
+   font-size: 1rem;
    line-height: 130%;
    color: #193C3F;
 }
@@ -118,7 +118,7 @@
    .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 40px;
+      grid-column-gap: 40px;
    }
 }
 
@@ -129,7 +129,7 @@
 .course-for .container {
    display: grid;
    grid-template-columns: 1fr 1.5fr;
-   grid-gap: 70px;
+   grid-column-gap: 70px;
    align-items: center;
 }
 
@@ -160,7 +160,7 @@
 
 .why-teach__text {
    font-weight: 500;
-   font-size: 20px;
+   font-size: 1.25rem;
    line-height: 140%;
 }
 
@@ -179,7 +179,7 @@
    .container {
       display: grid;
       grid-template-columns: 1fr 1.3fr;
-      grid-gap: 90px;
+      grid-column-gap: 90px;
    }
 }
 
@@ -223,7 +223,7 @@
 
    h3 {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 140%;
       letter-spacing: 0.02em;
    }
@@ -239,7 +239,98 @@
    padding: 12px 24px;
    border-top: 1px solid #E0E0E0;
    font-weight: 400;
-   font-size: 16px;
-   line-height: 22px;
+   font-size: 1rem;
+   line-height: 1.375rem;
    letter-spacing: 0.02em;
+}
+
+@media only screen and (max-width: 992px) {
+   .what-we-learn__item {
+      font-size: 1rem;
+   }
+
+   .topics__list {
+      font-size: 1rem;
+
+      li:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+
+   .topics__body {
+      grid-gap: 12px;
+   }
+
+   .why-teach__cards {
+      grid-gap: 12px;
+   }
+
+   .why-teach__card {
+      display: flex;
+      align-items: center;
+      padding: 18px;
+   }
+
+   .why-teach__icon {
+      margin-bottom: 0;
+      margin-right: 12px;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .what-we-learn {
+      .container {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   .topics__body {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .projects {
+      .container {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   .course-for {
+      .container {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   .course-for__left {
+      margin-bottom: 24px;
+
+      img {
+         width: 100%;
+      }
+   }
+
+   .why-teach__cards {
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .faq {
+      .container {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   .faq__left {
+      img {
+         width: 100%;
+      }
+   }
+}
+
+@media only screen and (max-width: 578px) {
+   .topics__body {
+      grid-template-columns: 1fr;
+   }
+
+   .why-teach__cards {
+      grid-template-columns: 1fr;
+   }
 }

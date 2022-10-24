@@ -4,121 +4,111 @@
          <img src="/assets/logos/header-logo.svg" alt="Site Logo">
       </a>
 
-      <div class="header__nav">
-         <div class="dropdown">
+      <div class="header__nav nav">
+         <div class="nav__item dropdown">
             <div class="dropdown__header" (click)="toggleDropdown('courses')">
                <div class="dropdown__title">Kurslar</div>
                <img class="dropdown__arrow" src="/assets/icons/arrow-down.svg" alt="arrow down icon">
             </div>
             <div class="dropdown__content" *ngIf="showCoursesDropdown">
                <div class="dropdown__col">
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/python.svg" alt="Course Python Icon">
-                     </div>
-                     <div class="dropdown__text">Python</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Python</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/ai.svg" alt="Course AI Icon">
-                     </div>
-                     <div class="dropdown__text">Sun’iy intellekt</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Sun’iy intellekt</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/nodejs.svg" alt="Course NodeJS Icon">
-                     </div>
-                     <div class="dropdown__text">NodeJS</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">NodeJS</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/frontend.svg" alt="Course Front End Icon">
-                     </div>
-                     <div class="dropdown__text">Frontend</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Frontend</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/react.svg" alt="Course React Icon">
-                     </div>
-                     <div class="dropdown__text">React</div>
-                  </div>
+                     </span>
+                     <span class="dropdown__text">React</span>
+                  </a>
                </div>
                <div class="dropdown__col">
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/android.svg" alt="Course Android Icon">
-                     </div>
-                     <div class="dropdown__text">Android</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Android</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/frontend.svg" alt="Course Front End Icon">
-                     </div>
-                     <div class="dropdown__text">Frontend videolar</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Frontend videolar</span>
+                  </a>
+                  <a class="dropdown__item">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/courses-dropdown/ai.svg" alt="Course AI Icon">
-                     </div>
-                     <div class="dropdown__text">Sun’iy intellekt videolar</div>
-                  </div>
+                     </span>
+                     <span class="dropdown__text">Sun’iy intellekt videolar</span>
+                  </a>
                </div>
             </div>
          </div>
-         <div class="dropdown">
+         <div class="nav__item dropdown">
             <div class="dropdown__header" (click)="toggleDropdown('about')">
                <div class="dropdown__title">Biz haqimizda</div>
                <img class="dropdown__arrow" src="/assets/icons/arrow-down.svg" alt="arrow down icon">
             </div>
             <div class="dropdown__content" *ngIf="showAboutDropdown">
                <div class="dropdown__col">
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                  <a class="dropdown__item" routerLink="/about/mentors">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/about-dropdown/teachers.svg" alt="Teachers Icon">
-                     </div>
-                     <div class="dropdown__text">O'qituvchilar</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
-                        <img src="/assets/images/about-dropdown/students-projects.svg" alt="Students Projects Icon">
-                     </div>
-                     <div class="dropdown__text">O'quvchilar loyihalari</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">O'qituvchilar</span>
+                  </a>
+                  <a class="dropdown__item" routerLink="/about/employed-students">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/about-dropdown/success-students.svg" alt="Success students Icon">
-                     </div>
-                     <div class="dropdown__text">Ishga kirgan o'quvchilar</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
-                        <img src="/assets/images/about-dropdown/intro-lessons.svg" alt="Intro Lessons Icon">
-                     </div>
-                     <div class="dropdown__text">Ochiq darslar</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Ishga kirgan o'quvchilar</span>
+                  </a>
+                  <a class="dropdown__item" routerLink="/about/help-to-work">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/about-dropdown/help-to-work.svg" alt="Help To Work Icon">
-                     </div>
-                     <div class="dropdown__text">Ishga yordam</div>
-                  </div>
+                     </span>
+                     <span class="dropdown__text">Ishga yordam</span>
+                  </a>
                </div>
                <div class="dropdown__col">
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                  <a class="dropdown__item" routerLink="/about/what-is-fulfil">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/about-dropdown/what-is-fulfil.svg" alt="Question Icon">
-                     </div>
-                     <div class="dropdown__text">Fulfil nima?</div>
-                  </div>
-                  <div class="dropdown__item">
-                     <div class="dropdown__icon">
+                     </span>
+                     <span class="dropdown__text">Fulfil nima?</span>
+                  </a>
+                  <a class="dropdown__item" routerLink="/about/contact-us">
+                     <span class="dropdown__icon">
                         <img src="/assets/images/about-dropdown/contact.svg" alt="Contact Icon">
-                     </div>
-                     <div class="dropdown__text">Biz bilan aloqa</div>
-                  </div>
+                     </span>
+                     <span class="dropdown__text">Biz bilan aloqa</span>
+                  </a>
                </div>
             </div>
          </div>
+         <a class="nav__item cursor-pointer" routerLink="/about/intro-lessons">Ochiq darslar</a>
+         <a class="nav__item cursor-pointer" routerLink="/about/students-projects">O’quvchilar loyihalari</a>
       </div>
 
       <a class="header__phone" href="tel: +998883300666">
@@ -127,3 +117,107 @@
       </a>
    </div>
 </header>
+
+<div class="bottom-panel">
+   <div class="container">
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'courses'" (click)="bottomPanelAction('courses')">
+         <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M11.8553 0.301761C11.6119 0.232671 11.3551 0.232731 11.1116 0.302031C10.5931 0.449571 10.0697 0.586231 9.5445 0.723351C7.20087 1.33527 4.62037 2.00904 2.41292 3.81037L1.37215 4.65967C0.54221 5.33693 0.54264 6.66327 1.3733 7.3398L2.39724 8.1738C3.15371 8.79 3.94208 9.2719 4.75 9.665V14.2939C4.75 15.4272 5.44522 16.4444 6.5011 16.8561L10.5011 18.4156C11.1435 18.666 11.8565 18.666 12.4989 18.4156L16.4989 16.8561C17.5548 16.4444 18.25 15.4272 18.25 14.2939V9.6733C19.0526 9.2823 19.8357 8.8028 20.5871 8.1896L20.75 8.0567V13C20.75 13.4142 21.0858 13.75 21.5 13.75C21.9142 13.75 22.25 13.4142 22.25 13V6C22.2498 5.49918 22.042 4.99845 21.6267 4.66016L20.6028 3.82618C18.3793 2.01516 15.6903 1.31386 13.4192 0.721531C12.8952 0.584851 12.3729 0.448631 11.8553 0.301761ZM7.79914 9.8122C7.4193 9.647 6.97745 9.821 6.81224 10.2009C6.64704 10.5807 6.82103 11.0226 7.20087 11.1878C8.47872 11.7435 9.8015 12.1983 11.1571 12.5462C11.3933 12.6068 11.6411 12.6068 11.8773 12.5459C13.2292 12.198 14.5481 11.7432 15.8219 11.1874C16.2015 11.0217 16.375 10.5797 16.2093 10.2C16.0436 9.8204 15.6016 9.6469 15.2219 9.8126C14.0253 10.3348 12.7865 10.7623 11.5167 11.0899C10.243 10.7622 9.00004 10.3346 7.79914 9.8122Z"
+            />
+         </svg>
+         <span>Bizning kurslar</span>
+      </div>
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'about'" (click)="bottomPanelAction('about')">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+               d="M12.5126 2.63407C12.1793 2.53164 11.823 2.53164 11.4897 2.63407L8.50395 3.55174C6.9696 4.02333 5.51242 4.71666 4.17863 5.60977C3.33079 6.17748 3.73267 7.49997 4.75303 7.49997H19.2492C20.2696 7.49997 20.6714 6.17748 19.8236 5.60977C18.4898 4.71666 17.0326 4.02333 15.4983 3.55174L12.5126 2.63407Z"
+            />
+            <path
+               d="M4.25 21C4.25 20.5858 4.58579 20.25 5 20.25H19C19.4142 20.25 19.75 20.5858 19.75 21C19.75 21.4142 19.4142 21.75 19 21.75H5C4.58579 21.75 4.25 21.4142 4.25 21Z"
+            />
+            <path
+               d="M6.25 17C6.25 17.4142 6.58579 17.75 7 17.75C7.41421 17.75 7.75 17.4142 7.75 17V11C7.75 10.5858 7.41421 10.25 7 10.25C6.58579 10.25 6.25 10.5858 6.25 11V17Z"
+            />
+            <path
+               d="M12 17.75C11.5858 17.75 11.25 17.4142 11.25 17V11C11.25 10.5858 11.5858 10.25 12 10.25C12.4142 10.25 12.75 10.5858 12.75 11V17C12.75 17.4142 12.4142 17.75 12 17.75Z"
+            />
+            <path
+               d="M16.25 17C16.25 17.4142 16.5858 17.75 17 17.75C17.4142 17.75 17.75 17.4142 17.75 17V11C17.75 10.5858 17.4142 10.25 17 10.25C16.5858 10.25 16.25 10.5858 16.25 11V17Z"
+            />
+         </svg>
+         <span>Biz haqimizda</span>
+      </div>
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'intro-lessons'" (click)="bottomPanelAction('intro-lessons')">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+               d="M9.48 1.02571L4.42 2.01228C2.99 2.23151 2 3.54693 2 4.97197V19.0031C2 20.4282 2.99 21.7436 4.42 21.9628L9.48 22.9494C11.24 23.2782 12.78 21.9628 13 20.2089V19.8801V4.09503V3.76617C12.78 2.01228 11.24 0.806474 9.48 1.02571Z"
+            />
+            <path
+               d="M18.8979 4H15V20H18.8979C20.6176 20 21.9933 18.6133 21.9933 17.0133V6.98667C22.108 5.28 20.7322 4 18.8979 4Z"
+            />
+            <path
+               d="M9.23491 13.9908C8.57131 13.9908 8.12891 13.5484 8.12891 12.8848V11.1152C8.12891 10.4516 8.57131 10.0092 9.23491 10.0092C9.89851 10.0092 10.3409 10.4516 10.3409 11.1152V12.9954C10.3409 13.5484 9.89851 13.9908 9.23491 13.9908Z"
+               fill="white"/>
+         </svg>
+         <span>Ochiq dars</span>
+      </div>
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'students-projects'" (click)="bottomPanelAction('students-projects')">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+               d="M13.0398 3.58195C12.4403 3.26907 11.6168 3.26437 11.0132 3.57614C8.43453 4.90788 6.09785 6.43371 4.05188 8.12432C3.77905 8.34976 3.59851 8.66529 3.6016 9.02594C3.60468 9.38536 3.78933 9.69738 4.06125 9.91972C6.09075 11.5792 8.43007 13.1068 10.9618 14.4282C11.5613 14.741 12.3848 14.7457 12.9884 14.434C15.5671 13.1022 17.9038 11.5764 19.9497 9.8858C20.2225 9.66036 20.4031 9.34483 20.4 8.98418C20.3969 8.62476 20.2123 8.31274 19.9403 8.09039C17.9108 6.43095 15.5715 4.90333 13.0398 3.58195Z"/>
+            <path
+               d="M20.9564 13.7315C21.3078 13.5121 21.4148 13.0494 21.1954 12.6981C20.9761 12.3467 20.5134 12.2397 20.1621 12.4591L14.0548 16.272C13.5108 16.6116 12.7717 16.801 11.9982 16.801C11.2248 16.8011 10.4856 16.6118 9.94142 16.2722L3.90109 12.5024C3.5497 12.2831 3.08705 12.3902 2.86775 12.7416C2.64844 13.093 2.75552 13.5557 3.10692 13.775L9.14725 17.5447C9.97611 18.062 11.0044 18.3011 11.9983 18.301C12.9923 18.301 14.0205 18.0618 14.8492 17.5444L20.9564 13.7315Z"/>
+            <path
+               d="M20.9565 17.4861C21.3078 17.2667 21.4148 16.8041 21.1954 16.4527C20.976 16.1014 20.5133 15.9945 20.162 16.2139L14.8731 19.5167C14.1002 19.9994 13.0664 20.2602 11.9982 20.2603C10.93 20.2604 9.89605 19.9996 9.12303 19.517L3.90117 16.2572C3.5498 16.0379 3.08714 16.1449 2.8678 16.4963C2.64845 16.8476 2.75547 17.3103 3.10684 17.5296L8.32871 20.7895C9.38649 21.4498 10.7096 21.7604 11.9983 21.7603C13.287 21.7602 14.61 21.4495 15.6676 20.789L20.9565 17.4861Z"/>
+         </svg>
+         <span>O’quvchilar loyihalari</span>
+      </div>
+   </div>
+</div>
+
+<div class="mobile-menu" *ngIf="bottomPanel === 'courses' || bottomPanel === 'about'">
+   <div class="flex-container">
+      <div class="mobile-menu__header">
+         <h2>{{ bottomPanel === 'courses' ? 'Kurslar' : 'Biz haqimizda' }}</h2>
+         <svg (click)="bottomPanel == null" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="14" fill="white"/>
+            <path d="M9.88281 18.1176L18.1181 9.88235M9.88282 9.88237L18.1181 18.1176" stroke="#193C3F" stroke-width="2"
+                  stroke-linecap="round"/>
+         </svg>
+      </div>
+      <ul class="mobile-menu__ul">
+         <li class="mobile-menu__li">
+            <span class="mobile-menu__icon">
+               <img src="/assets/images/courses-dropdown/python.svg" alt="Course Python Icon">
+            </span>
+            <span class="mobile-menu__text">Python</span>
+         </li>
+         <li class="mobile-menu__li">
+            <span class="mobile-menu__icon">
+               <img src="/assets/images/courses-dropdown/ai.svg" alt="Course AI Icon">
+            </span>
+            <span class="mobile-menu__text">Sun’iy intellekt</span>
+         </li>
+         <li class="mobile-menu__li">
+            <span class="mobile-menu__icon">
+               <img src="/assets/images/courses-dropdown/nodejs.svg" alt="Course NodeJS Icon">
+            </span>
+            <span class="mobile-menu__text">NodeJS</span>
+         </li>
+         <li class="mobile-menu__li">
+            <span class="mobile-menu__icon">
+               <img src="/assets/images/courses-dropdown/frontend.svg" alt="Course Front End Icon">
+            </span>
+            <span class="mobile-menu__text">Frontend</span>
+         </li>
+         <li class="mobile-menu__li">
+            <span class="mobile-menu__icon">
+               <img src="/assets/images/courses-dropdown/react.svg" alt="Course React Icon">
+            </span>
+            <span class="mobile-menu__text">React</span>
+         </li>
+      </ul>
+   </div>
+</div>
+

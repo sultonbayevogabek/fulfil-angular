@@ -17,3 +17,14 @@
       width: 100%;
    }
 }
+
+@media only screen and (max-width: 992px) {
+   .enroll-form {
+      padding: 18px;
+      grid-template-columns: 1fr;
+   }
+
+   .enroll-form__send {
+      padding-top: 0;
+   }
+}

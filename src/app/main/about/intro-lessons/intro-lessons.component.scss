@@ -35,22 +35,22 @@
    div {
       margin-bottom: 5px;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: #55645E;
    }
 
    h3  {
       font-weight: 500;
-      font-size: 16px;
+      font-size: 1rem;
    }
 }
 
 .card__body {
-   padding-top: 18px;
+   padding-top: 1.125rem;
 
    p {
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 1.2;
    }
 }
@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 140%;
       color: #C3C8C6;
 
@@ -76,7 +76,7 @@
 
    div:last-child {
       font-weight: 400;
-      font-size: 16px;
+      font-size: 1rem;
       line-height: 140%;
       color: #3CB27F;
    }

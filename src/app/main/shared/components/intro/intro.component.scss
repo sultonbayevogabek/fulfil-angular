@@ -11,7 +11,7 @@
 .intro__subtitle {
    margin-bottom: 20px;
    font-weight: 600;
-   font-size: 20px;
+   font-size: 1.25rem;
    letter-spacing: 0.01em;
    text-transform: uppercase;
    color: #10985D;
@@ -20,7 +20,7 @@
 .intro__title {
    margin-bottom: 48px;
    font-weight: 700;
-   font-size: 60px;
+   font-size: 3.75rem;
    color: #193C3F;
 }
 
@@ -51,7 +51,7 @@
 .intro__description {
    margin-bottom: 36px;
    font-weight: 400;
-   font-size: 24px;
+   font-size: 1.5rem;
    color: #55645E;
 }
 
@@ -64,7 +64,7 @@
    border-radius: 4px;
    cursor: pointer;
    font-weight: 500;
-   font-size: 16px;
+   font-size: 1rem;
    letter-spacing: 0.02em;
    color: #FFFFFF;
    transition: 0.1s all ease-out;
@@ -82,7 +82,7 @@
 
 .intro__statistics {
    display: grid;
-   grid-template-columns: repeat(3, 1fr);
+   grid-template-columns: repeat(3, 150px);
    grid-gap: 30px;
    padding-top: 60px;
 }
@@ -98,8 +98,8 @@
 .statistics__value {
    margin-bottom: 12px;
    font-weight: 700;
-   font-size: 40px;
-   line-height: 60px;
+   font-size: 2.5rem;
+   line-height: 3.75rem;
    color: #000000;
 
    span {
@@ -108,13 +108,99 @@
 }
 
 .statistics__title {
-   line-height: 24px;
+   line-height: 1.5rem;
    color: #000000;
 }
 
 .intro__course-details {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   grid-gap: 20px;
+   grid-column-gap: 20px;
    padding-top: 70px;
+}
+
+@media only screen and (max-width: 992px) {
+   .intro {
+      padding-top: 30px;
+   }
+
+   .intro__top {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+   }
+
+   .intro__right {
+      order: -1;
+      text-align: center;
+
+      img {
+         width: 60%;
+      }
+   }
+
+   .intro__subtitle {
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+   }
+
+   .intro__title {
+      margin-bottom: 20px;
+      font-size: 2.14rem;
+   }
+
+
+   .intro__description {
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+   }
+
+   .intro__button {
+      height: 48px;
+   }
+
+   .intro__statistics {
+      grid-template-columns: repeat(3, 105px);
+      grid-gap: 12px;
+      padding-top: 24px;
+   }
+
+   .statistics__item {
+      padding: 16px;
+   }
+
+   .statistics__value {
+      margin-bottom: 7px;
+      font-size: 1.7rem;
+      line-height: 2.5rem;
+   }
+
+   .statistics__title {
+      font-size: 0.85rem;
+   }
+
+   .intro__course-details {
+      padding-top: 0;
+   }
+}
+
+@media only screen and (max-width: 768px) {
+   .intro__right {
+      img {
+         width: 100%;
+      }
+   }
+
+   .intro__course-details {
+      grid-template-columns: 1fr;
+   }
+}
+
+@media only screen and (max-width: 578px) {
+   .intro__button {
+      width: 100%;
+   }
+
+   .intro__statistics {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }

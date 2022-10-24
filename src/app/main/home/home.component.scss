@@ -2,7 +2,7 @@
    margin-bottom: 40px;
    text-align: center;
    font-weight: 700;
-   font-size: 28px;
+   font-size: 1.75rem;
    line-height: 130%;
    letter-spacing: 0.02em;
    color: #193C3F;
@@ -56,7 +56,7 @@
    }
 
    p {
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 140%;
       text-align: center;
       color: #000000;
@@ -96,8 +96,8 @@
 
 .why-we__text {
    font-weight: 500;
-   font-size: 20px;
-   line-height: 30px;
+   font-size: 1.25rem;
+   line-height: 1.875rem;
    letter-spacing: 0.01em;
    color: #000000;
 }
@@ -121,7 +121,7 @@
 .why-online__text {
    margin-bottom: 20px;
    font-weight: 500;
-   font-size: 20px;
+   font-size: 1.25rem;
    line-height: 140%;
 }
 
@@ -152,7 +152,117 @@
    display: flex;
    align-items: center;
    justify-content: center;
+   padding: 18px;
    background-color: #FFFFFF;
    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
    border-radius: 8px;
+}
+
+@media screen and (max-width: 992px) {
+   .video__heading {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+   }
+
+   .our-courses__cards {
+      grid-gap: 12px;
+   }
+
+   .our-courses__card {
+      padding: 24px;
+
+      img {
+         max-width: 60px;
+         margin-bottom: 12px;
+      }
+
+      p {
+         font-size: 1rem;
+      }
+   }
+
+   .why-we__cards {
+      grid-gap: 24px;
+   }
+
+   .why-we__icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 12px;
+
+      svg {
+         width: 50%;
+      }
+   }
+
+   .why-we__text {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.25rem;
+   }
+
+   .why-online__cards {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 12px;
+   }
+
+   .why-online__card {
+      display: flex;
+      padding: 18px;
+   }
+
+   .why-online__icon {
+      order: -1;
+      flex-shrink: 0;
+      margin-right: 12px;
+   }
+
+   .why-online__text {
+      font-size: 1rem;
+   }
+
+   .companies__cards {
+      grid-gap: 12px;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .our-courses__cards {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .course-benefit .container {
+      grid-template-columns: 1fr;
+      grid-gap: 30px;
+   }
+
+   .course-benefit__left img {
+      width: 100%;
+   }
+
+   .why-we__cards {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   .companies__cards {
+      grid-template-columns: repeat(3, 1fr);
+   }
+}
+
+@media screen and (max-width: 578px) {
+   .our-courses__cards {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .why-we__cards {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .why-online__cards {
+      grid-template-columns: 1fr;
+   }
+
+   .companies__cards {
+      grid-template-columns: repeat(2, 1fr);
+   }
 }

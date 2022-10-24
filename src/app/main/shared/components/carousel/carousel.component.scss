@@ -22,13 +22,13 @@
    h3 {
       margin-bottom: 8px;
       font-weight: 600;
-      font-size: 20px;
+      font-size: 1.25rem;
       line-height: 125%;
    }
 
    div {
       font-weight: 400;
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 125%;
       color: #55645E;
    }
@@ -37,7 +37,7 @@
 .feedback__text {
    padding-top: 24px;
    font-weight: 400;
-   font-size: 16px;
+   font-size: 1rem;
    line-height: 150%;
    color: #1B211E;
 }
@@ -48,7 +48,7 @@
    p {
       margin-bottom: 12px;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 0.875rem;
       line-height: 125%;
       color: #55645E;
    }
@@ -63,10 +63,42 @@
    }
 
    span {
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 125%;
       color: #3CB27F;
    }
 }
 
+@media only screen and (max-width: 992px) {
+   .feedback {
+      padding: 18px;
+   }
 
+   .feedback__img {
+      width: 45px;
+      height: 45px;
+      margin-right: 12px;
+   }
+
+   .feedback__title {
+      h3 {
+         font-size: 1.25rem;
+         margin-bottom: 0;
+      }
+      div {
+         font-size: 0.8rem;
+      }
+   }
+
+   .feedback__text {
+      padding-top: 18px;
+   }
+
+   .feedback__contact {
+      padding-top: 10px;
+
+      p {
+         margin-bottom: 4px;
+      }
+   }
+}

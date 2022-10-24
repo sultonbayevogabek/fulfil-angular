@@ -26,18 +26,18 @@
 .card__name {
    margin-bottom: 16px;
    font-weight: 600;
-   font-size: 24px;
+   font-size: 1.5rem;
 }
 
 .card__job {
    margin-bottom: 8px;
-   font-size: 18px;
+   font-size: 1.125rem;
    color: #55645E;
 }
 
 .card__workplace {
    font-weight: 500;
-   font-size: 18px;
+   font-size: 1.125rem;
    color: #3CB27F;
 }
 
@@ -52,7 +52,7 @@
    span {
       margin-right: 16px;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 125%;
       color: #193C3F;
    }
@@ -93,7 +93,7 @@
 
 .comment__heading {
    font-weight: 600;
-   font-size: 18px;
+   font-size: 1.125rem;
    line-height: 140%;
 }
 
@@ -111,7 +111,7 @@
 .comment__text {
    padding-top: 16px;
    font-weight: 300;
-   font-size: 16px;
+   font-size: 1rem;
    line-height: 140%;
    text-align: left;
 }

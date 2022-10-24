@@ -6,6 +6,7 @@ import { IntroComponent } from './components/intro/intro.component';
 import { CarouselComponent } from './components/carousel/carousel.component'
 import { CarouselModule } from 'ngx-owl-carousel-o'
 import { EnrollFormComponent } from './components/enroll-form/enroll-form.component'
+import { RouterLinkWithHref } from '@angular/router'
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { EnrollFormComponent } from './components/enroll-form/enroll-form.compon
    imports: [
       NgIf,
       NgForOf,
-      CarouselModule
+      CarouselModule,
+      RouterLinkWithHref
    ],
    exports: [
       HeaderComponent,
