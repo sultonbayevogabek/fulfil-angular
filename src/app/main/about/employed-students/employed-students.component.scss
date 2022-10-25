@@ -18,7 +18,6 @@
 }
 
 .card__avatar {
-   height: 180px;
    margin-bottom: 16px;
    border-radius: 50%;
 }
@@ -114,4 +113,48 @@
    font-size: 1rem;
    line-height: 140%;
    text-align: left;
+}
+
+@media only screen and (max-width: 992px) {
+   .cards {
+      grid-gap: 12px;
+   }
+
+   .card__header {
+      padding: 18px;
+   }
+
+   .card__name {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+   }
+
+   .card__job, .card__workplace {
+      font-size: 1rem;
+   }
+
+   .card__footer {
+      padding: 12px;
+
+      span {
+         font-size: 1rem;
+         margin-right: 12px;
+      }
+   }
+
+   .comment {
+      padding: 12px;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .cards {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media only screen and (max-width: 578px) {
+   .cards {
+      grid-template-columns: 1fr;
+   }
 }

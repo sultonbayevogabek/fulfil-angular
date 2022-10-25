@@ -2,7 +2,7 @@
    .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 100px;
+      grid-column-gap: 100px;
    }
 }
 
@@ -39,5 +39,41 @@
 
    .button {
       width: 100%;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .contact-us {
+      .container {
+         grid-column-gap: 30px;
+      }
+   }
+
+   .contact-us__left p {
+      padding-top: 24px;
+   }
+
+   .contact-us__form {
+      padding: 18px;
+
+      h3 {
+         font-size: 1.25rem;
+      }
+
+      .form-label {
+         margin-bottom: 18px;
+      }
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .contact-us__left {
+      margin-bottom: 24px;
+   }
+
+   .contact-us {
+      .container {
+         grid-template-columns: 1fr;
+      }
    }
 }

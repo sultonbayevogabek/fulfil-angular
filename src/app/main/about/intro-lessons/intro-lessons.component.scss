@@ -11,9 +11,8 @@
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.card__img {
+.card__img img {
    border-radius: 12px;
-   overflow: hidden;
 }
 
 .teacher {
@@ -24,11 +23,12 @@
 
 .teacher__avatar {
    width: 50px;
-   height: 50px;
    margin-right: 12px;
-   border-radius: 50%;
-   overflow: hidden;
    flex-shrink: 0;
+
+   img {
+      border-radius: 50%;
+   }
 }
 
 .teacher__info {
@@ -79,5 +79,46 @@
       font-size: 1rem;
       line-height: 140%;
       color: #3CB27F;
+   }
+}
+
+@media only screen and (max-width: 992px) {
+   .cards {
+      grid-gap: 12px;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .card {
+      padding: 18px;
+   }
+
+   .teacher__avatar {
+      width: 45px;
+   }
+
+   .card__body p {
+      font-size: 1rem;
+   }
+
+   .card__footer div:first-child {
+      font-size: 0.875rem;
+
+      svg {
+         margin-right: 8px;
+      }
+   }
+
+   .card__footer div:last-child {
+      font-size: 0.875rem;
+   }
+}
+
+@media only screen and (max-width: 578px) {
+   .cards {
+      grid-template-columns: 1fr;
+   }
+
+   .card__img img {
+      width: 100%;
    }
 }
