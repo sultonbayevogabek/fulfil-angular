@@ -1,0 +1,33 @@
+.login {
+   height: 100vh;
+   overflow: auto;
+   background-color: #1D4245;
+}
+
+.login__form {
+   margin: 100px auto;
+   width: 500px;
+   padding: 24px;
+   background-color: #fff;
+   border-radius: 8px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.login__error {
+   height: 48px;
+   margin-bottom: 24px;
+   text-align: center;
+   border: 1px solid #FF0000;
+   border-radius: 4px;
+   background-color: rgba(#ff0000, 0.1);
+   color: #ff0000;
+   line-height: 46px;
+}
+
+.form-label {
+   margin-bottom: 24px;
+}
+
+.button {
+   width: 100%;
+}

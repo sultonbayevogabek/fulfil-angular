@@ -95,6 +95,11 @@ select::-ms-expand {
       background-color: #056A3F;
       outline: 1px solid rgba(60, 178, 127, 0.5);
    }
+
+   &[disabled] {
+      background-color: rgba(#09A964, 0.2);
+      cursor: no-drop;
+   }
 }
 
 .form-label {

@@ -1,0 +1,14 @@
+<div class="login">
+   <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <label class="form-label">
+         <span>Email</span>
+         <input class="form-control" type="email" formControlName="email">
+      </label>
+      <label class="form-label">
+         <span>Parol</span>
+         <input class="form-control" type="email" formControlName="password">
+      </label>
+      <p class="login__error" *ngIf="error && !pending">Email yoki parol noto'g'ri</p>
+      <button class="button" [disabled]="loginForm.invalid || pending">Kirish</button>
+   </form>
+</div>
