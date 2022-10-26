@@ -1,0 +1,38 @@
+<div class="header">
+   <h3 class="fw-500 mb-30">Header</h3>
+
+   <hr class="mb-20">
+
+   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="grid grid-4 column-gap-20 mb-20">
+         <label class="form-label">
+            <span>Telefon raqam</span>
+            <input class="form-control" type="text" placeholder="998999639773" maxlength="12" formControlName="phoneNumber">
+         </label>
+         <label class="form-label">
+            <span>O'qituvchilar soni</span>
+            <input class="form-control" type="number" placeholder="12" formControlName="teachers">
+         </label>
+         <label class="form-label">
+            <span>O'quvchilar soni</span>
+            <input class="form-control" type="number" placeholder="150" formControlName="students">
+         </label>
+         <label class="form-label">
+            <span>Dars soatlari soni</span>
+            <input class="form-control" type="number" placeholder="200" formControlName="lessons">
+         </label>
+      </div>
+      <div class="grid grid-1 mb-20">
+         <label class="form-label">
+            <span>Video URL</span>
+            <input class="form-control" type="url" placeholder="https://youtu.be/IYw61DTysBg" formControlName="youtube">
+         </label>
+      </div>
+      <div class="grid grid-4 column-gap-20">
+         <div></div>
+         <div></div>
+         <div></div>
+         <button class="button" [disabled]="form.invalid">{{ created ? 'Yangilash' : 'Yaratish' }}</button>
+      </div>
+   </form>
+</div>
