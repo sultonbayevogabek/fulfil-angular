@@ -15,3 +15,8 @@ export interface ICurrentUser {
    }
    status: number
 }
+
+export interface IAdmin {
+   email: string
+   id: string
+}

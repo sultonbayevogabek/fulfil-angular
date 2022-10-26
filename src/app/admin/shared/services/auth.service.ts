@@ -1,30 +1,28 @@
 import { Injectable } from '@angular/core'
-import { AdminApiService } from './admin-api.service'
-import { Router } from '@angular/router'
+import { ApiService } from './api.service'
+import { IAdmin } from '../models/auth.models'
 
 @Injectable()
 
 export class AuthService {
-   constructor(
-      private adminApiService: AdminApiService,
-      private router: Router
-   ) {}
+   constructor(private _adminApiService: ApiService) {
+   }
 
-   private _currentUser = null
+   private _admin = null
 
    get token(): string | null {
       return localStorage.getItem('token')
    }
 
-   get currentUser() {
-      return this._currentUser
+   set admin(admin: IAdmin) {
+      this._admin = admin
    }
 
-   getCurrentUser(): void {
-      this.adminApiService.getCurrentUser()
-         .subscribe(res => {
-            this._currentUser = res
-            this.router.navigate(['admin', 'cabinet'])
-         })
+   get admin() {
+      return this._admin
+   }
+
+   getAdmin() {
+      this._adminApiService.getAdmin().subscribe(res => this._admin = res, _ => {})
    }
 }

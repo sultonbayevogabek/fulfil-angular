@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { AdminApiService } from '../shared/services/admin-api.service'
+import { ApiService } from '../shared/services/api.service'
 import { AuthService } from '../shared/services/auth.service'
+import { Router } from '@angular/router'
 
 @Component({
    selector: 'app-login',
@@ -15,8 +16,9 @@ export class LoginComponent implements OnInit {
    pending = false
 
    constructor(
-      private adminApiService: AdminApiService,
-      private authService: AuthService
+      private _adminApiService: ApiService,
+      private _authService: AuthService,
+      private _router: Router
    ) {
    }
 
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
          password: new FormControl('123456', Validators.required)
       })
 
+      this._authService.admin = null
       localStorage.clear()
    }
 
@@ -33,10 +36,10 @@ export class LoginComponent implements OnInit {
       if (this.loginForm.invalid) return
 
       this.pending = true
-      this.adminApiService.login(this.loginForm.value)
+      this._adminApiService.login(this.loginForm.value)
          .subscribe(res => {
             localStorage.setItem('token', res.token)
-            this.authService.getCurrentUser()
+            this._router.navigate(['admin', 'cabinet']).then()
          }, () => {
             this.error = true
             this.pending = false

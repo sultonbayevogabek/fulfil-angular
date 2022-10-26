@@ -1,5 +1,7 @@
-import { Component, HostListener } from '@angular/core'
+import { Component, HostListener, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { ApiService } from '../../../../admin/shared/services/api.service'
+import { IHeader } from '../../../../admin/shared/models/cabinet.models'
 
 @Component({
    selector: 'app-header',
@@ -7,10 +9,11 @@ import { Router } from '@angular/router'
    styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
    showCoursesDropdown = false
    showAboutDropdown = false
    bottomPanel = null
+   header: IHeader
 
    @HostListener('document: keydown', ['$event']) onKeyUp(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -29,8 +32,17 @@ export class HeaderComponent {
    }
 
    constructor(
-      private router: Router
+      private _router: Router,
+      private _apiService: ApiService
    ) {
+   }
+
+   ngOnInit() {
+      this._apiService.getHeader()
+         .subscribe(res => {
+            this.header = res
+            localStorage.setItem('header', JSON.stringify(res))
+         })
    }
 
    toggleDropdown(courses: 'courses' | 'about') {
@@ -48,7 +60,7 @@ export class HeaderComponent {
       this.bottomPanel = bottomPanel
 
       if (bottomPanel === 'intro-lessons' || bottomPanel === 'students-projects') {
-         this.router.navigate(['/about', bottomPanel])
+         this._router.navigate(['/about', bottomPanel])
       }
    }
 }

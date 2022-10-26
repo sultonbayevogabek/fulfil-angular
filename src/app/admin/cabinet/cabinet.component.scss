@@ -1,0 +1,36 @@
+.cabinet {
+   display: flex;
+   height: 100vh;
+}
+
+.cabinet__sidebar {
+   width: 250px;
+   background-color: #193C3F;
+}
+
+.cabinet__nav {
+   padding: 20px;
+
+   li {
+      margin-bottom: 20px;
+   }
+
+   a {
+      display: block;
+      padding: 16px;
+      border-radius: 4px;
+      font-weight: 500;
+      color: #FFFFFF;
+   }
+
+   a:hover, a.active {
+      background-color: rgba(#3CB27F, 0.7);
+   }
+}
+
+.cabinet__main {
+   flex-grow: 1;
+   padding: 30px 20px;
+   background-color: #fff;
+   overflow: auto;
+}

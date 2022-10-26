@@ -6,9 +6,8 @@ import { AuthService } from './shared/services/auth.service'
 import { NgIf } from '@angular/common'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms'
-import { AdminApiService } from './shared/services/admin-api.service'
+import { ApiService } from './shared/services/api.service'
 import { HttpInterceptorService } from './shared/interceptors/http-interceptor.service'
-import { CabinetComponent } from './cabinet/cabinet.component'
 import { AdminGuardService } from './shared/guards/admin-guard.service'
 
 const routes: Routes = [
@@ -22,7 +21,7 @@ const routes: Routes = [
          },
          {
             path: 'cabinet',
-            component: CabinetComponent,
+            loadChildren: () => import('./cabinet/cabinet.module').then(m => m.CabinetModule),
             canActivate: [ AdminGuardService ]
          }
       ]
@@ -39,14 +38,12 @@ const routes: Routes = [
    ],
    declarations: [
       AdminComponent,
-      LoginComponent,
-      CabinetComponent
+      LoginComponent
    ],
    exports: [
       RouterModule
    ],
    providers: [
-      AdminApiService,
       AuthService,
       AdminGuardService,
       {

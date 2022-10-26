@@ -59,6 +59,10 @@ select {
    text-overflow: '';
 }
 
+hr {
+   border: 1px solid #E0E0E0;
+}
+
 select::-ms-expand {
    display: none;
 }
@@ -72,6 +76,37 @@ select::-ms-expand {
 .flex-container {
    display: flex;
    @extend .container;
+}
+
+.grid {
+   display: grid;
+}
+
+@for $i from 1 through 6 {
+   .grid-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+   }
+}
+
+@for $i from 1 through 10 {
+   .column-gap-#{$i}0 {
+      grid-column-gap: #{$i * 10}px;
+   }
+   .row-gap-#{$i}0 {
+      grid-row-gap: #{$i * 10}px;
+   }
+   .gap-#{$i}0 {
+      grid-gap: #{$i * 10}px;
+   }
+   .fw-#{$i}00 {
+      font-weight: #{$i}00;
+   }
+   .mr-#{$i}0 {
+      margin-right: #{$i * 10}px;
+   }
+   .mb-#{$i}0 {
+      margin-bottom: #{$i * 10}px;
+   }
 }
 
 .button {
