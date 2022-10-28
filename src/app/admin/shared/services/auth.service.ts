@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core'
-import { ApiService } from './api.service'
+import { ApiService } from '../../../shared/services/api.service'
 import { IAdmin } from '../models/auth.models'
 
-@Injectable()
+@Injectable({
+   providedIn: 'root'
+})
 
 export class AuthService {
    constructor(private _adminApiService: ApiService) {
@@ -23,6 +25,8 @@ export class AuthService {
    }
 
    getAdmin() {
-      this._adminApiService.getAdmin().subscribe(res => this._admin = res, _ => {})
+      this._adminApiService.getAdmin().subscribe(
+         res => this._admin = res, _ => {}
+      )
    }
 }

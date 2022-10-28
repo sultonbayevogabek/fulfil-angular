@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { IStatistic } from '../../intercases'
+import { Component, Input } from '@angular/core'
 
 @Component({
    selector: 'app-intro',
@@ -7,15 +6,12 @@ import { IStatistic } from '../../intercases'
    styleUrls: ['./intro.component.scss']
 })
 
-export class IntroComponent implements OnInit {
+export class IntroComponent {
    @Input() introType? = 'course'
    @Input() introSubTitle
    @Input() introBigTitle
    @Input() introDescription
    @Input() introCourseInfo?: string[]
    @Input() introImgUrl?: string
-   @Input() introStatistic?: IStatistic[]
-   ngOnInit() {
-      console.log(this.introImgUrl)
-   }
+   @Input() introStatistic?: { students: number, teachers: number, lessons: number }
 }

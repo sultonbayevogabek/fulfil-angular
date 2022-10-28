@@ -1,4 +1,6 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+import { IHeader } from '../../shared/models/models'
+import { ApiService } from '../../shared/services/api.service'
 
 @Component({
    selector: 'app-home',
@@ -6,21 +8,20 @@ import { Component } from '@angular/core'
    styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent {
-   statistics = [
-      {
-         statisticTitle: 'O’quvchilar',
-         statisticNumber: 700
-      },
-      {
-         statisticTitle: 'O’qituvchilar',
-         statisticNumber: 10
-      },
-      {
-         statisticTitle: 'Darslar',
-         statisticNumber: 200
-      }
-   ]
+export class HomeComponent implements OnInit {
+   header: IHeader
+
+   constructor(
+      private _apiService: ApiService
+   ) {}
+
+   ngOnInit() {
+      this._apiService.getHeader()
+         .subscribe(res => {
+            this.header = res
+         })
+   }
+
    details = [
       '7 oy davomida o’qish',
       'Yordamchi mutaxassislar',

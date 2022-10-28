@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { ApiService } from '../../shared/services/api.service'
+import { ApiService } from '../../../shared/services/api.service'
 
 @Component({
    selector: 'app-header',
@@ -47,7 +47,7 @@ export class HeaderComponent implements OnInit {
          this._adminApiService.updateHeader(this.form.value)
             .subscribe(_ => {
                window.alert(`O'zgarishlar muvaffaqqiyatli amalga oshirildi`)
-            }, _ => {
+            }, err => {
                window.alert(`Xatolik ro'y berdi :(`)
             })
       }

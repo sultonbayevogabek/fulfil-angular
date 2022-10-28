@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core'
-import { environment } from '../../../../environments/environment'
+import { environment } from '../../../environments/environment'
 import { HttpClient } from '@angular/common/http'
-import { ICurrentUser, ILoginRequest, ILoginResponse } from '../models/auth.models'
+import { ICurrentUser, ILoginRequest, ILoginResponse } from '../../admin/shared/models/auth.models'
 import { map } from 'rxjs'
-import { IHeader } from '../models/cabinet.models'
+import { IHeader } from '../models/models'
 
 @Injectable({
    providedIn: 'root'

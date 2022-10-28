@@ -2,13 +2,10 @@ import { NgModule } from '@angular/core'
 import { AdminComponent } from './admin.component'
 import { RouterModule, RouterOutlet, Routes } from '@angular/router'
 import { LoginComponent } from './login/login.component'
-import { AuthService } from './shared/services/auth.service'
 import { NgIf } from '@angular/common'
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms'
-import { ApiService } from './shared/services/api.service'
-import { HttpInterceptorService } from './shared/interceptors/http-interceptor.service'
 import { AdminGuardService } from './shared/guards/admin-guard.service'
+import { AuthService } from './shared/services/auth.service'
 
 const routes: Routes = [
    {
@@ -33,7 +30,6 @@ const routes: Routes = [
       RouterOutlet,
       RouterModule.forChild(routes),
       NgIf,
-      HttpClientModule,
       ReactiveFormsModule
    ],
    declarations: [
@@ -45,12 +41,7 @@ const routes: Routes = [
    ],
    providers: [
       AuthService,
-      AdminGuardService,
-      {
-         provide: HTTP_INTERCEPTORS,
-         useClass: HttpInterceptorService,
-         multi: true
-      }
+      AdminGuardService
    ]
 })
 

@@ -3,7 +3,7 @@
    introSubTitle="Kutib oling!"
    introBigTitle="Fulfil education"
    introDescription="Xalqaro darajadagi o'zbekona onlayn maktab"
-   [introStatistic]="statistics"
+   [introStatistic]="{ students: header?.students, teachers: header?.teachers, lessons: header?.lessons }"
 ></app-intro>
 
 <section class="section video">
@@ -26,7 +26,7 @@
       </div>-->
       <div class="video__iframe">
          <iframe
-            src="https://www.youtube.com/embed/IYw61DTysBg"
+            src="https://www.youtube.com/embed/HwUSkVSD1xw"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

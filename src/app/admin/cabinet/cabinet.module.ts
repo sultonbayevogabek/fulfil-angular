@@ -24,7 +24,7 @@ const routes: Routes = [
    ],
    imports: [
       RouterModule.forChild(routes),
-      ReactiveFormsModule
+      ReactiveFormsModule,
    ],
    exports: [RouterModule]
 })
