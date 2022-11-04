@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core'
-import { CabinetComponent } from './cabinet.component'
+import { NgModule } from '@angular/core';
+import { CabinetComponent } from './cabinet.component';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './header/header.component'
-import { ReactiveFormsModule } from '@angular/forms'
+import { HeaderComponent } from './header/header.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
    {
@@ -15,7 +15,7 @@ const routes: Routes = [
          }
       ]
    }
-]
+];
 
 @NgModule({
    declarations: [
@@ -24,11 +24,10 @@ const routes: Routes = [
    ],
    imports: [
       RouterModule.forChild(routes),
-      ReactiveFormsModule,
+      ReactiveFormsModule
    ],
    exports: [RouterModule]
 })
 
 export class CabinetModule {
-
 }

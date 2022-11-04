@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core'
-import { AdminComponent } from './admin.component'
-import { RouterModule, RouterOutlet, Routes } from '@angular/router'
-import { LoginComponent } from './login/login.component'
-import { NgIf } from '@angular/common'
-import { ReactiveFormsModule } from '@angular/forms'
-import { AdminGuardService } from './shared/guards/admin-guard.service'
-import { AuthService } from './shared/services/auth.service'
+import { NgModule } from '@angular/core';
+import { AdminComponent } from './admin.component';
+import { RouterModule, RouterOutlet, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { NgIf } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminGuardService } from './shared/guards/admin-guard.service';
+import { AuthService } from './shared/services/auth.service';
 
 const routes: Routes = [
    {
@@ -19,11 +19,11 @@ const routes: Routes = [
          {
             path: 'cabinet',
             loadChildren: () => import('./cabinet/cabinet.module').then(m => m.CabinetModule),
-            canActivate: [ AdminGuardService ]
+            canActivate: [AdminGuardService]
          }
       ]
    }
-]
+];
 
 @NgModule({
    imports: [
@@ -45,4 +45,5 @@ const routes: Routes = [
    ]
 })
 
-export class AdminModule {}
+export class AdminModule {
+}

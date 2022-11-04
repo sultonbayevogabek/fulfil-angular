@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
-import { HomeComponent } from './home/home.component'
-import { MainComponent } from './main.component'
-import { SharedModule } from './shared/shared.module'
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main.component';
+import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
    {
@@ -23,7 +23,7 @@ const routes: Routes = [
          }
       ]
    }
-]
+];
 
 @NgModule({
    declarations: [
@@ -36,4 +36,5 @@ const routes: Routes = [
    ]
 })
 
-export class MainModule {}
+export class MainModule {
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input } from '@angular/core';
 
 @Component({
    selector: 'app-intro',
@@ -7,11 +7,11 @@ import { Component, Input } from '@angular/core'
 })
 
 export class IntroComponent {
-   @Input() introType? = 'course'
-   @Input() introSubTitle
-   @Input() introBigTitle
-   @Input() introDescription
-   @Input() introCourseInfo?: string[]
-   @Input() introImgUrl?: string
-   @Input() introStatistic?: { students: number, teachers: number, lessons: number }
+   @Input() introType? = 'course';
+   @Input() introSubTitle;
+   @Input() introBigTitle;
+   @Input() introDescription;
+   @Input() introCourseInfo?: string[];
+   @Input() introImgUrl?: string;
+   @Input() introStatistic?: { students: number, teachers: number, lessons: number };
 }

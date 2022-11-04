@@ -9,13 +9,13 @@
             Bizning ishga kirgan qahramonlarimiz ro’yxati
          </div>
       </div>
-
       <div class="students-projects__cards cards">
          <div class="card" *ngFor="let item of students">
             <div class="card__header">
                <img class="card__avatar" src="https://i.pravatar.cc/180?img={{ item.id }}" alt="">
                <h3 class="card__name">
-                  <span class="highlight">{{ item.name.toString().split(' ')[0] }}</span><br>{{ item.name.toString().split(' ')[1] }}
+                  <span
+                     class="highlight">{{ item.name.toString().split(' ')[0] }}</span><br>{{ item.name.toString().split(' ')[1] }}
                </h3>
                <div class="card__job">{{ item.job }}</div>
                <div class="card__workplace">{{ item.workplace }}</div>

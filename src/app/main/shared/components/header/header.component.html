@@ -148,7 +148,8 @@
          </svg>
          <span>Biz haqimizda</span>
       </div>
-      <div class="bottom-panel__item" [class.active]="bottomPanel === 'intro-lessons'" (click)="bottomPanelAction('intro-lessons')">
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'intro-lessons'"
+           (click)="bottomPanelAction('intro-lessons')">
          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                d="M9.48 1.02571L4.42 2.01228C2.99 2.23151 2 3.54693 2 4.97197V19.0031C2 20.4282 2.99 21.7436 4.42 21.9628L9.48 22.9494C11.24 23.2782 12.78 21.9628 13 20.2089V19.8801V4.09503V3.76617C12.78 2.01228 11.24 0.806474 9.48 1.02571Z"
@@ -162,7 +163,8 @@
          </svg>
          <span>Ochiq dars</span>
       </div>
-      <div class="bottom-panel__item" [class.active]="bottomPanel === 'students-projects'" (click)="bottomPanelAction('students-projects')">
+      <div class="bottom-panel__item" [class.active]="bottomPanel === 'students-projects'"
+           (click)="bottomPanelAction('students-projects')">
          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                d="M13.0398 3.58195C12.4403 3.26907 11.6168 3.26437 11.0132 3.57614C8.43453 4.90788 6.09785 6.43371 4.05188 8.12432C3.77905 8.34976 3.59851 8.66529 3.6016 9.02594C3.60468 9.38536 3.78933 9.69738 4.06125 9.91972C6.09075 11.5792 8.43007 13.1068 10.9618 14.4282C11.5613 14.741 12.3848 14.7457 12.9884 14.434C15.5671 13.1022 17.9038 11.5764 19.9497 9.8858C20.2225 9.66036 20.4031 9.34483 20.4 8.98418C20.3969 8.62476 20.2123 8.31274 19.9403 8.09039C17.9108 6.43095 15.5715 4.90333 13.0398 3.58195Z"/>
@@ -180,7 +182,8 @@
    <div class="flex-container">
       <div class="mobile-menu__header">
          <h2>{{ bottomPanel === 'courses' ? 'Kurslar' : 'Biz haqimizda' }}</h2>
-         <svg (click)="bottomPanel == null" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <svg (click)="bottomPanel == null" width="28" height="28" viewBox="0 0 28 28" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
             <circle cx="14" cy="14" r="14" fill="white"/>
             <path d="M9.88281 18.1176L18.1181 9.88235M9.88282 9.88237L18.1181 18.1176" stroke="#193C3F" stroke-width="2"
                   stroke-linecap="round"/>

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { IHeader } from '../../shared/models/models'
-import { ApiService } from '../../shared/services/api.service'
+import { Component, OnInit } from '@angular/core';
+import { IHeader } from '../../shared/models/models';
+import { ApiService } from '../../shared/services/api.service';
 
 @Component({
    selector: 'app-home',
@@ -9,17 +9,18 @@ import { ApiService } from '../../shared/services/api.service'
 })
 
 export class HomeComponent implements OnInit {
-   header: IHeader
+   header: IHeader;
 
    constructor(
       private _apiService: ApiService
-   ) {}
+   ) {
+   }
 
    ngOnInit() {
       this._apiService.getHeader()
          .subscribe(res => {
-            this.header = res
-         })
+            this.header = res;
+         });
    }
 
    details = [
@@ -27,5 +28,5 @@ export class HomeComponent implements OnInit {
       'Yordamchi mutaxassislar',
       '168 soatdan iborat 87 ta darslar (zoom orqali)',
       'Real loyihalardan namunalar, ko’plab va ish o’rinlari'
-   ]
+   ];
 }

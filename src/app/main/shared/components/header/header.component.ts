@@ -1,7 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
-import { ApiService } from '../../../../shared/services/api.service'
-import { CommunicateService } from '../../services/communicate.service'
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../../../../shared/services/api.service';
+import { CommunicateService } from '../../services/communicate.service';
 
 @Component({
    selector: 'app-header',
@@ -9,24 +9,24 @@ import { CommunicateService } from '../../services/communicate.service'
    styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit {
-   showCoursesDropdown = false
-   showAboutDropdown = false
-   bottomPanel = null
+export class HeaderComponent {
+   showCoursesDropdown = false;
+   showAboutDropdown = false;
+   bottomPanel = null;
 
    @HostListener('document: keydown', ['$event']) onKeyUp(event: KeyboardEvent) {
       if (event.key === 'Escape') {
-         this.showCoursesDropdown = false
-         this.showAboutDropdown = false
+         this.showCoursesDropdown = false;
+         this.showAboutDropdown = false;
       }
    }
 
    @HostListener('document: click', ['$event']) onClick(event: MouseEvent) {
-      const targetClassList = (event.target as HTMLElement).classList
+      const targetClassList = (event.target as HTMLElement).classList;
       if (!targetClassList.contains('dropdown__header') && !targetClassList.contains('dropdown__title')
          && !targetClassList.contains('dropdown__arrow') && !targetClassList.contains('dropdown__content')) {
-         this.showCoursesDropdown = false
-         this.showAboutDropdown = false
+         this.showCoursesDropdown = false;
+         this.showAboutDropdown = false;
       }
    }
 
@@ -37,26 +37,22 @@ export class HeaderComponent implements OnInit {
    ) {
    }
 
-   ngOnInit() {
-
-   }
-
    toggleDropdown(courses: 'courses' | 'about') {
       if (courses === 'courses') {
-         this.showCoursesDropdown = !this.showCoursesDropdown
-         this.showAboutDropdown = false
+         this.showCoursesDropdown = !this.showCoursesDropdown;
+         this.showAboutDropdown = false;
       }
       if (courses === 'about') {
-         this.showAboutDropdown = !this.showAboutDropdown
-         this.showCoursesDropdown = false
+         this.showAboutDropdown = !this.showAboutDropdown;
+         this.showCoursesDropdown = false;
       }
    }
 
    bottomPanelAction(bottomPanel: string) {
-      this.bottomPanel = bottomPanel
+      this.bottomPanel = bottomPanel;
 
       if (bottomPanel === 'intro-lessons' || bottomPanel === 'students-projects') {
-         this._router.navigate(['about', bottomPanel]).then()
+         this._router.navigate(['about', bottomPanel]).then();
       }
    }
 }

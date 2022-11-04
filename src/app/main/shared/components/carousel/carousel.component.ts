@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { OwlOptions } from 'ngx-owl-carousel-o'
+import { Component } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
    selector: 'app-carousel',
@@ -29,5 +29,5 @@ export class CarouselComponent {
          }
       },
       nav: true
-   }
+   };
 }

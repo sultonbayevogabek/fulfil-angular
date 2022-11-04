@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
-import { ApiService } from '../../../shared/services/api.service'
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../../../shared/services/api.service';
 
 @Component({
    selector: 'app-header',
@@ -8,12 +8,13 @@ import { ApiService } from '../../../shared/services/api.service'
 })
 
 export class HeaderComponent implements OnInit {
-   form: FormGroup
-   created = false
+   form: FormGroup;
+   created = false;
 
    constructor(
       private _adminApiService: ApiService
-   ) {}
+   ) {
+   }
 
    ngOnInit(): void {
       this._adminApiService.getHeader()
@@ -24,9 +25,9 @@ export class HeaderComponent implements OnInit {
                teachers: res.teachers,
                lessons: res.lessons ?? null,
                youtube: res.youtube
-            })
-            this.created = true
-         })
+            });
+            this.created = true;
+         });
       this.form = new FormGroup({
          phoneNumber: new FormControl(null, [
             Validators.required,
@@ -37,19 +38,19 @@ export class HeaderComponent implements OnInit {
          teachers: new FormControl(null, Validators.required),
          lessons: new FormControl(null, Validators.required),
          youtube: new FormControl(null, Validators.required)
-      })
+      });
    }
 
    onSubmit() {
-      if (this.form.invalid) return
+      if (this.form.invalid) return;
 
       if (this.created) {
          this._adminApiService.updateHeader(this.form.value)
             .subscribe(_ => {
-               window.alert(`O'zgarishlar muvaffaqqiyatli amalga oshirildi`)
+               window.alert(`O'zgarishlar muvaffaqqiyatli amalga oshirildi`);
             }, err => {
-               window.alert(`Xatolik ro'y berdi :(`)
-            })
+               window.alert(`Xatolik ro'y berdi :(`);
+            });
       }
    }
 }

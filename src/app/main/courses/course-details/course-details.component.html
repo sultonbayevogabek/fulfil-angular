@@ -245,7 +245,7 @@
 <section class="section why-teach">
    <div class="container">
       <div class="section__header center">
-         <div class="section__subtitle">O’ylab ko’ridingizmi? </div>
+         <div class="section__subtitle">O’ylab ko’ridingizmi?</div>
          <h2 class="section__title">Nega aynan bu <span class="highlight">kursda o’qishim kerak?</span></h2>
       </div>
       <div class="section__body why-teach__cards">
@@ -310,7 +310,9 @@
             <li class="faq__item" [class.faq__item--open]="item.open" *ngFor="let item of faq">
                <div class="faq__question" (click)="toggleFaq(item)">
                   <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5303 0.969668C9.8232 1.26256 9.8232 1.73744 9.5303 2.0303L5.5303 6.0303C5.2374 6.3232 4.7626 6.3232 4.4697 6.0303L0.469668 2.0303C0.176777 1.73744 0.176777 1.26256 0.469668 0.969668C0.762558 0.676777 1.23744 0.676777 1.53033 0.969668L5 4.4393L8.4697 0.969668C8.7626 0.676777 9.2374 0.676777 9.5303 0.969668Z" fill="black"/>
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M9.5303 0.969668C9.8232 1.26256 9.8232 1.73744 9.5303 2.0303L5.5303 6.0303C5.2374 6.3232 4.7626 6.3232 4.4697 6.0303L0.469668 2.0303C0.176777 1.73744 0.176777 1.26256 0.469668 0.969668C0.762558 0.676777 1.23744 0.676777 1.53033 0.969668L5 4.4393L8.4697 0.969668C8.7626 0.676777 9.2374 0.676777 9.5303 0.969668Z"
+                           fill="black"/>
                   </svg>
                   <h3>{{ item.question }}</h3>
                </div>

@@ -1,13 +1,12 @@
 <div class="header">
    <h3 class="fw-500 mb-30">Header</h3>
-
    <hr class="mb-20">
-
    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="grid grid-4 column-gap-20 mb-20">
          <label class="form-label">
             <span>Telefon raqam</span>
-            <input class="form-control" type="text" placeholder="998999639773" maxlength="12" formControlName="phoneNumber">
+            <input class="form-control" type="text" placeholder="998999639773" maxlength="12"
+                   formControlName="phoneNumber">
          </label>
          <label class="form-label">
             <span>O'qituvchilar soni</span>

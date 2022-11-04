@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
    selector: 'app-employed-students',
@@ -7,42 +7,42 @@ import { Component } from '@angular/core'
 })
 
 export class IntroLessonsComponent {
-   introLessons =  [
+   introLessons = [
       {
          id: 1,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       },
       {
          id: 2,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       },
       {
          id: 3,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       },
       {
          id: 4,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       },
       {
          id: 5,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       },
       {
          id: 6,
          name: `Og'abek Sultonbayev`,
-         text:  'Lorem Ipsum is simply dummy text of the ',
+         text: 'Lorem Ipsum is simply dummy text of the ',
          duration: '5 soat 30 minut'
       }
-   ]
+   ];
 }

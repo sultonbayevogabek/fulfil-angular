@@ -1,22 +1,22 @@
 export interface ILoginRequest {
-   email: string
-   password: string
+   email: string;
+   password: string;
 }
 
 export interface ILoginResponse {
-   status: number
-   token: string
+   status: number;
+   token: string;
 }
 
 export interface ICurrentUser {
    data: {
       email: string
       id: string
-   }
-   status: number
+   };
+   status: number;
 }
 
 export interface IAdmin {
-   email: string
-   id: string
+   email: string;
+   id: string;
 }

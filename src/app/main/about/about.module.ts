@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core'
-import { MentorsComponent } from './mentors/mentors.component'
-import { AboutComponent } from './about.component'
-import { Router, RouterModule, Routes } from '@angular/router'
-import { SharedModule } from '../shared/shared.module'
-import { StudentsProjectsComponent } from './students-projects/students-projects.component'
-import { NgForOf, NgIf } from '@angular/common'
-import { EmployedStudentsComponent } from './employed-students/employed-students.component'
-import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component'
-import { HelpToWorkComponent } from './help-to-work/help-to-work.component'
-import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component'
-import { ContactUsComponent } from './contact-us/contact-us.component'
+import { NgModule } from '@angular/core';
+import { MentorsComponent } from './mentors/mentors.component';
+import { AboutComponent } from './about.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { StudentsProjectsComponent } from './students-projects/students-projects.component';
+import { NgForOf, NgIf } from '@angular/common';
+import { EmployedStudentsComponent } from './employed-students/employed-students.component';
+import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
+import { HelpToWorkComponent } from './help-to-work/help-to-work.component';
+import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
    {
@@ -46,7 +46,7 @@ const routes: Routes = [
          }
       ]
    }
-]
+];
 
 @NgModule({
    declarations: [

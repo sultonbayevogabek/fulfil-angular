@@ -63,7 +63,7 @@
    }
 }
 
-.course-benefit .container  {
+.course-benefit .container {
    display: grid;
    grid-template-columns: 1.8fr 1fr;
    grid-gap: 90px;
@@ -138,7 +138,7 @@
 .feedbacks {
    background-image: url('/assets/bg-images/bg-blur.png');
    background-repeat: no-repeat;
-      background-position: 50% 20%;
+   background-position: 50% 20%;
 }
 
 .companies__cards {

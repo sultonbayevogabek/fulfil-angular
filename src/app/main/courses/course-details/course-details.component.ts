@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
    selector: 'app-course-details',
@@ -70,15 +70,15 @@ export class CourseDetailsComponent {
          answer: `Siz kursga ro’yxatdan o’tishingiz uchun +998883300666 qo’ngiroq qilishingiz mumkin yoki
             saytimiz orqali, @fulfiledu telegramiga aloqaga chiqishingiz orqali qilishingiz mumkin`,
          open: false
-      },
-   ]
+      }
+   ];
 
    toggleFaq(item: { id: number, question: string, answer: string, open: boolean }) {
       if (item.open) {
-         item.open = false
-         return
+         item.open = false;
+         return;
       }
-      this.faq.forEach(item => item.open = false)
-      item.open = true
+      this.faq.forEach(item => item.open = false);
+      item.open = true;
    }
 }
