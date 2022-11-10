@@ -135,6 +135,10 @@ select::-ms-expand {
       background-color: rgba(#09A964, 0.2);
       cursor: no-drop;
    }
+
+   &-full {
+      width: 100%;
+   }
 }
 
 .form-label {

@@ -8,6 +8,11 @@ export interface ILoginResponse {
    token: string;
 }
 
+export interface ISuccessResponse {
+   message: string;
+   success: number;
+}
+
 export interface ICurrentUser {
    data: {
       email: string
@@ -19,4 +24,9 @@ export interface ICurrentUser {
 export interface IAdmin {
    email: string;
    id: string;
+}
+
+export interface IChangePassword {
+   currentPassword: string;
+   newPassword: string;
 }

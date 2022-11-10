@@ -3,6 +3,8 @@ import { CabinetComponent } from './cabinet.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SettingsComponent } from './settings/settings.component';
+import { FaqComponent } from './faq/faq.component';
 
 const routes: Routes = [
    {
@@ -12,6 +14,14 @@ const routes: Routes = [
          {
             path: 'header',
             component: HeaderComponent
+         },
+         {
+            path: 'settings',
+            component: SettingsComponent
+         },
+         {
+            path: 'faq',
+            component: FaqComponent
          }
       ]
    }
@@ -20,7 +30,9 @@ const routes: Routes = [
 @NgModule({
    declarations: [
       CabinetComponent,
-      HeaderComponent
+      HeaderComponent,
+      SettingsComponent,
+      FaqComponent
    ],
    imports: [
       RouterModule.forChild(routes),

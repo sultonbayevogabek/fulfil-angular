@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { ICurrentUser, ILoginRequest, ILoginResponse } from '../../admin/shared/models/auth.models';
+import { IChangePassword, ICurrentUser, ILoginRequest, ILoginResponse } from '../../admin/shared/models/models';
 import { map } from 'rxjs';
-import { IHeader } from '../models/models';
+import { IFaq, IHeader } from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -39,5 +39,13 @@ export class ApiService {
 
    updateHeader(payload: IHeader) {
       return this.http.put(environment.host + '/header', payload);
+   }
+
+   changePassword(payload: IChangePassword) {
+      return this.http.put(environment.host + '/auth/updatepassword', payload);
+   }
+
+   createFaq(payload: IFaq) {
+      return this.http.post(environment.host + '/faq', payload);
    }
 }

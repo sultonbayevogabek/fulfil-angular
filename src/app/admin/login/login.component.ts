@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../shared/services/api.service';
 import { Router } from '@angular/router';
+import { ToasterService } from '../shared/services/toaster.service';
 
 @Component({
    selector: 'app-login',
@@ -11,19 +12,19 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
    loginForm: FormGroup;
-   error = false;
    pending = false;
 
    constructor(
       private _adminApiService: ApiService,
-      private _router: Router
+      private _router: Router,
+      private _toasterService: ToasterService
    ) {
    }
 
    ngOnInit() {
       this.loginForm = new FormGroup({
-         email: new FormControl('test@test.com', [Validators.required, Validators.email]),
-         password: new FormControl('123456', Validators.required)
+         email: new FormControl('sultonbayevogabek@gmail.com', [Validators.required, Validators.email]),
+         password: new FormControl('Ogabek19991031', Validators.required)
       });
    }
 
@@ -36,8 +37,8 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('token', res.token);
             this._router.navigate(['admin', 'cabinet', 'header']).then();
          }, () => {
-            this.error = true;
             this.pending = false;
+            this._toasterService.error(`Login yoki parol noto'g'ri`);
          });
    }
 }

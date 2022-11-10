@@ -6,3 +6,8 @@ export interface IHeader {
    lessons: number;
    youtube: string;
 }
+
+export interface IFaq {
+   question: string;
+   answer: string;
+}

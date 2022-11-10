@@ -6,6 +6,8 @@ import { NgIf } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminGuardService } from './shared/guards/admin-guard.service';
 import { AuthService } from './shared/services/auth.service';
+import { ToasterComponent } from './shared/components/toaster/toaster.component';
+import { ToasterService } from './shared/services/toaster.service';
 
 const routes: Routes = [
    {
@@ -34,14 +36,16 @@ const routes: Routes = [
    ],
    declarations: [
       AdminComponent,
-      LoginComponent
+      LoginComponent,
+      ToasterComponent
    ],
    exports: [
       RouterModule
    ],
    providers: [
       AuthService,
-      AdminGuardService
+      AdminGuardService,
+      ToasterService
    ]
 })
 

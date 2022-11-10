@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../shared/services/api.service';
+import { ToasterService } from '../../shared/services/toaster.service';
 
 @Component({
    selector: 'app-header',
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit {
    created = false;
 
    constructor(
-      private _adminApiService: ApiService
+      private _adminApiService: ApiService,
+      private _toasterService: ToasterService
    ) {
    }
 
@@ -28,6 +30,7 @@ export class HeaderComponent implements OnInit {
             });
             this.created = true;
          });
+
       this.form = new FormGroup({
          phoneNumber: new FormControl(null, [
             Validators.required,
@@ -47,9 +50,9 @@ export class HeaderComponent implements OnInit {
       if (this.created) {
          this._adminApiService.updateHeader(this.form.value)
             .subscribe(_ => {
-               window.alert(`O'zgarishlar muvaffaqqiyatli amalga oshirildi`);
-            }, err => {
-               window.alert(`Xatolik ro'y berdi :(`);
+               this._toasterService.success();
+            }, () => {
+               this._toasterService.error();
             });
       }
    }
