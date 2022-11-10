@@ -1,0 +1,16 @@
+<h3 class="fw-500 mb-30">FAQ - ko'p beriladigan savollar</h3>
+<hr class="mb-20">
+<form [formGroup]="faqForm" (ngSubmit)="createFaq()">
+   <label class="form-label">
+      <span>Savol matni</span>
+      <input class="form-control" type="text" placeholder="Kursga qanday yozilsam bo'ladi?"
+             formControlName="question">
+   </label>
+   <label class="form-label">
+      <span>Javob matni</span>
+      <textarea class="form-control"></textarea>
+   </label>
+   <div style="padding-top: 32.4px">
+      <button class="button button-full" [disabled]="faqForm.invalid">Qo'shish</button>
+   </div>
+</form>
