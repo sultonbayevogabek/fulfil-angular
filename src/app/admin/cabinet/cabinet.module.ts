@@ -5,6 +5,15 @@ import { HeaderComponent } from './header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { FaqComponent } from './faq/faq.component';
+import { NgForOf, NgIf } from '@angular/common';
+import { IntroLessonsComponent } from './intro-lesson/intro-lessons.component';
+import {
+   EmployedStudentsResolver,
+   FaqResolver,
+   IntroLessonResolver,
+   IntroLessonsRegistrationsResolver
+} from './cabinet.resolvers';
+import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 
 const routes: Routes = [
    {
@@ -21,7 +30,25 @@ const routes: Routes = [
          },
          {
             path: 'faq',
-            component: FaqComponent
+            component: FaqComponent,
+            resolve: {
+               faqList: FaqResolver
+            }
+         },
+         {
+            path: 'intro-lessons',
+            component: IntroLessonsComponent,
+            resolve: {
+               introLessons: IntroLessonResolver,
+               introLessonsRegistrations: IntroLessonsRegistrationsResolver
+            }
+         },
+         {
+            path: 'employed-students',
+            component: IntroLessonsComponent,
+            resolve: {
+               employedStudents: EmployedStudentsResolver
+            }
          }
       ]
    }
@@ -32,13 +59,22 @@ const routes: Routes = [
       CabinetComponent,
       HeaderComponent,
       SettingsComponent,
-      FaqComponent
+      FaqComponent,
+      IntroLessonsComponent,
+      EmployedStudentsComponent
    ],
    imports: [
       RouterModule.forChild(routes),
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      NgIf,
+      NgForOf
    ],
-   exports: [RouterModule]
+   exports: [RouterModule],
+   providers: [
+      FaqResolver,
+      IntroLessonResolver,
+      IntroLessonsRegistrationsResolver
+   ]
 })
 
 export class CabinetModule {

@@ -7,11 +7,11 @@ import { IFaq } from '../../../shared/models/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-   selector: 'app-faq',
-   templateUrl: './faq.component.html'
+   selector: 'app-admin-employed-students',
+   templateUrl: './employed-students.component.html'
 })
 
-export class FaqComponent implements OnInit {
+export class EmployedStudentsComponent implements OnInit {
    faqForm: FormGroup;
    faqList: IFaq[] = [];
 

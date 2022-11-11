@@ -8,6 +8,12 @@ export interface IHeader {
 }
 
 export interface IFaq {
+   id?: string;
    question: string;
    answer: string;
+}
+
+export interface IIntroLesson {
+   id?: string;
+   name: string;
 }

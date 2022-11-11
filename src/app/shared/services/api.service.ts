@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { IChangePassword, ICurrentUser, ILoginRequest, ILoginResponse } from '../../admin/shared/models/models';
-import { map } from 'rxjs';
-import { IFaq, IHeader } from '../models/models';
+import {
+   IChangePassword,
+   ICurrentUser,
+   IEnrollCourse,
+   ILoginRequest,
+   ILoginResponse
+} from '../../admin/shared/models/models';
+import { map, tap } from 'rxjs';
+import { IFaq, IHeader, IIntroLesson } from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -47,5 +53,37 @@ export class ApiService {
 
    createFaq(payload: IFaq) {
       return this.http.post(environment.host + '/faq', payload);
+   }
+
+   getFaqList() {
+      return this.http.get<{ status: number; data: IFaq[] }>(environment.host + '/faq');
+   }
+
+   deleteFaq(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/faq/${id}`);
+   }
+
+   createIntroLesson(payload: IIntroLesson) {
+      return this.http.post(environment.host + '/register-free-lesson/lessons', payload);
+   }
+
+   getIntroLessonsList() {
+      return this.http.get<{ status: number; data: IIntroLesson[] }>(environment.host + '/register-free-lesson/lessons');
+   }
+
+   deleteIntroLesson(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/register-free-lesson/lessons/${id}`);
+   }
+
+   enrollCourse(payload: IEnrollCourse) {
+      return this.http.post<{ success: boolean }>(environment.host + `/register-free-lesson`, payload);
+   }
+
+   getIntroLessonsRegistrations() {
+      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/register-free-lesson');
+   }
+
+   deleteIntroLessonRegistration(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/register-free-lesson/${id}`);
    }
 }
