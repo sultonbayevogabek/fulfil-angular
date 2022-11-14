@@ -8,12 +8,15 @@ import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { IntroLessonsComponent } from './intro-lesson/intro-lessons.component';
 import {
+   CompaniesResolver,
    FaqResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
-import { EmployedStudentsResolver } from '../../app.resolvers';
+import { EmployedStudentsResolver, TeachersResolver } from '../../app.resolvers';
+import { CompaniesComponent } from './companies/companies.component';
+import { TeachersComponent } from './teachers/teachers.component';
 
 const routes: Routes = [
    {
@@ -49,6 +52,20 @@ const routes: Routes = [
             resolve: {
                employedStudents: EmployedStudentsResolver
             }
+         },
+         {
+            path: 'companies',
+            component: CompaniesComponent,
+            resolve: {
+               companies: CompaniesResolver
+            }
+         },
+         {
+            path: 'teachers',
+            component: TeachersComponent,
+            resolve: {
+               teachers: TeachersResolver
+            }
          }
       ]
    }
@@ -61,7 +78,9 @@ const routes: Routes = [
       SettingsComponent,
       FaqComponent,
       IntroLessonsComponent,
-      EmployedStudentsComponent
+      EmployedStudentsComponent,
+      CompaniesComponent,
+      TeachersComponent
    ],
    imports: [
       RouterModule.forChild(routes),
@@ -74,7 +93,8 @@ const routes: Routes = [
       FaqResolver,
       IntroLessonResolver,
       IntroLessonsRegistrationsResolver,
-      EmployedStudentsResolver
+      EmployedStudentsResolver,
+      CompaniesResolver
    ]
 })
 

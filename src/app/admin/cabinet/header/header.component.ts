@@ -32,20 +32,22 @@ export class HeaderComponent implements OnInit {
          });
 
       this.form = new FormGroup({
-         phoneNumber: new FormControl(null, [
+         'phoneNumber': new FormControl(null, [
             Validators.required,
             Validators.minLength(12),
             Validators.maxLength(12)
          ]),
-         students: new FormControl(null, Validators.required),
-         teachers: new FormControl(null, Validators.required),
-         lessons: new FormControl(null, Validators.required),
-         youtube: new FormControl(null, Validators.required)
+         'students': new FormControl(null, Validators.required),
+         'teachers': new FormControl(null, Validators.required),
+         'lessons': new FormControl(null, Validators.required),
+         'youtube': new FormControl(null, Validators.required)
       });
    }
 
    onSubmit() {
-      if (this.form.invalid) return;
+      if (this.form.invalid) {
+         return;
+      }
 
       if (this.created) {
          this._adminApiService.updateHeader(this.form.value)

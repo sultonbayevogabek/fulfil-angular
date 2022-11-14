@@ -27,11 +27,11 @@ export class EmployedStudentsComponent implements OnInit {
 
    ngOnInit(): void {
       this.employedStudentForm = new FormGroup({
-         name: new FormControl('Sultonbayev Ogabek', Validators.required),
-         workplace: new FormControl('Unicon Soft MCHJ', Validators.required),
-         profession: new FormControl('Angular Developer', Validators.required),
-         image: new FormControl(null, Validators.required),
-         comment: new FormControl('Bu kursdan keyin hayotim ancha yaxshilandi...', Validators.required)
+         'name': new FormControl('Sultonbayev Ogabek', Validators.required),
+         'workplace': new FormControl('Unicon Soft MCHJ', Validators.required),
+         'profession': new FormControl('Angular Developer', Validators.required),
+         'image': new FormControl(null, Validators.required),
+         'comment': new FormControl('Bu kursdan keyin hayotim ancha yaxshilandi...', Validators.required)
       });
       this._route.data.subscribe(data => {
          this.employedStudentsList = data['employedStudents'].data;
@@ -46,6 +46,10 @@ export class EmployedStudentsComponent implements OnInit {
    }
 
    createEmployedStudent() {
+      if (this.employedStudentForm.invalid) {
+         return;
+      }
+
       const { name, workplace, profession, image, comment } = this.employedStudentForm.value;
       const formData = new FormData();
       formData.append('name', name);
@@ -67,7 +71,7 @@ export class EmployedStudentsComponent implements OnInit {
       const files = (event.currentTarget as HTMLInputElement).files;
       if (files && files.length) {
          this.employedStudentForm.patchValue({
-            image: files[0]
+            'image': files[0]
          });
       }
    }

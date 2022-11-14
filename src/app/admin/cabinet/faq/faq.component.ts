@@ -24,15 +24,19 @@ export class FaqComponent implements OnInit {
 
    ngOnInit(): void {
       this.faqForm = new FormGroup({
-         question: new FormControl('Kursga qanday yozilsam bo`ladi?', Validators.required),
-         answer: new FormControl('Admin bilan aloqaga chiqing: @Abdivaliyevich', Validators.required)
+         'question': new FormControl('Kursga qanday yozilsam bo`ladi?', Validators.required),
+         'answer': new FormControl('Admin bilan aloqaga chiqing: @Abdivaliyevich', Validators.required)
       });
       this._route.data.subscribe(data => {
          this.faqList = data['faqList'].data;
-      })
+      });
    }
 
    createFaq() {
+      if (this.faqForm.invalid) {
+         return;
+      }
+
       this._apiService.createFaq(this.faqForm.value)
          .subscribe((res) => {
             this.getFaqList();

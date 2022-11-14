@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main.component';
 import { SharedModule } from './shared/shared.module';
+import { NgForOf, NgIf } from '@angular/common';
 
 const routes: Routes = [
    {
@@ -32,7 +33,9 @@ const routes: Routes = [
    ],
    imports: [
       SharedModule,
-      RouterModule.forChild(routes)
+      RouterModule.forChild(routes),
+      NgIf,
+      NgForOf
    ]
 })
 

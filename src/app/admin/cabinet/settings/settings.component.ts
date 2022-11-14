@@ -20,9 +20,9 @@ export class SettingsComponent implements OnInit {
 
    ngOnInit(): void {
       this.passwordForm = new FormGroup({
-         currentPassword: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-         newPassword: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-         repeatPassword: new FormControl(null, [Validators.required])
+         'currentPassword': new FormControl(null, [Validators.required, Validators.minLength(6)]),
+         'newPassword': new FormControl(null, [Validators.required, Validators.minLength(6)]),
+         'repeatPassword': new FormControl(null, [Validators.required])
       },  { validators: confirmPassword });
    }
 

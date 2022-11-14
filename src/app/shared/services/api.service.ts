@@ -9,7 +9,7 @@ import {
    ILoginResponse
 } from '../../admin/shared/models/models';
 import { map, tap } from 'rxjs';
-import { IEmployedStudent, IFaq, IHeader, IIntroLesson } from '../models/models';
+import { ICompany, IEmployedStudent, IFaq, IHeader, IIntroLesson, ITeacher } from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -99,4 +99,27 @@ export class ApiService {
       return this.http.get<{ status: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student');
    }
 
+   createCompany(payload: FormData) {
+      return this.http.post<{ status: number; data: ICompany }>(environment.host + `/api/v1/company-logo`, payload);
+   }
+
+   getCompanies() {
+      return this.http.get<{ status: number; data: ICompany[] }>(environment.host + '/api/v1/company-logo');
+   }
+
+   deleteCompany(id: string) {
+      return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/company-logo/${id}`);
+   }
+
+   createTeacher(payload: FormData) {
+      return this.http.post(environment.host + `/api/v1/teacher`, payload);
+   }
+
+   getTeachers() {
+      return this.http.get<{ status: number; data: ITeacher[] }>(environment.host + '/api/v1/teacher');
+   }
+
+   deleteTeacher(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/teacher/${id}`);
+   }
 }

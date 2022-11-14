@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IHeader } from '../../shared/models/models';
+import { ICompany, IHeader } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
    selector: 'app-home',
@@ -9,7 +10,9 @@ import { ApiService } from '../../shared/services/api.service';
 })
 
 export class HomeComponent implements OnInit {
+   host = environment.host;
    header: IHeader;
+   companies: ICompany[] = [];
 
    constructor(
       private _apiService: ApiService
@@ -20,6 +23,10 @@ export class HomeComponent implements OnInit {
       this._apiService.getHeader()
          .subscribe(res => {
             this.header = res;
+         });
+      this._apiService.getCompanies()
+         .subscribe(res => {
+            this.companies = res.data;
          });
    }
 

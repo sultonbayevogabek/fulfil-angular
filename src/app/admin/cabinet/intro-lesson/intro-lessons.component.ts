@@ -26,7 +26,7 @@ export class IntroLessonsComponent implements OnInit {
 
    ngOnInit(): void {
       this.introLessonForm = new FormGroup({
-         name: new FormControl('Python', Validators.required)
+         'name': new FormControl('Python', Validators.required)
       });
       this._route.data.subscribe(data => {
          this.introLessonsList = data['introLessons'].data;
@@ -35,6 +35,10 @@ export class IntroLessonsComponent implements OnInit {
    }
 
    createIntroLLesson() {
+      if (this.introLessonForm.invalid) {
+         return;
+      }
+
       this._apiService.createIntroLesson(this.introLessonForm.value)
          .subscribe((res) => {
             this.getIntroLessonsList();

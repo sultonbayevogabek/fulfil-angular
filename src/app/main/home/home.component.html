@@ -286,42 +286,9 @@
       <div class="section__header center">
          <h2 class="section__title">Bitiruvchilarimiz ishlayotgan <span class="highlight">kompaniyalar</span></h2>
       </div>
-      <div class="section__body companies__cards">
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
-         </a>
-         <a class="companies__card" href="#">
-            <img src="/assets/images/home-page/companies/ucell.png" alt="">
+      <div class="section__body companies__cards" *ngIf="companies.length">
+         <a class="companies__card" target="_blank" href="{{ company.link }}" *ngFor="let company of companies">
+            <img src="{{ host + company.companyLogo.slice(2) }}" alt="{{ company.link }} logo">
          </a>
       </div>
    </div>

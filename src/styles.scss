@@ -108,18 +108,23 @@ th {
    .column-gap-#{$i}0 {
       grid-column-gap: #{$i * 10}px;
    }
+
    .row-gap-#{$i}0 {
       grid-row-gap: #{$i * 10}px;
    }
+
    .gap-#{$i}0 {
       grid-gap: #{$i * 10}px;
    }
+
    .fw-#{$i}00 {
       font-weight: #{$i}00;
    }
+
    .mr-#{$i}0 {
       margin-right: #{$i * 10}px;
    }
+
    .mb-#{$i}0 {
       margin-bottom: #{$i * 10}px;
    }
@@ -150,6 +155,10 @@ th {
    &[disabled] {
       background-color: rgba(#09A964, 0.2);
       cursor: no-drop;
+   }
+
+   &-danger {
+      background-color: red;
    }
 
    &-full {

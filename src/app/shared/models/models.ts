@@ -27,3 +27,18 @@ export interface IEmployedStudent {
    id: string;
    showComment?: boolean;
 }
+
+export interface ICompany {
+   id: string;
+   link: string;
+   companyLogo: string;
+}
+
+export interface ITeacher {
+   id: string;
+   name: string;
+   position: string;
+   workplace: string;
+   information: string[];
+   teacherImage: string;
+}
