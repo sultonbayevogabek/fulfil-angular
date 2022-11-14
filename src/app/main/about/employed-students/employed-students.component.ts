@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployedStudent } from '../../../shared/models/models';
-import { ApiService } from '../../../shared/services/api.service';
 import { environment } from '../../../../environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-employed-students',
@@ -11,17 +11,16 @@ import { environment } from '../../../../environments/environment';
 
 export class EmployedStudentsComponent implements OnInit {
    host = environment.host;
-   employedStudents: IEmployedStudent[] = [];
+   employedStudentsList: IEmployedStudent[] = [];
 
    constructor(
-      private _apiService: ApiService
+      private _route: ActivatedRoute
    ) {
    }
 
    ngOnInit() {
-      this._apiService.getEmployedStudents()
-         .subscribe(res => {
-            this.employedStudents = res.data;
-         })
+      this._route.data.subscribe(data => {
+         this.employedStudentsList = data['employedStudents'].data;
+      });
    }
 }

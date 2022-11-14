@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
-import { IEmployedStudent, IFaq, IIntroLesson } from '../../shared/models/models';
+import { IFaq, IIntroLesson } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
 import { IEnrollCourse } from '../shared/models/models';
 
@@ -38,17 +38,5 @@ export class IntroLessonsRegistrationsResolver implements Resolve<{ status: numb
 
    resolve(): Observable<{ status: number; data: IEnrollCourse[] }> {
       return this._apiService.getIntroLessonsRegistrations();
-   }
-}
-
-@Injectable()
-export class EmployedStudentsResolver implements Resolve<{ status: number; data: IEmployedStudent[] }> {
-   constructor(
-      private _apiService: ApiService
-   ) {
-   }
-
-   resolve(): Observable<{ status: number; data: IEmployedStudent[] }> {
-      return this._apiService.getEmployedStudents();
    }
 }

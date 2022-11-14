@@ -1,0 +1,52 @@
+.loader {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   overflow: hidden;
+   height: 4px;
+   background-color: rgba(#3CB27F, 0.1);
+}
+
+.loader__inner {
+   position: relative;
+   width: 100%;
+   height: 100%;
+}
+
+.loader__inner:before {
+   content: '';
+   position: absolute;
+   height: 100%;
+   background-color: rgba(#3CB27F, 0.9);
+   animation: loader__inner__first 1.5s infinite ease-out;
+}
+
+.loader__inner:after {
+   content: '';
+   position: absolute;
+   height: 100%;
+   background-color: rgba(#3CB27F, 0.7);
+   animation: loader__inner__second 1.5s infinite ease-in;
+}
+
+@keyframes loader__inner__first {
+   0% {
+      left: -100%;
+      width: 100%;
+   }
+   100% {
+      left: 100%;
+      width: 10%;
+   }
+}
+
+@keyframes loader__inner__second {
+   0% {
+      left: -150%;
+      width: 100%;
+   }
+   100% {
+      left: 100%;
+      width: 10%;
+   }
+}

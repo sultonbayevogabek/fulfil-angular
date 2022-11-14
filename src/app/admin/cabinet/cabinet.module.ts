@@ -8,12 +8,12 @@ import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { IntroLessonsComponent } from './intro-lesson/intro-lessons.component';
 import {
-   EmployedStudentsResolver,
    FaqResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
+import { EmployedStudentsResolver } from '../../app.resolvers';
 
 const routes: Routes = [
    {

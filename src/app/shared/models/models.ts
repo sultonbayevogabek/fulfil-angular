@@ -25,4 +25,5 @@ export interface IEmployedStudent {
    workplace: string;
    comment: string;
    id: string;
+   showComment?: boolean;
 }

@@ -10,6 +10,7 @@ import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import { HelpToWorkComponent } from './help-to-work/help-to-work.component';
 import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { EmployedStudentsResolver } from '../../app.resolvers';
 
 const routes: Routes = [
    {
@@ -26,7 +27,10 @@ const routes: Routes = [
          },
          {
             path: 'employed-students',
-            component: EmployedStudentsComponent
+            component: EmployedStudentsComponent,
+            resolve: {
+               employedStudents: EmployedStudentsResolver
+            }
          },
          {
             path: 'intro-lessons',
