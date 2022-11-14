@@ -17,3 +17,12 @@ export interface IIntroLesson {
    id?: string;
    name: string;
 }
+
+export interface IEmployedStudent {
+   name: string;
+   image: string;
+   profession: string;
+   workplace: string;
+   comment: string;
+   id: string;
+}

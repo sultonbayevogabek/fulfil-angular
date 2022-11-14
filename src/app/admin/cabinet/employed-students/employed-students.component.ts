@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../shared/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
-import { HttpErrorResponse } from '@angular/common/http';
-import { IFaq } from '../../../shared/models/models';
 import { ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+import { IEmployedStudent } from '../../../shared/models/models';
+import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-employed-students',
@@ -12,52 +13,71 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class EmployedStudentsComponent implements OnInit {
-   faqForm: FormGroup;
-   faqList: IFaq[] = [];
+   host = environment.host;
+   employedStudentForm: FormGroup;
+   employedStudentsList: IEmployedStudent[] = [];
 
    constructor(
       private _apiService: ApiService,
       private _toasterService: ToasterService,
-      private _route: ActivatedRoute
+      private _route: ActivatedRoute,
+      private _cd: ChangeDetectorRef
    ) {
    }
 
    ngOnInit(): void {
-      this.faqForm = new FormGroup({
-         question: new FormControl('Kursga qanday yozilsam bo`ladi?', Validators.required),
-         answer: new FormControl('Admin bilan aloqaga chiqing: @Abdivaliyevich', Validators.required)
+      this.employedStudentForm = new FormGroup({
+         name: new FormControl('Sultonbayev Ogabek', Validators.required),
+         workplace: new FormControl('Unicon Soft MCHJ', Validators.required),
+         profession: new FormControl('Angular Developer', Validators.required),
+         image: new FormControl(null, Validators.required),
+         comment: new FormControl('Bu kursdan keyin hayotim ancha yaxshilandi...', Validators.required)
       });
       this._route.data.subscribe(data => {
-         this.faqList = data['faqList'].data;
-      })
+         this.employedStudentsList = data['employedStudents'].data;
+      });
    }
 
-   createFaq() {
-      this._apiService.createFaq(this.faqForm.value)
-         .subscribe((res) => {
-            this.getFaqList();
-            this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
-         }, (err: HttpErrorResponse) => {
-            this._toasterService.error(err.error.errors[0].message);
-         });
-   }
-
-   getFaqList() {
-      this._apiService.getFaqList()
+   getEmployedStudents() {
+      this._apiService.getEmployedStudents()
          .subscribe(res => {
-            this.faqList = res.data;
-         }, err => {
-            this._toasterService.error();
+            this.employedStudentsList = res.data;
          });
    }
 
-   deleteFaq(id: string) {
-      if (window.confirm(`Rostan ham o'chirmoqchimisiz?`)) {
-         this._apiService.deleteFaq(id)
-            .subscribe(() => {
-               this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this.getFaqList();
-            });
+   createEmployedStudent() {
+      const { name, workplace, profession, image, comment } = this.employedStudentForm.value;
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('workplace', workplace);
+      formData.append('profession', profession);
+      formData.append('comment', comment);
+      formData.append('image', image);
+
+      this._apiService.createEmployedStudent(formData)
+         .subscribe(() => {
+            this.getEmployedStudents();
+            this._toasterService.success(`O'quvchi muvaffaqqiyatli qo'shildi`);
+         }, (err: HttpErrorResponse) => {
+            this._toasterService.error(err.error.errors[0]);
+         });
+   }
+
+   onImageSelected(event: Event) {
+      const files = (event.currentTarget as HTMLInputElement).files;
+      if (files && files.length) {
+         this.employedStudentForm.patchValue({
+            image: files[0]
+         });
+      }
+   }
+
+   deleteEmployedStudent(id: string) {
+      if (window.confirm(`Rostan ham bu o'quvchini o'chirmoqchimisiz?`)) {
+         this._apiService.deleteEmployedStudent(id).subscribe(() => {
+            this.getEmployedStudents();
+            this._toasterService.success(`O'quvchi muvaffaqiyatli o'chirildi`);
+         });
       }
    }
 }

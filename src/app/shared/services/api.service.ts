@@ -9,7 +9,7 @@ import {
    ILoginResponse
 } from '../../admin/shared/models/models';
 import { map, tap } from 'rxjs';
-import { IFaq, IHeader, IIntroLesson } from '../models/models';
+import { IEmployedStudent, IFaq, IHeader, IIntroLesson } from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -22,68 +22,81 @@ export class ApiService {
    }
 
    login(payload: ILoginRequest) {
-      return this.http.post<ILoginResponse>(environment.host + '/auth/signin', payload);
+      return this.http.post<ILoginResponse>(environment.host + '/api/v1/auth/signin', payload);
    }
 
    getAdmin() {
-      return this.http.get<ICurrentUser>(environment.host + '/auth/currentuser')
+      return this.http.get<ICurrentUser>(environment.host + '/api/v1/auth/currentuser')
          .pipe(
             map(res => res.data)
          );
    }
 
    getHeader() {
-      return this.http.get<{ data: IHeader, status: number }>(environment.host + '/header')
+      return this.http.get<{ data: IHeader, status: number }>(environment.host + '/api/v1/header')
          .pipe(
             map(res => res.data)
          );
    }
 
    createHeader(payload: IHeader) {
-      return this.http.post(environment.host + '/header', payload);
+      return this.http.post(environment.host + '/api/v1/header', payload);
    }
 
    updateHeader(payload: IHeader) {
-      return this.http.put(environment.host + '/header', payload);
+      return this.http.put(environment.host + '/api/v1/header', payload);
    }
 
    changePassword(payload: IChangePassword) {
-      return this.http.put(environment.host + '/auth/updatepassword', payload);
+      return this.http.put(environment.host + '/api/v1/auth/updatepassword', payload);
    }
 
    createFaq(payload: IFaq) {
-      return this.http.post(environment.host + '/faq', payload);
+      return this.http.post(environment.host + '/api/v1/faq', payload);
    }
 
    getFaqList() {
-      return this.http.get<{ status: number; data: IFaq[] }>(environment.host + '/faq');
+      return this.http.get<{ status: number; data: IFaq[] }>(environment.host + '/api/v1/faq');
    }
 
    deleteFaq(id: string) {
-      return this.http.delete<{ success: boolean }>(environment.host + `/faq/${id}`);
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/faq/${id}`);
    }
 
    createIntroLesson(payload: IIntroLesson) {
-      return this.http.post(environment.host + '/register-free-lesson/lessons', payload);
+      return this.http.post(environment.host + '/api/v1/register-free-lesson/lessons', payload);
    }
 
    getIntroLessonsList() {
-      return this.http.get<{ status: number; data: IIntroLesson[] }>(environment.host + '/register-free-lesson/lessons');
+      return this.http.get<{ status: number; data: IIntroLesson[] }>(environment.host + '/api/v1/register-free-lesson/lessons');
    }
 
    deleteIntroLesson(id: string) {
-      return this.http.delete<{ success: boolean }>(environment.host + `/register-free-lesson/lessons/${id}`);
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson/lessons/${id}`);
    }
 
    enrollCourse(payload: IEnrollCourse) {
-      return this.http.post<{ success: boolean }>(environment.host + `/register-free-lesson`, payload);
+      return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson`, payload);
    }
 
    getIntroLessonsRegistrations() {
-      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/register-free-lesson');
+      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/api/v1/register-free-lesson');
    }
 
    deleteIntroLessonRegistration(id: string) {
-      return this.http.delete<{ success: boolean }>(environment.host + `/register-free-lesson/${id}`);
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson/${id}`);
    }
+
+   createEmployedStudent(payload: FormData) {
+      return this.http.post<{ status: number; data: IEmployedStudent }>(environment.host + `/api/v1/student`, payload);
+   }
+
+   deleteEmployedStudent(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/student/${id}`);
+   }
+
+   getEmployedStudents() {
+      return this.http.get<{ status: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student');
+   }
+
 }

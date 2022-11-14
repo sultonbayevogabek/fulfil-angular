@@ -10,17 +10,17 @@
          </div>
       </div>
       <div class="students-projects__cards cards">
-         <div class="card" *ngFor="let item of students">
+         <div class="card" *ngFor="let item of employedStudents">
             <div class="card__header">
-               <img class="card__avatar" src="https://i.pravatar.cc/180?img={{ item.id }}" alt="">
+               <img class="card__avatar" src="{{ host + item.image.slice(2) }}" alt="{{ item.name }} image">
                <h3 class="card__name">
                   <span
                      class="highlight">{{ item.name.toString().split(' ')[0] }}</span><br>{{ item.name.toString().split(' ')[1] }}
                </h3>
-               <div class="card__job">{{ item.job }}</div>
+               <div class="card__job">{{ item.profession }}</div>
                <div class="card__workplace">{{ item.workplace }}</div>
             </div>
-            <div class="card__footer" (click)="item.comment = true">
+            <div class="card__footer" (click)="item.show = true">
                <span>Kurs haqida fikri</span>
                <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
@@ -28,20 +28,17 @@
                         fill=""/>
                </svg>
             </div>
-            <div class="card__comment comment" *ngIf="item.comment">
+            <div class="card__comment comment">
                <div class="comment__header">
                   <h4 class="comment__heading">Kurs haqida fikri</h4>
-                  <div class="comment__close" (click)="item.comment = false">
+                  <div class="comment__close">
                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.4707 8.52947L8.52953 1.47064M1.47071 1.47065L8.52953 8.52947" stroke="#193C3F"
                               stroke-width="1.5" stroke-linecap="round"/>
                      </svg>
                   </div>
                </div>
-               <p class="comment__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                  but also the leap into electronic typesetting, remaining essentially unchanged</p>
+               <p class="comment__text">{{ item.comment }}</p>
             </div>
          </div>
       </div>

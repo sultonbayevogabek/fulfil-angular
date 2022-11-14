@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IEmployedStudent } from '../../../shared/models/models';
+import { ApiService } from '../../../shared/services/api.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-employed-students',
@@ -6,49 +9,19 @@ import { Component } from '@angular/core';
    styleUrls: ['./employed-students.component.scss']
 })
 
-export class EmployedStudentsComponent {
-   students = [
-      {
-         id: 1,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      },
-      {
-         id: 2,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      },
-      {
-         id: 3,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      },
-      {
-         id: 4,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      },
-      {
-         id: 5,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      },
-      {
-         id: 6,
-         name: `Og'abek Sultonbayev`,
-         job: 'Angular Developer',
-         workplace: 'Unicon Soft',
-         comment: false
-      }
-   ];
+export class EmployedStudentsComponent implements OnInit {
+   host = environment.host;
+   employedStudents: IEmployedStudent[] = [];
+
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   ngOnInit() {
+      this._apiService.getEmployedStudents()
+         .subscribe(res => {
+            this.employedStudents = res.data;
+         })
+   }
 }

@@ -45,7 +45,7 @@ const routes: Routes = [
          },
          {
             path: 'employed-students',
-            component: IntroLessonsComponent,
+            component: EmployedStudentsComponent,
             resolve: {
                employedStudents: EmployedStudentsResolver
             }
@@ -73,7 +73,8 @@ const routes: Routes = [
    providers: [
       FaqResolver,
       IntroLessonResolver,
-      IntroLessonsRegistrationsResolver
+      IntroLessonsRegistrationsResolver,
+      EmployedStudentsResolver
    ]
 })
 
