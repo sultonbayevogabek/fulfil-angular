@@ -9,120 +9,26 @@
             Bizning malakali ustozlarimiz bilan tanishib chiqing!
          </div>
       </div>
-      <div class="mentor">
+      <div class="mentor" [class.revert]="i % 2 !== 0" *ngFor="let mentor of mentors; let i = index">
          <div class="mentor__img">
-            <img src="https://i.pravatar.cc/585?img=59" alt="">
+            <img src="{{ host + mentor.image.slice(2) }}" alt="{{ mentor.name }} image">
          </div>
          <div class="mentor__info">
-            <h3 class="mentor__name"><span class="highlight">Shaxzod</span> Ilhomov</h3>
+            <h3 class="mentor__name"><span class="highlight">{{ mentor.name.split(' ')[0] }}</span> {{ mentor.name.split(' ')[1] }}</h3>
 
             <div class="mentor__main">
-               <div>Software senior developer</div>
-               <div>Fulfil educationda ( Sentyabr 2020 - Now)</div>
+               <div>{{ mentor.position }}</div>
+               <div>{{ mentor.workplace }}</div>
             </div>
 
             <ul class="mentor__history">
-               <li class="details__item">
+               <li class="details__item" *ngFor="let info of mentor.information">
                   <div class="details__icon">
                      <img src="/assets/icons/checked.svg" alt="Checked icon">
                   </div>
-                  <p class="details__text">Tajribasi: 7 yil</p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Xalqaro tajriba: 4 yil</p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Malayziyada Limkokwing University of Creative Technology
-                     unversitetini IT yo'nalishini bitirgan
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Java Kotlin dasturlash tillari xamda Andriod studioda mukammal
-                     bilimga ega
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Hozirda Buyuk Britaniyaning “Infinity group” kompaniyasida faoliyat
-                     ko'rsatmoqda
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Fulfil educationda Android dasturlash ustozi</p>
+                  <p class="details__text">{{ info }}</p>
                </li>
             </ul>
-         </div>
-      </div>
-      <div class="mentor">
-         <div class="mentor__info">
-            <h3 class="mentor__name"><span class="highlight">Shaxzod</span> Ilhomov</h3>
-
-            <div class="mentor__main">
-               <div>Software senior developer</div>
-               <div>Fulfil educationda ( Sentyabr 2020 - Now)</div>
-            </div>
-
-            <ul class="mentor__history">
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Tajribasi: 7 yil</p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Xalqaro tajriba: 4 yil</p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Malayziyada Limkokwing University of Creative Technology
-                     unversitetini IT yo'nalishini bitirgan
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Java Kotlin dasturlash tillari xamda Andriod studioda mukammal
-                     bilimga ega
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Hozirda Buyuk Britaniyaning “Infinity group” kompaniyasida faoliyat
-                     ko'rsatmoqda
-                  </p>
-               </li>
-               <li class="details__item">
-                  <div class="details__icon">
-                     <img src="/assets/icons/checked.svg" alt="Checked icon">
-                  </div>
-                  <p class="details__text">Fulfil educationda Android dasturlash ustozi</p>
-               </li>
-            </ul>
-         </div>
-         <div class="mentor__img">
-            <img src="https://i.pravatar.cc/585?img=60" alt="">
          </div>
       </div>
    </div>

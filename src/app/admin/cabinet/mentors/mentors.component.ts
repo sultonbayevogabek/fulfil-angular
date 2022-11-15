@@ -3,19 +3,19 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../shared/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ITeacher } from '../../../shared/models/models';
+import { IMentor } from '../../../shared/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 
 @Component({
-   selector: 'app-faq',
-   templateUrl: './teachers.component.html'
+   selector: 'app-admin-mentors',
+   templateUrl: './mentors.component.html'
 })
 
-export class TeachersComponent implements OnInit {
+export class MentorsComponent implements OnInit {
    host = environment.host;
-   teacherForm: FormGroup;
-   teacherList: ITeacher[] = [];
+   mentorForm: FormGroup;
+   mentorsList: IMentor[] = [];
 
    constructor(
       private _apiService: ApiService,
@@ -25,26 +25,31 @@ export class TeachersComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      this.teacherForm = new FormGroup({
+      this.mentorForm = new FormGroup({
          'name': new FormControl('Asadbek Zoirov', Validators.required),
          'position': new FormControl('Senior Backend Developer', Validators.required),
          'workplace': new FormControl('Payme LLC', Validators.required),
          'information': new FormArray([
-            new FormControl('10 yillik tajribaga ega', Validators.required)
+            new FormControl('Tajribasi: 7 yil', Validators.required),
+            new FormControl('Xalqaro tajriba: 4 yil', Validators.required),
+            new FormControl('Malayziyada Limkokwing University of Creative Technology unversitetini IT yo\'nalishini bitirgan', Validators.required),
+            new FormControl('Java Kotlin dasturlash tillari xamda Andriod studioda mukammal bilimga ega', Validators.required),
+            new FormControl('Hozirda Buyuk Britaniyaning “Infinity group” kompaniyasida faoliyat ko\'rsatmoqda', Validators.required),
+            new FormControl('Fulfil educationda Android dasturlash ustozi', Validators.required)
          ]),
          'teacherImage': new FormControl('null', Validators.required)
       });
       this._route.data.subscribe(data => {
-         this.teacherList = data['teachers'].data;
+         this.mentorsList = data['mentors'].data;
       });
    }
 
    createTeacher() {
-      if (this.teacherForm.invalid) {
+      if (this.mentorForm.invalid) {
          return;
       }
 
-      const { name, position, workplace, information, teacherImage } = this.teacherForm.value;
+      const { name, position, workplace, information, teacherImage } = this.mentorForm.value;
 
       const formData = new FormData();
 
@@ -56,7 +61,7 @@ export class TeachersComponent implements OnInit {
       });
       formData.append('teacherImage', teacherImage);
 
-      this._apiService.createTeacher(formData)
+      this._apiService.createMentor(formData)
          .subscribe((res) => {
             this.getTeachersList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
@@ -66,9 +71,9 @@ export class TeachersComponent implements OnInit {
    }
 
    getTeachersList() {
-      this._apiService.getTeachers()
+      this._apiService.getMentors()
          .subscribe(res => {
-            this.teacherList = res.data;
+            this.mentorsList = res.data;
          }, err => {
             this._toasterService.error();
          });
@@ -76,7 +81,7 @@ export class TeachersComponent implements OnInit {
 
    deleteTeacher(id: string) {
       if (window.confirm(`Rostan ham o'chirmoqchimisiz?`)) {
-         this._apiService.deleteTeacher(id)
+         this._apiService.deleteMentor(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
                this.getTeachersList();
@@ -85,18 +90,18 @@ export class TeachersComponent implements OnInit {
    }
 
    addInfo() {
-      (this.teacherForm.controls['information'] as FormArray).push(new FormControl(null, Validators.required));
+      (this.mentorForm.controls['information'] as FormArray).push(new FormControl(null, Validators.required));
    }
 
    removeInfo(i: number) {
-      (this.teacherForm.controls['information'] as FormArray).controls.splice(i, 1);
-      this.teacherForm.controls['information'].updateValueAndValidity();
+      (this.mentorForm.controls['information'] as FormArray).controls.splice(i, 1);
+      this.mentorForm.controls['information'].updateValueAndValidity();
    }
 
    onImageSelected(event: Event) {
       const files = (event.currentTarget as HTMLInputElement).files;
       if (files && files.length) {
-         this.teacherForm.patchValue({
+         this.mentorForm.patchValue({
             'teacherImage': files[0]
          });
       }

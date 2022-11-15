@@ -4,7 +4,7 @@ import { ApiService } from '../../../shared/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 
 @Component({
-   selector: 'app-header',
+   selector: 'app-admin-header',
    templateUrl: './header.component.html'
 })
 

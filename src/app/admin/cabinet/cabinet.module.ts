@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
-import { IntroLessonsComponent } from './intro-lesson/intro-lessons.component';
+import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import {
    CompaniesResolver,
    FaqResolver,
@@ -14,9 +14,16 @@ import {
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
-import { EmployedStudentsResolver, TeachersResolver } from '../../app.resolvers';
+import {
+   EmployedStudentsResolver,
+   MentorsResolver,
+   RecordedIntroLessonsResolver,
+   StudentsProjectsResolver
+} from '../../app.resolvers';
 import { CompaniesComponent } from './companies/companies.component';
-import { TeachersComponent } from './teachers/teachers.component';
+import { MentorsComponent } from './mentors/mentors.component';
+import { StudentsProjectsComponent } from './students-projects/students-projects.component';
+import { RecordedIntroLessonsComponent } from './recorded-intro-lessons/recorded-intro-lessons.component';
 
 const routes: Routes = [
    {
@@ -61,10 +68,24 @@ const routes: Routes = [
             }
          },
          {
-            path: 'teachers',
-            component: TeachersComponent,
+            path: 'mentors',
+            component: MentorsComponent,
             resolve: {
-               teachers: TeachersResolver
+               mentors: MentorsResolver
+            }
+         },
+         {
+            path: 'students-projects',
+            component: StudentsProjectsComponent,
+            resolve: {
+               studentsProjects: StudentsProjectsResolver
+            }
+         },
+         {
+            path: 'recorded-intro-lessons',
+            component: RecordedIntroLessonsComponent,
+            resolve: {
+               recordedIntroLessons: RecordedIntroLessonsResolver
             }
          }
       ]
@@ -80,7 +101,9 @@ const routes: Routes = [
       IntroLessonsComponent,
       EmployedStudentsComponent,
       CompaniesComponent,
-      TeachersComponent
+      MentorsComponent,
+      StudentsProjectsComponent,
+      RecordedIntroLessonsComponent
    ],
    imports: [
       RouterModule.forChild(routes),

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { IEmployedStudent, ITeacher } from './shared/models/models';
+import { IEmployedStudent, IMentor, IStudentProject } from './shared/models/models';
 import { ApiService } from './shared/services/api.service';
 import { Observable } from 'rxjs';
 
@@ -21,13 +21,41 @@ export class EmployedStudentsResolver implements Resolve<{ status: number; data:
 @Injectable({
    providedIn: 'root'
 })
-export class TeachersResolver implements Resolve<{ status: number; data: ITeacher[] }> {
+export class MentorsResolver implements Resolve<{ status: number; data: IMentor[] }> {
    constructor(
       private _apiService: ApiService
    ) {
    }
 
-   resolve(): Observable<{ status: number; data: ITeacher[] }> {
-      return this._apiService.getTeachers();
+   resolve(): Observable<{ status: number; data: IMentor[] }> {
+      return this._apiService.getMentors();
+   }
+}
+
+@Injectable({
+   providedIn: 'root'
+})
+export class StudentsProjectsResolver implements Resolve<{ status: number; data: IStudentProject[] }> {
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   resolve(): Observable<{ status: number; data: IStudentProject[] }> {
+      return this._apiService.getStudentsProjects();
+   }
+}
+
+@Injectable({
+   providedIn: 'root'
+})
+export class RecordedIntroLessonsResolver implements Resolve<any> {
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   resolve(): Observable<any> {
+      return this._apiService.getRecordedIntroLessons();
    }
 }

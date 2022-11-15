@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IMentor } from '../../../shared/models/models';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-mentors',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
    styleUrls: ['./mentors.component.scss']
 })
 
-export class MentorsComponent {
+export class MentorsComponent implements OnInit {
+   host = environment.host;
+   mentors: IMentor[] = [];
+
+   constructor(
+      private _route: ActivatedRoute
+   ) {
+   }
+
+   ngOnInit() {
+      this._route.data.subscribe(data => {
+         this.mentors = data['mentors'].data;
+      });
+   }
 }

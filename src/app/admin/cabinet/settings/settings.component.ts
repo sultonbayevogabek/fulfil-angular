@@ -5,7 +5,7 @@ import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-   selector: 'app-settings',
+   selector: 'app-admin-settings',
    templateUrl: './settings.component.html'
 })
 

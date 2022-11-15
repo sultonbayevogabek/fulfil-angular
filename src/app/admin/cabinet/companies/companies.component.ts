@@ -8,7 +8,7 @@ import { ICompany } from '../../../shared/models/models';
 import { environment } from '../../../../environments/environment';
 
 @Component({
-   selector: 'app-faq',
+   selector: 'app-admin-companies',
    templateUrl: './companies.component.html'
 })
 

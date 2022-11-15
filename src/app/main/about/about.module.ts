@@ -10,7 +10,7 @@ import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import { HelpToWorkComponent } from './help-to-work/help-to-work.component';
 import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { EmployedStudentsResolver } from '../../app.resolvers';
+import { EmployedStudentsResolver, MentorsResolver, StudentsProjectsResolver } from '../../app.resolvers';
 
 const routes: Routes = [
    {
@@ -19,11 +19,17 @@ const routes: Routes = [
       children: [
          {
             path: 'mentors',
-            component: MentorsComponent
+            component: MentorsComponent,
+            resolve: {
+               mentors: MentorsResolver
+            }
          },
          {
             path: 'students-projects',
-            component: StudentsProjectsComponent
+            component: StudentsProjectsComponent,
+            resolve: {
+               studentsProjects: StudentsProjectsResolver
+            }
          },
          {
             path: 'employed-students',

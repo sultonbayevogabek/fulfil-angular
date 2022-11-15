@@ -7,7 +7,7 @@ import { IFaq } from '../../../shared/models/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-   selector: 'app-faq',
+   selector: 'app-admin-faq',
    templateUrl: './faq.component.html'
 })
 

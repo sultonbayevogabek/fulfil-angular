@@ -9,7 +9,7 @@ import {
    ILoginResponse
 } from '../../admin/shared/models/models';
 import { map, tap } from 'rxjs';
-import { ICompany, IEmployedStudent, IFaq, IHeader, IIntroLesson, ITeacher } from '../models/models';
+import { ICompany, IEmployedStudent, IFaq, IHeader, IIntroLesson, IMentor, IStudentProject } from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -111,15 +111,39 @@ export class ApiService {
       return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/company-logo/${id}`);
    }
 
-   createTeacher(payload: FormData) {
+   createMentor(payload: FormData) {
       return this.http.post(environment.host + `/api/v1/teacher`, payload);
    }
 
-   getTeachers() {
-      return this.http.get<{ status: number; data: ITeacher[] }>(environment.host + '/api/v1/teacher');
+   getMentors() {
+      return this.http.get<{ status: number; data: IMentor[] }>(environment.host + '/api/v1/teacher');
    }
 
-   deleteTeacher(id: string) {
+   deleteMentor(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/teacher/${id}`);
+   }
+
+   createStudentProject(payload: FormData) {
+      return this.http.post<{ status: number; data: IStudentProject }>(environment.host + `/api/v1/student-project`, payload);
+   }
+
+   getStudentsProjects() {
+      return this.http.get<{ status: number; data: IStudentProject[] }>(environment.host + '/api/v1/student-project');
+   }
+
+   deleteStudentProject(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/student-project/${id}`);
+   }
+
+   createRecordedIntroLesson(payload: FormData) {
+      return this.http.post(environment.host + `/api/v1/student-project`, payload);
+   }
+
+   getRecordedIntroLessons() {
+      return this.http.get(environment.host + '/api/v1/free-lesson');
+   }
+
+   deleteRecordedIntroLesson(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/free-lesson/${id}`);
    }
 }
