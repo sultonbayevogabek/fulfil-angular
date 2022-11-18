@@ -1,8 +1,9 @@
-<h3 class="fw-500 mb-30">FAQ - qo'shish</h3>
+<h3 class="fw-500 mb-30">Izoh - qo'shish</h3>
 <hr class="mb-20">
-<form class="grid grid-3 column-gap-20 mb-40" [formGroup]="faqForm" (ngSubmit)="createFaq()">
+<form class="grid grid-3 column-gap-20 mb-40" [formGroup]="commentForm" (ngSubmit)="createComment()">
    <label class="form-label">
-      <span>Savol matni</span>
+      <span>Kurs</span>
+      <select name="" id="" class="form-control"></select>
       <input class="form-control" type="text" placeholder="Kursga qanday yozilsam bo'ladi?" formControlName="question">
    </label>
    <label class="form-label">

@@ -191,4 +191,12 @@ export class ApiService {
    createComment(id: string, payload: FormData) {
       return this.http.post<{ status: number; data: any }>(environment.host + `/api/v1/comment/${id}`, payload);
    }
+
+   getComments() {
+      return this.http.get<{ status: number; data: any }>(environment.host + `/api/v1/comment`);
+   }
+
+   deleteComment(id: string) {
+      return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/comment/${id}`);
+   }
 }

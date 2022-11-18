@@ -64,3 +64,15 @@ export class ContactsResolver implements Resolve<{ status: number; data: IContac
       return this._apiService.getContacts();
    }
 }
+
+@Injectable()
+export class CommentsResolver implements Resolve<{ status: number; data: any }> {
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   resolve(): Observable<{ status: number; data: any }> {
+      return this._apiService.getComments();
+   }
+}

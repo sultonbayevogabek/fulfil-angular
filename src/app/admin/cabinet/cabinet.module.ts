@@ -8,6 +8,7 @@ import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import {
+   CommentsResolver,
    CompaniesResolver, ContactsResolver,
    FaqResolver,
    IntroLessonResolver,
@@ -119,7 +120,8 @@ const routes: Routes = [
             path: 'comment',
             component: CommentComponent,
             resolve: {
-               comments: CommentsResolver
+               comments: CommentsResolver,
+               courses: CoursesResolver
             }
          }
       ]
@@ -140,7 +142,8 @@ const routes: Routes = [
       RecordedIntroLessonsComponent,
       ContactComponent,
       CoursesComponent,
-      CourseEditComponent
+      CourseEditComponent,
+      CommentComponent
    ],
    imports: [
       RouterModule.forChild(routes),
