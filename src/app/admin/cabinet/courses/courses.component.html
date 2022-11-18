@@ -240,8 +240,8 @@
                   </li>
                </ol>
             </td>
-            <td><img src="{{ host + course.courseImage.slice(2) }}" alt=""></td>
-            <td><img src="{{ host + course.coursePageImage.slice(2) }}" alt=""></td>
+            <td><img style="max-width: 40px" src="{{ host + course.courseImage.slice(2) }}" alt=""></td>
+            <td><img style="min-width: 300px" src="{{ host + course.coursePageImage.slice(2) }}" alt=""></td>
             <td>
                <svg (click)="deleteCourse(course.id)" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path

@@ -90,7 +90,7 @@ export class CoursesComponent implements OnInit {
          courseName, courseImage, courseSubtitle,
          courseTitle, courseDescription, coursePageImage,
          whyThisCourseTitle, courseDetails, courseSkills,
-         listOfTopics, courseProjectsList
+         listOfTopics, courseProjectsList, whyThisCourse
       } = this.courseForm.value;
 
       const formData = new FormData();
@@ -114,6 +114,9 @@ export class CoursesComponent implements OnInit {
       });
       courseProjectsList.forEach(item => {
          formData.append('courseProjectsList', item);
+      });
+      whyThisCourse.forEach(item => {
+         formData.append('whyThisCourse', item);
       });
 
       this._apiService.createCourse(formData)
