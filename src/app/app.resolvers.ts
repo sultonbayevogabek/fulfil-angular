@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Params, Resolve } from '@angular/router';
 import {
    ICourse,
@@ -10,10 +10,6 @@ import {
 } from './shared/models/models';
 import { ApiService } from './shared/services/api.service';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ToasterService } from './admin/shared/services/toaster.service';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
    providedIn: 'root'

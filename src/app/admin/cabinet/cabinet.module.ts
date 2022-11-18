@@ -29,6 +29,7 @@ import { RecordedIntroLessonsComponent } from './recorded-intro-lessons/recorded
 import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
+import { CommentComponent } from './comment/comment.component';
 
 const routes: Routes = [
    {
@@ -112,6 +113,13 @@ const routes: Routes = [
             component: CourseEditComponent,
             resolve: {
                course: CourseResolver
+            }
+         },
+         {
+            path: 'comment',
+            component: CommentComponent,
+            resolve: {
+               comments: CommentsResolver
             }
          }
       ]

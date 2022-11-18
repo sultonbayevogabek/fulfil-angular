@@ -181,10 +181,14 @@ export class ApiService {
    }
 
    editCourse(id: string, payload: FormData) {
-      return this.http.put<any>(environment.host + `/api/v1/course/${id}`, payload);
+      return this.http.put<{ status: number; data: ICourse }>(environment.host + `/api/v1/course/${id}`, payload);
    }
 
    deleteCourse(id: string) {
-      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/course/${id}`);
+      return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/course/${id}`);
+   }
+
+   createComment(id: string, payload: FormData) {
+      return this.http.post<{ status: number; data: any }>(environment.host + `/api/v1/comment/${id}`, payload);
    }
 }
