@@ -22,20 +22,20 @@ export class ToasterComponent implements OnInit, OnDestroy {
    }
 
    ngOnInit() {
-      this._toasterService.openToaster.subscribe(data => {
+      this._openSubscription = this._toasterService.openToaster.subscribe(data => {
          this.toasterShow = true;
          this.toasterType = data.toasterType;
          this.toasterText = data.toasterText;
       });
 
-      this._toasterService.closeToaster.subscribe(() => {
+      this._closeSubscription = this._toasterService.closeToaster.subscribe(() => {
          this.toasterShow = false;
       });
    }
 
 
    ngOnDestroy() {
-      this._openSubscription.unsubscribe()
-      this._closeSubscription.unsubscribe()
+      this._openSubscription.unsubscribe();
+      this._closeSubscription.unsubscribe();
    }
 }

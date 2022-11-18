@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { ActivatedRoute, Resolve } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Params, Resolve } from '@angular/router';
 import {
    ICourse,
    IEmployedStudent,
@@ -96,5 +96,21 @@ export class CoursesResolver implements Resolve<{ status: number; data: ICourse[
 
    resolve(): Observable<{ status: number; data: ICourse[] }> {
       return this._apiService.getCourses();
+   }
+}
+
+@Injectable({
+   providedIn: 'root'
+})
+export class CourseResolver implements Resolve<{ status: number; data: ICourse }> {
+   constructor(
+      private _apiService: ApiService,
+      private _route: ActivatedRoute
+   ) {
+   }
+
+   resolve(route: ActivatedRouteSnapshot): Observable<{ status: number; data: ICourse }> {
+      const id = route.params['id'];
+      return this._apiService.getCourseById(id);
    }
 }

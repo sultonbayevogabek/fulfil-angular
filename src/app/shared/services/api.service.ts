@@ -176,6 +176,14 @@ export class ApiService {
       return this.http.get<{ status: number; data: ICourse[] }>(environment.host + '/api/v1/course');
    }
 
+   getCourseById(id: string) {
+      return this.http.get<{ status: number; data: ICourse }>(environment.host + `/api/v1/course/${id}`);
+   }
+
+   editCourse(id: string, payload: FormData) {
+      return this.http.put<any>(environment.host + `/api/v1/course/${id}`, payload);
+   }
+
    deleteCourse(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/course/${id}`);
    }

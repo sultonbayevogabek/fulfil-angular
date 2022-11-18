@@ -15,6 +15,7 @@ import {
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 import {
+   CourseResolver,
    CoursesResolver,
    EmployedStudentsResolver,
    MentorsResolver,
@@ -27,6 +28,7 @@ import { StudentsProjectsComponent } from './students-projects/students-projects
 import { RecordedIntroLessonsComponent } from './recorded-intro-lessons/recorded-intro-lessons.component';
 import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
+import { CourseEditComponent } from './course-edit/course-edit.component';
 
 const routes: Routes = [
    {
@@ -104,6 +106,13 @@ const routes: Routes = [
             resolve: {
                courses: CoursesResolver
             }
+         },
+         {
+            path: 'edit-course/:id',
+            component: CourseEditComponent,
+            resolve: {
+               course: CourseResolver
+            }
          }
       ]
    }
@@ -122,7 +131,8 @@ const routes: Routes = [
       StudentsProjectsComponent,
       RecordedIntroLessonsComponent,
       ContactComponent,
-      CoursesComponent
+      CoursesComponent,
+      CourseEditComponent
    ],
    imports: [
       RouterModule.forChild(routes),
