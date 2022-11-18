@@ -42,38 +42,10 @@
          <h2 class="section__title">Bizning zamonaviy <span class="highlight decorated">kurslarimiz</span></h2>
       </div>
       <div class="section__body our-courses__cards">
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/python.svg" alt="">
-            <p>Python Backend</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/ai.svg" alt="">
-            <p>Sun'iy intellekt</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/android.svg" alt="">
-            <p>Android</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/fr-re.svg" alt="">
-            <p>Frontend <br> ReactJS</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/node.svg" alt="">
-            <p>JavaScript <br> NodeJS</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/frontend.svg" alt="">
-            <p>Frontend videolar</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/react.svg" alt="">
-            <p>ReactJS</p>
-         </div>
-         <div class="our-courses__card">
-            <img src="/assets/images/home-page/our-courses/ai-videos.svg" alt="">
-            <p>Sun'iy intellekt <br> videolar</p>
-         </div>
+         <a routerLink="/course/{{ course.id }}" class="our-courses__card" *ngFor="let course of courses">
+            <img src="{{ host + course.courseImage.slice(2) }}" alt="{{ course.courseName }} image">
+            <p>{{ course.courseName }}</p>
+         </a>
       </div>
    </div>
 </section>

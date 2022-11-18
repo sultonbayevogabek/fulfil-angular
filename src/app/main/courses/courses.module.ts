@@ -3,11 +3,15 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { NgForOf } from '@angular/common';
+import { CourseResolver } from '../../app.resolvers';
 
 const routes: Routes = [
    {
-      path: '',
-      component: CourseDetailsComponent
+      path: ':id',
+      component: CourseDetailsComponent,
+      resolve: {
+         course: CourseResolver
+      }
    }
 ];
 

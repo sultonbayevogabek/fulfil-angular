@@ -28,7 +28,7 @@ export class EnrollFormComponent implements OnInit {
       this.enrollForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),
          'phone': new FormControl('', [Validators.required, validatePhone]),
-         'course': new FormControl(this.introLessons[0].name, Validators.required)
+         'course': new FormControl(this.introLessons[0]?.name, Validators.required)
       });
 
       if (this.currentCourse) {

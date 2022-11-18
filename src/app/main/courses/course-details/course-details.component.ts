@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ICourse } from '../../../shared/models/models';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-course-details',
@@ -6,7 +8,7 @@ import { Component } from '@angular/core';
    styleUrls: ['./course-details.component.scss']
 })
 
-export class CourseDetailsComponent {
+export class CourseDetailsComponent implements OnInit {
    faq = [
       {
          id: 1,
@@ -72,6 +74,19 @@ export class CourseDetailsComponent {
          open: false
       }
    ];
+   course: ICourse;
+
+   constructor(
+      private _route: ActivatedRoute
+   ) {
+   }
+
+   ngOnInit() {
+      this._route.data.subscribe(data => {
+         this.course = data['course'].data;
+         console.log(this.course);
+      });
+   }
 
    toggleFaq(item: { id: number, question: string, answer: string, open: boolean }) {
       if (item.open) {

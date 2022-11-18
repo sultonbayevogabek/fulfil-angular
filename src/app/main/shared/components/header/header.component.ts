@@ -50,8 +50,6 @@ export class HeaderComponent implements OnInit {
          this._communicateService.coursesEmitter.next(this.courses);
          this.coursesCount = this.courses.length;
          this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
-         console.log(this.coursesCount);
-         console.log(this.sliceIndex);
       });
    }
 
