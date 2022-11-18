@@ -8,8 +8,17 @@ import {
    ILoginRequest,
    ILoginResponse
 } from '../../admin/shared/models/models';
-import { map, tap } from 'rxjs';
-import { ICompany, IEmployedStudent, IFaq, IHeader, IIntroLesson, IMentor, IStudentProject } from '../models/models';
+import { map } from 'rxjs';
+import {
+   ICompany, IContact, ICourse,
+   IEmployedStudent,
+   IFaq,
+   IHeader,
+   IIntroLesson,
+   IMentor,
+   IRecordedIntroLesson,
+   IStudentProject
+} from '../models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -136,14 +145,38 @@ export class ApiService {
    }
 
    createRecordedIntroLesson(payload: FormData) {
-      return this.http.post(environment.host + `/api/v1/student-project`, payload);
+      return this.http.post<{ status: number; data: IRecordedIntroLesson }>(environment.host + `/api/v1/free-lesson`, payload);
    }
 
    getRecordedIntroLessons() {
-      return this.http.get(environment.host + '/api/v1/free-lesson');
+      return this.http.get<{ status: number; data: IRecordedIntroLesson[] }>(environment.host + '/api/v1/free-lesson');
    }
 
    deleteRecordedIntroLesson(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/free-lesson/${id}`);
+   }
+
+   sendContact(payload: IContact) {
+      return this.http.post<{ status: number; data: IContact }>(environment.host + `/api/v1/contact`, payload);
+   }
+
+   getContacts() {
+      return this.http.get<{ status: number; data: IContact[] }>(environment.host + `/api/v1/contact`);
+   }
+
+   deleteContact(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/contact/${id}`);
+   }
+
+   createCourse(payload: FormData) {
+      return this.http.post<{ status: number; data: ICourse }>(environment.host + '/api/v1/course', payload);
+   }
+
+   getCourses() {
+      return this.http.get<{ status: number; data: ICourse[] }>(environment.host + '/api/v1/course');
+   }
+
+   deleteCourse(id: string) {
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/course/${id}`);
    }
 }

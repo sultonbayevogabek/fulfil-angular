@@ -10,7 +10,13 @@ import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import { HelpToWorkComponent } from './help-to-work/help-to-work.component';
 import { WhatIsFulfilComponent } from './what-is-fulfil/what-is-fulfil.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { EmployedStudentsResolver, MentorsResolver, StudentsProjectsResolver } from '../../app.resolvers';
+import {
+   EmployedStudentsResolver,
+   MentorsResolver,
+   RecordedIntroLessonsResolver,
+   StudentsProjectsResolver
+} from '../../app.resolvers';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
    {
@@ -40,7 +46,10 @@ const routes: Routes = [
          },
          {
             path: 'intro-lessons',
-            component: IntroLessonsComponent
+            component: IntroLessonsComponent,
+            resolve: {
+               recordedIntroLessons: RecordedIntroLessonsResolver
+            }
          },
          {
             path: 'help-to-work',
@@ -73,7 +82,8 @@ const routes: Routes = [
       SharedModule,
       RouterModule.forChild(routes),
       NgForOf,
-      NgIf
+      NgIf,
+      ReactiveFormsModule
    ],
    exports: [RouterModule]
 })

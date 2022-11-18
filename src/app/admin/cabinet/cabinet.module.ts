@@ -8,13 +8,14 @@ import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import {
-   CompaniesResolver,
+   CompaniesResolver, ContactsResolver,
    FaqResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 import {
+   CoursesResolver,
    EmployedStudentsResolver,
    MentorsResolver,
    RecordedIntroLessonsResolver,
@@ -24,6 +25,8 @@ import { CompaniesComponent } from './companies/companies.component';
 import { MentorsComponent } from './mentors/mentors.component';
 import { StudentsProjectsComponent } from './students-projects/students-projects.component';
 import { RecordedIntroLessonsComponent } from './recorded-intro-lessons/recorded-intro-lessons.component';
+import { ContactComponent } from './contact/contact.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
    {
@@ -87,6 +90,20 @@ const routes: Routes = [
             resolve: {
                recordedIntroLessons: RecordedIntroLessonsResolver
             }
+         },
+         {
+            path: 'contact',
+            component: ContactComponent,
+            resolve: {
+               contacts: ContactsResolver
+            }
+         },
+         {
+            path: 'courses',
+            component: CoursesComponent,
+            resolve: {
+               courses: CoursesResolver
+            }
          }
       ]
    }
@@ -103,7 +120,9 @@ const routes: Routes = [
       CompaniesComponent,
       MentorsComponent,
       StudentsProjectsComponent,
-      RecordedIntroLessonsComponent
+      RecordedIntroLessonsComponent,
+      ContactComponent,
+      CoursesComponent
    ],
    imports: [
       RouterModule.forChild(routes),
@@ -117,7 +136,8 @@ const routes: Routes = [
       IntroLessonResolver,
       IntroLessonsRegistrationsResolver,
       EmployedStudentsResolver,
-      CompaniesResolver
+      CompaniesResolver,
+      ContactsResolver
    ]
 })
 

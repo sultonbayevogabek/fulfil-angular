@@ -177,12 +177,11 @@
       </div>
    </div>
 </div>
-
 <div class="mobile-menu" *ngIf="bottomPanel === 'courses' || bottomPanel === 'about'">
    <div class="flex-container">
       <div class="mobile-menu__header">
          <h2>{{ bottomPanel === 'courses' ? 'Kurslar' : 'Biz haqimizda' }}</h2>
-         <svg (click)="bottomPanel == null" width="28" height="28" viewBox="0 0 28 28" fill="none"
+         <svg (click)="bottomPanel = null" width="28" height="28" viewBox="0 0 28 28" fill="none"
               xmlns="http://www.w3.org/2000/svg">
             <circle cx="14" cy="14" r="14" fill="white"/>
             <path d="M9.88281 18.1176L18.1181 9.88235M9.88282 9.88237L18.1181 18.1176" stroke="#193C3F" stroke-width="2"
@@ -223,4 +222,3 @@
       </ul>
    </div>
 </div>
-

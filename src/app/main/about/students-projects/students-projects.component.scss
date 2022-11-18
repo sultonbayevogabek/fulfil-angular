@@ -12,6 +12,8 @@
 }
 
 .card__img {
+   aspect-ratio: 1;
+
    img {
       vertical-align: middle;
    }
@@ -19,7 +21,7 @@
 
 .card__body {
    display: flex;
-   align-items: center;
+   align-items: flex-start;
    padding: 20px;
    background-color: #ffffff;
 }
@@ -27,6 +29,8 @@
 .card__avatar {
    width: 52px;
    margin-right: 12px;
+   aspect-ratio: 1;
+   border-radius: 50%;
 
    img {
       border-radius: 50%;

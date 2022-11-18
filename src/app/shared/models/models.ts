@@ -64,3 +64,28 @@ export interface IRecordedIntroLesson {
    name: string;
    teacherImage: string;
 }
+
+export interface IContact {
+   id?: string;
+   createdDate?: string;
+   createdTime?: string;
+   name: string;
+   phone: number;
+   message: string;
+}
+
+export interface ICourse {
+   courseName: string;
+   courseImage: string;
+   courseSubtitle: string;
+   courseTitle: string;
+   courseDescription: string;
+   coursePageImage: string;
+   courseDetails: string[];
+   courseSkills: string[];
+   listOfTopics: string[];
+   whyThisCourseTitle: string;
+   whyThisCourse: string[];
+   courseProjectsList: string[];
+   id: string;
+}

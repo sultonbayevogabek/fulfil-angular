@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IRecordedIntroLesson } from '../../../shared/models/models';
+import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-employed-students',
@@ -6,43 +9,18 @@ import { Component } from '@angular/core';
    styleUrls: ['./intro-lessons.component.scss']
 })
 
-export class IntroLessonsComponent {
-   introLessons = [
-      {
-         id: 1,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      },
-      {
-         id: 2,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      },
-      {
-         id: 3,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      },
-      {
-         id: 4,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      },
-      {
-         id: 5,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      },
-      {
-         id: 6,
-         name: `Og'abek Sultonbayev`,
-         text: 'Lorem Ipsum is simply dummy text of the ',
-         duration: '5 soat 30 minut'
-      }
-   ];
+export class IntroLessonsComponent implements OnInit {
+   host = environment.host;
+   recordedIntroLessons: IRecordedIntroLesson[] = [];
+
+   constructor(
+      private _route: ActivatedRoute
+   ) {
+   }
+
+   ngOnInit() {
+      this._route.data.subscribe(data => {
+         this.recordedIntroLessons = data['recordedIntroLessons'].data;
+      });
+   }
 }

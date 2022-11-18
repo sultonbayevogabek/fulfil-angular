@@ -10,7 +10,7 @@
          </div>
       </div>
       <div class="mentor" [class.revert]="i % 2 !== 0" *ngFor="let mentor of mentors; let i = index">
-         <div class="mentor__img">
+         <div class="mentor__img skeleton">
             <img src="{{ host + mentor.image.slice(2) }}" alt="{{ mentor.name }} image">
          </div>
          <div class="mentor__info">

@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../../shared/services/api.service';
 import { CommunicateService } from '../../services/communicate.service';
@@ -9,7 +9,7 @@ import { CommunicateService } from '../../services/communicate.service';
    styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
    showCoursesDropdown = false;
    showAboutDropdown = false;
    bottomPanel = null;
@@ -35,6 +35,10 @@ export class HeaderComponent {
       private _apiService: ApiService,
       private _communicateService: CommunicateService
    ) {
+   }
+
+   ngOnInit() {
+
    }
 
    toggleDropdown(courses: 'courses' | 'about') {

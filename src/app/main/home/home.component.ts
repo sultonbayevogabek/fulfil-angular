@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICompany, IHeader } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
 import { environment } from '../../../environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-home',
@@ -15,15 +16,16 @@ export class HomeComponent implements OnInit {
    companies: ICompany[] = [];
 
    constructor(
-      private _apiService: ApiService
+      private _apiService: ApiService,
+      private _route: ActivatedRoute
    ) {
    }
 
    ngOnInit() {
-      this._apiService.getHeader()
-         .subscribe(res => {
-            this.header = res;
-         });
+      this._route.data.subscribe(data => {
+         this.header = data['header'];
+         console.log(this.header);
+      });
       this._apiService.getCompanies()
          .subscribe(res => {
             this.companies = res.data;

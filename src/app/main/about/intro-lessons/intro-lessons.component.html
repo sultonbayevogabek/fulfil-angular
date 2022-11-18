@@ -11,21 +11,21 @@
       </div>
 
       <div class="intro-lessons__cards cards">
-         <div class="card" *ngFor="let lesson of introLessons; let i = index">
-            <div class="card__img">
-               <img src="https://picsum.photos/330/245?random={{ i + 1 }}" alt="">
+         <div class="card" *ngFor="let lesson of recordedIntroLessons; let i = index">
+            <div class="card__img skeleton">
+               <img src="{{ host + lesson.posterImage.slice(2) }}" alt="">
             </div>
             <div class="card__teacher teacher">
-               <div class="teacher__avatar">
-                  <img src="https://i.pravatar.cc/50?img={{ i + 1 }}" alt="">
+               <div class="teacher__avatar skeleton">
+                  <img src="{{ host + lesson.teacherImage.slice(2) }}" alt="">
                </div>
                <div class="teacher__info">
                   <div>Ustoz</div>
-                  <h3>Eshonov Fakhriyor</h3>
+                  <h3>{{ lesson.name }}</h3>
                </div>
             </div>
             <div class="card__body">
-               <p>Lorem Ipsum is simply dummy text of the </p>
+               <p>{{ lesson.videoTitle }}</p>
             </div>
             <div class="card__footer">
                <div>
@@ -38,7 +38,7 @@
                   <span>Davomiyligi</span>
                </div>
                <div>
-                  5 soat 50 daqiqa
+                  {{ lesson.duration }}
                </div>
             </div>
          </div>

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../shared/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
@@ -20,8 +20,7 @@ export class EmployedStudentsComponent implements OnInit {
    constructor(
       private _apiService: ApiService,
       private _toasterService: ToasterService,
-      private _route: ActivatedRoute,
-      private _cd: ChangeDetectorRef
+      private _route: ActivatedRoute
    ) {
    }
 

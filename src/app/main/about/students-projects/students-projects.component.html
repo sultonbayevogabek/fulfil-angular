@@ -12,11 +12,11 @@
 
       <div class="students-projects__cards cards">
          <a class="card" target="_blank" href="{{ project.projectLink }}" *ngFor="let project of studentsProjects">
-            <div class="card__img">
+            <div class="card__img skeleton">
                <img src="{{ host + project.projectImage.slice(2) }}" alt="image">
             </div>
             <div class="card__body">
-               <div class="card__avatar">
+               <div class="card__avatar skeleton">
                   <img src="{{ host + project.studentImage.slice(2) }}" alt="">
                </div>
                <div class="card__info">

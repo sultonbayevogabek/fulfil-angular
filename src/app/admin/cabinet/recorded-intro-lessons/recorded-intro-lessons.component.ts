@@ -5,6 +5,7 @@ import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
+import { IRecordedIntroLesson } from '../../../shared/models/models';
 
 @Component({
    selector: 'app-admin-mentors',
@@ -14,7 +15,7 @@ import { environment } from '../../../../environments/environment';
 export class RecordedIntroLessonsComponent implements OnInit {
    host = environment.host;
    recordedIntroLessonForm: FormGroup;
-   recordedIntroLessons: any[] = [];
+   recordedIntroLessons: IRecordedIntroLesson[] = [];
 
    constructor(
       private _apiService: ApiService,
@@ -29,80 +30,88 @@ export class RecordedIntroLessonsComponent implements OnInit {
          'posterImage': new FormControl(null, Validators.required),
          'teacherImage': new FormControl(null, Validators.required),
          'videoTitle': new FormControl('NodeJS. Kirish darsi. 11-noyabr, 2022', Validators.required),
-         'youtube': new FormControl('Payme LLC', Validators.required),
+         'youtube': new FormControl('https://www.youtube.com/embed/ECTIE39k-_0', Validators.required),
          'themes': new FormArray([
-            new FormControl('Tajribasi: 7 yil', Validators.required),
-            new FormControl('Xalqaro tajriba: 4 yil', Validators.required),
-            new FormControl('Malayziyada Limkokwing University of Creative Technology unversitetini IT yo\'nalishini bitirgan', Validators.required),
-            new FormControl('Java Kotlin dasturlash tillari xamda Andriod studioda mukammal bilimga ega', Validators.required),
-            new FormControl('Hozirda Buyuk Britaniyaning “Infinity group” kompaniyasida faoliyat ko\'rsatmoqda', Validators.required),
-            new FormControl('Fulfil educationda Android dasturlash ustozi', Validators.required)
+            new FormControl('Tanishuv', Validators.required),
+            new FormControl('NodeJS nima?', Validators.required),
+            new FormControl('Kursda qanday loyihalar bajaramiz?', Validators.required),
+            new FormControl('Kursni tugatgach, ishga kira olamanmi?', Validators.required),
+            new FormControl('Dars vaqtlari', Validators.required),
+            new FormControl('Savollar', Validators.required)
          ]),
-         'duration': new FormControl('null', Validators.required)
+         'duration': new FormControl('3 soat 22 minut', Validators.required)
       });
       this._route.data.subscribe(data => {
-         this.mentorsList = data['mentors'].data;
+         this.recordedIntroLessons = data['recordedIntroLessons'].data;
       });
    }
 
-   createTeacher() {
-      if (this.mentorForm.invalid) {
+   createRecordedIntroLesson() {
+      if (this.recordedIntroLessonForm.invalid) {
          return;
       }
 
-      const { name, position, workplace, information, teacherImage } = this.mentorForm.value;
+      const { name, posterImage, teacherImage, videoTitle, youtube, themes, duration } = this.recordedIntroLessonForm.value;
 
       const formData = new FormData();
 
       formData.append('name', name);
-      formData.append('position', position);
-      formData.append('workplace', workplace);
-      information.forEach(info => {
-         formData.append('information', info);
-      });
+      formData.append('posterImage', posterImage);
       formData.append('teacherImage', teacherImage);
+      formData.append('videoTitle', videoTitle);
+      formData.append('youtube', youtube);
+      formData.append('duration', duration);
+      themes.forEach(theme => {
+         formData.append('themes', theme);
+      });
 
-      this._apiService.createMentor(formData)
+      this._apiService.createRecordedIntroLesson(formData)
          .subscribe((res) => {
-            this.getTeachersList();
+            this.getRecorderIntroLessonsList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });
    }
 
-   getTeachersList() {
-      this._apiService.getMentors()
-         .subscribe(res => {
-            this.mentorsList = res.data;
+   getRecorderIntroLessonsList() {
+      this._apiService.getRecordedIntroLessons()
+         .subscribe((res: any) => {
+            this.recordedIntroLessons = res.data;
          }, err => {
             this._toasterService.error();
          });
    }
 
-   deleteTeacher(id: string) {
+   deleteRecordedIntroLesson(id: string) {
       if (window.confirm(`Rostan ham o'chirmoqchimisiz?`)) {
-         this._apiService.deleteMentor(id)
+         this._apiService.deleteRecordedIntroLesson(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this.getTeachersList();
+               this.getRecorderIntroLessonsList();
             });
       }
    }
 
    addInfo() {
-      (this.mentorForm.controls['information'] as FormArray).push(new FormControl(null, Validators.required));
+      (this.recordedIntroLessonForm.controls['themes'] as FormArray).push(new FormControl(null, Validators.required));
    }
 
    removeInfo(i: number) {
-      (this.mentorForm.controls['information'] as FormArray).controls.splice(i, 1);
-      this.mentorForm.controls['information'].updateValueAndValidity();
+      (this.recordedIntroLessonForm.controls['themes'] as FormArray).controls.splice(i, 1);
+      this.recordedIntroLessonForm.controls['themes'].updateValueAndValidity();
    }
 
-   onImageSelected(event: Event) {
+   onImageSelected(event: Event, control: string) {
       const files = (event.currentTarget as HTMLInputElement).files;
       if (files && files.length) {
-         this.mentorForm.patchValue({
+         if (control === 'posterImage') {
+            this.recordedIntroLessonForm.patchValue({
+               'posterImage': files[0]
+            });
+            return;
+         }
+         this.recordedIntroLessonForm.patchValue({
             'teacherImage': files[0]
          });
       }

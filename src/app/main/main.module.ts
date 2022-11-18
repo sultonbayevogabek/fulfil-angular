@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main.component';
 import { SharedModule } from './shared/shared.module';
 import { NgForOf, NgIf } from '@angular/common';
+import { HeaderResolver } from '../app.resolvers';
 
 const routes: Routes = [
    {
@@ -12,7 +13,10 @@ const routes: Routes = [
       children: [
          {
             path: '',
-            component: HomeComponent
+            component: HomeComponent,
+            resolve: {
+               header: HeaderResolver
+            }
          },
          {
             path: 'courses',

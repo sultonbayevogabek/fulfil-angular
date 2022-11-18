@@ -6,7 +6,7 @@ import { IntroComponent } from './components/intro/intro.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { EnrollFormComponent } from './components/enroll-form/enroll-form.component';
-import { RouterLinkWithHref } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -22,7 +22,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       NgForOf,
       CarouselModule,
       RouterLinkWithHref,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      RouterLink,
+      RouterLinkActive
    ],
    exports: [
       HeaderComponent,
