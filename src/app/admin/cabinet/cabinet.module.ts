@@ -9,7 +9,9 @@ import { NgForOf, NgIf } from '@angular/common';
 import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
 import {
    CommentsResolver,
-   CompaniesResolver, ContactsResolver,
+   CompaniesResolver,
+   ContactsResolver,
+   CoursesResolver,
    FaqResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
@@ -17,7 +19,6 @@ import {
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 import {
    CourseResolver,
-   CoursesResolver,
    EmployedStudentsResolver,
    MentorsResolver,
    RecordedIntroLessonsResolver,
@@ -158,7 +159,9 @@ const routes: Routes = [
       IntroLessonsRegistrationsResolver,
       EmployedStudentsResolver,
       CompaniesResolver,
-      ContactsResolver
+      ContactsResolver,
+      CommentsResolver,
+      CoursesResolver
    ]
 })
 

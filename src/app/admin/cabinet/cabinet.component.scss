@@ -5,6 +5,8 @@
 
 .cabinet__sidebar {
    width: 250px;
+   height: 100%;
+   overflow: auto;
    flex-shrink: 0;
    background-color: #193C3F;
 }

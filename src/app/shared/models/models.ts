@@ -89,3 +89,14 @@ export interface ICourse {
    courseProjectsList: string[];
    id: string;
 }
+
+export interface IComment {
+   commentTitle: string;
+   commentDescription: string;
+   name: string;
+   phone: string;
+   image: string;
+   course: ICourse;
+   id: string;
+}
+

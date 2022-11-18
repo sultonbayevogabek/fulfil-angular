@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../../../shared/services/api.service';
 import { CommunicateService } from '../../services/communicate.service';
+import { ICourse } from '../../../../shared/models/models';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
    selector: 'app-header',
@@ -10,9 +12,13 @@ import { CommunicateService } from '../../services/communicate.service';
 })
 
 export class HeaderComponent implements OnInit {
+   host = environment.host;
    showCoursesDropdown = false;
    showAboutDropdown = false;
    bottomPanel = null;
+   courses: ICourse[] = [];
+   sliceIndex: number;
+   coursesCount: number;
 
    @HostListener('document: keydown', ['$event']) onKeyUp(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -38,7 +44,15 @@ export class HeaderComponent implements OnInit {
    }
 
    ngOnInit() {
+      this._apiService.getCourses().subscribe(res => {
+         this.courses = res.data;
 
+         this._communicateService.coursesEmitter.next(this.courses);
+         this.coursesCount = this.courses.length;
+         this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
+         console.log(this.coursesCount);
+         console.log(this.sliceIndex);
+      });
    }
 
    toggleDropdown(courses: 'courses' | 'about') {

@@ -4,7 +4,8 @@ import { ApiService } from '../../../shared/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { ICourse } from '../../../shared/models/models';
+import { IComment, ICourse } from '../../../shared/models/models';
+import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-comment',
@@ -12,8 +13,9 @@ import { ICourse } from '../../../shared/models/models';
 })
 
 export class CommentComponent implements OnInit {
+   host = environment.host;
    commentForm: FormGroup;
-   commentList: any[] = [];
+   commentList: IComment[] = [];
    courses: ICourse[] = [];
 
    constructor(
@@ -81,6 +83,15 @@ export class CommentComponent implements OnInit {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
                this.getCommentsList();
             });
+      }
+   }
+
+   onImageSelected(event: Event) {
+      const files = (event.currentTarget as HTMLInputElement).files;
+      if (files && files[0]) {
+         this.commentForm.patchValue({
+            'image': files[0]
+         });
       }
    }
 }

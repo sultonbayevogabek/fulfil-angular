@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { IHeader } from '../../../shared/models/models';
+import { ICourse, IHeader } from '../../../shared/models/models';
 
 @Injectable({
    providedIn: 'root'
@@ -8,8 +8,5 @@ import { IHeader } from '../../../shared/models/models';
 
 export class CommunicateService {
    headerEmitter: Subject<IHeader> = new Subject();
-
-   headerEmit(header: IHeader) {
-      this.headerEmitter.next(header);
-   }
+   coursesEmitter: Subject<ICourse[]> = new Subject();
 }

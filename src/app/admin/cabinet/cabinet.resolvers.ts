@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ICompany, IContact, IFaq, IIntroLesson } from '../../shared/models/models';
+import { ICompany, IContact, ICourse, IFaq, IIntroLesson } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
 import { IEnrollCourse } from '../shared/models/models';
 
@@ -74,5 +74,17 @@ export class CommentsResolver implements Resolve<{ status: number; data: any }> 
 
    resolve(): Observable<{ status: number; data: any }> {
       return this._apiService.getComments();
+   }
+}
+
+@Injectable()
+export class CoursesResolver implements Resolve<{ status: number; data: ICourse[] }> {
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   resolve(): Observable<{ status: number; data: ICourse[] }> {
+      return this._apiService.getCourses();
    }
 }

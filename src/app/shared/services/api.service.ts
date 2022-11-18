@@ -10,6 +10,7 @@ import {
 } from '../../admin/shared/models/models';
 import { map } from 'rxjs';
 import {
+   IComment,
    ICompany, IContact, ICourse,
    IEmployedStudent,
    IFaq,
@@ -189,11 +190,11 @@ export class ApiService {
    }
 
    createComment(id: string, payload: FormData) {
-      return this.http.post<{ status: number; data: any }>(environment.host + `/api/v1/comment/${id}`, payload);
+      return this.http.post<{ status: number; data: IComment }>(environment.host + `/api/v1/comment/${id}`, payload);
    }
 
    getComments() {
-      return this.http.get<{ status: number; data: any }>(environment.host + `/api/v1/comment`);
+      return this.http.get<{ status: number; data: IComment[] }>(environment.host + `/api/v1/comment`);
    }
 
    deleteComment(id: string) {

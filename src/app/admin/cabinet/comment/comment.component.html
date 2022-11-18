@@ -1,41 +1,69 @@
 <h3 class="fw-500 mb-30">Izoh - qo'shish</h3>
 <hr class="mb-20">
-<form class="grid grid-3 column-gap-20 mb-40" [formGroup]="commentForm" (ngSubmit)="createComment()">
-   <label class="form-label">
-      <span>Kurs</span>
-      <select name="" id="" class="form-control"></select>
-      <input class="form-control" type="text" placeholder="Kursga qanday yozilsam bo'ladi?" formControlName="question">
+<form class="mb-40" [formGroup]="commentForm" (ngSubmit)="createComment()">
+   <div class="grid grid-3 gap-20 mb-20">
+      <label class="form-label">
+         <span>Kurs</span>
+         <select class="form-control" formControlName="courseId">
+            <option *ngFor="let course of courses" value="{{ course.id }}">{{ course.courseName }}</option>
+         </select>
+      </label>
+      <label class="form-label">
+         <span>Izoh sarlavhasi</span>
+         <input class="form-control" type="text" placeholder="Bu kurs hayotimni o'zgartirdi" formControlName="commentTitle">
+      </label>
+      <label class="form-label">
+         <span>Izoh egasining ismi</span>
+         <input class="form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
+      </label>
+   </div>
+   <div class="grid grid-3 gap-20 mb-20">
+      <label class="form-label form-label--phone">
+         <span>Izoh egasining raqami</span>
+         <input class="form-control" type="text" placeholder="000000000" formControlName="phone">
+      </label>
+      <label class="form-label">
+         <span>Izoh egasining rasmi(kvadrat rasm)</span>
+         <input class="form-control" type="file" accept=".jpg, .png, .webp" (change)="onImageSelected($event)">
+      </label>
+   </div>
+   <label class="form-label mb-20">
+      <span>Izoh matni</span>
+      <textarea class="form-control" style="min-height: 200px" placeholder="Fulfil zo'r..." formControlName="commentDescription"></textarea>
    </label>
-   <label class="form-label">
-      <span>Javob matni</span>
-      <textarea class="form-control" placeholder="Admin bilan aloqaga chiqing: @Abdivaliyevich"
-                formControlName="answer"></textarea>
-   </label>
-   <div style="padding-top: 32.4px">
-      <button class="button button-full" [disabled]="faqForm.invalid">Qo'shish</button>
+   <div>
+      <button class="button button-full" [disabled]="commentForm.invalid">Qo'shish</button>
    </div>
 </form>
 
-<h3 class="fw-500 mb-30">Ko'p beriladigan savollar ro'yxati</h3>
+<h3 class="fw-500 mb-30">Izohlar ro'yxati</h3>
 <hr class="mb-20">
 
 <table>
    <thead>
    <tr>
       <th>N</th>
-      <th>Savol matni</th>
-      <th>Javob matni</th>
+      <th>Ismi</th>
+      <th>Izoh egasi rasmi</th>
+      <th>Sarlavhasi</th>
+      <th>Tel. raqami</th>
+      <th>Izoh matni</th>
       <th>O'chirish</th>
    </tr>
    </thead>
    <tbody>
-   <ng-container *ngIf="faqList.length; else noData">
-      <tr *ngFor="let faq of faqList; let i = index;">
+   <ng-container *ngIf="commentList.length; else noData">
+      <tr *ngFor="let comment of commentList; let i = index;">
          <td>{{ i + 1 }}</td>
-         <td>{{ faq.question }}</td>
-         <td>{{ faq.answer }}</td>
+         <td>{{ comment.name }}</td>
          <td>
-            <svg (click)="deleteFaq(faq.id)" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <img style="width: 40px" src="{{ host + comment.image.slice(2) }}" alt="">
+         </td>
+         <td>{{ comment.commentTitle }}</td>
+         <td>+998{{ comment.phone }}</td>
+         <td>{{ comment.commentDescription }}</td>
+         <td>
+            <svg (click)="deleteComment(comment.id)" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
                   fill="#FE7062"/>
@@ -45,7 +73,7 @@
    </ng-container>
    <ng-template #noData>
       <tr>
-         <td align="center" colspan="4">Ma'lumot topilmadi</td>
+         <td align="center" colspan="7">Ma'lumot topilmadi</td>
       </tr>
    </ng-template>
    </tbody>
