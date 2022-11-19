@@ -1,155 +1,25 @@
 <owl-carousel-o [options]="customOptions">
-   <ng-template carouselSlide>
+   <ng-template carouselSlide *ngFor="let comment of comments">
       <div class="feedback">
          <div class="feedback__header">
-            <div class="feedback__img">
-               <img src="https://i.pravatar.cc/80?img=3" alt="">
+            <div class="feedback__img skeleton">
+               <img src="{{ host + comment.image.slice(2) }}" alt="">
             </div>
             <div class="feedback__title">
-               <h3>Bu kurs hayotimni o’zgartirdi</h3>
+               <h3>{{ comment.commentTitle }}</h3>
                <div>Eshonov Fakhriyor</div>
             </div>
          </div>
-         <div class="feedback__text">
-            O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim, Fulfil telegram kanalida suniy intellekt
-            kursini ko’rib qoldim va shu kursda o’qishga niyat qildim, to’grisini aytsam natija bunday bo’ladi deb
-            kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan, ustoz Biyimbetov Azizbek o’z ishi
-            ustasi juda kreativ dasturchi ekan, xozirda ishga kirdim va haligacha ustozimdan maslahat olib turaman,
-            ishlariga omad.
-         </div>
+         <div class="feedback__text">{{ comment.commentDescription }}</div>
          <div class="feedback__contact">
             <p>Izoh muallifining telefon raqami</p>
-            <a class="feedback__phone" href="tel: +998999639773">
+            <a class="feedback__phone" href="tel: +998{{ comment.phone }}">
                <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M2.84028 6.85617C4.6276 10.748 7.80811 13.8422 11.7618 15.5188L11.7743 15.5241L12.5381 15.8645C13.5108 16.2979 14.654 15.9901 15.2776 15.127L16.552 13.3633C16.6298 13.2556 16.6097 13.1058 16.5063 13.0223L14.2816 11.2275C14.171 11.1383 14.0083 11.1591 13.9237 11.2732L13.0579 12.4416C12.8476 12.7254 12.4678 12.824 12.1461 12.6784C9.18971 11.3404 6.81397 8.96472 5.47604 6.00833C5.33042 5.68656 5.42902 5.30681 5.71277 5.09653L6.88115 4.23067C6.99532 4.14606 7.01611 3.98344 6.92687 3.87284L5.13183 1.6478C5.0484 1.54438 4.89866 1.5243 4.79093 1.60207L3.01763 2.88223C2.14884 3.50942 1.84289 4.66226 2.28635 5.63771L2.83969 6.85487C2.83989 6.85531 2.84009 6.85574 2.84028 6.85617ZM11.1699 16.8971C6.87392 15.0735 3.41855 11.7105 1.47651 7.48072L1.47534 7.47822L0.920843 6.2585C0.181743 4.63275 0.691663 2.71134 2.13965 1.66603L3.91294 0.385868C4.66706 -0.158542 5.71529 -0.0179317 6.29928 0.705958L8.09431 2.93101C8.71891 3.70518 8.57341 4.84357 7.77421 5.43581L7.10471 5.93197C8.23571 8.12632 10.028 9.91872 12.2224 11.0496L12.7186 10.3801C13.3108 9.58102 14.4492 9.43552 15.2234 10.0601L17.4481 11.8548C18.1722 12.439 18.3127 13.4877 17.7678 14.2418L16.4934 16.0055C15.4541 17.444 13.5487 17.957 11.9277 17.2347L11.1699 16.8971Z"
                         fill="#3CB27F"/>
                </svg>
-               <span>+998999639773</span>
-            </a>
-         </div>
-      </div>
-   </ng-template>
-   <ng-template carouselSlide>
-      <div class="feedback">
-         <div class="feedback__header">
-            <div class="feedback__img">
-               <img src="https://i.pravatar.cc/80?img=3" alt="">
-            </div>
-            <div class="feedback__title">
-               <h3>Bu kurs hayotimni o’zgartirdi</h3>
-               <div>Eshonov Fakhriyor</div>
-            </div>
-         </div>
-         <div class="feedback__text">
-            O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim, Fulfil telegram kanalida suniy intellekt
-            kursini ko’rib qoldim va shu kursda o’qishga niyat qildim, to’grisini aytsam natija bunday bo’ladi deb
-            kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan, ustoz Biyimbetov Azizbek o’z ishi
-            ustasi juda kreativ dasturchi ekan, xozirda ishga kirdim va haligacha ustozimdan maslahat olib turaman,
-            ishlariga omad.
-         </div>
-         <div class="feedback__contact">
-            <p>Izoh muallifining telefon raqami</p>
-            <a class="feedback__phone" href="tel: +998999639773">
-               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.84028 6.85617C4.6276 10.748 7.80811 13.8422 11.7618 15.5188L11.7743 15.5241L12.5381 15.8645C13.5108 16.2979 14.654 15.9901 15.2776 15.127L16.552 13.3633C16.6298 13.2556 16.6097 13.1058 16.5063 13.0223L14.2816 11.2275C14.171 11.1383 14.0083 11.1591 13.9237 11.2732L13.0579 12.4416C12.8476 12.7254 12.4678 12.824 12.1461 12.6784C9.18971 11.3404 6.81397 8.96472 5.47604 6.00833C5.33042 5.68656 5.42902 5.30681 5.71277 5.09653L6.88115 4.23067C6.99532 4.14606 7.01611 3.98344 6.92687 3.87284L5.13183 1.6478C5.0484 1.54438 4.89866 1.5243 4.79093 1.60207L3.01763 2.88223C2.14884 3.50942 1.84289 4.66226 2.28635 5.63771L2.83969 6.85487C2.83989 6.85531 2.84009 6.85574 2.84028 6.85617ZM11.1699 16.8971C6.87392 15.0735 3.41855 11.7105 1.47651 7.48072L1.47534 7.47822L0.920843 6.2585C0.181743 4.63275 0.691663 2.71134 2.13965 1.66603L3.91294 0.385868C4.66706 -0.158542 5.71529 -0.0179317 6.29928 0.705958L8.09431 2.93101C8.71891 3.70518 8.57341 4.84357 7.77421 5.43581L7.10471 5.93197C8.23571 8.12632 10.028 9.91872 12.2224 11.0496L12.7186 10.3801C13.3108 9.58102 14.4492 9.43552 15.2234 10.0601L17.4481 11.8548C18.1722 12.439 18.3127 13.4877 17.7678 14.2418L16.4934 16.0055C15.4541 17.444 13.5487 17.957 11.9277 17.2347L11.1699 16.8971Z"
-                        fill="#3CB27F"/>
-               </svg>
-               <span>+998999639773</span>
-            </a>
-         </div>
-      </div>
-   </ng-template>
-   <ng-template carouselSlide>
-      <div class="feedback">
-         <div class="feedback__header">
-            <div class="feedback__img">
-               <img src="https://i.pravatar.cc/80?img=3" alt="">
-            </div>
-            <div class="feedback__title">
-               <h3>Bu kurs hayotimni o’zgartirdi</h3>
-               <div>Eshonov Fakhriyor</div>
-            </div>
-         </div>
-         <div class="feedback__text">
-            O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim, Fulfil telegram kanalida suniy intellekt
-            kursini ko’rib qoldim va shu kursda o’qishga niyat qildim, to’grisini aytsam natija bunday bo’ladi deb
-            kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan, ustoz Biyimbetov Azizbek o’z ishi
-            ustasi juda kreativ dasturchi ekan, xozirda ishga kirdim va haligacha ustozimdan maslahat olib turaman,
-            ishlariga omad.
-         </div>
-         <div class="feedback__contact">
-            <p>Izoh muallifining telefon raqami</p>
-            <a class="feedback__phone" href="tel: +998999639773">
-               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.84028 6.85617C4.6276 10.748 7.80811 13.8422 11.7618 15.5188L11.7743 15.5241L12.5381 15.8645C13.5108 16.2979 14.654 15.9901 15.2776 15.127L16.552 13.3633C16.6298 13.2556 16.6097 13.1058 16.5063 13.0223L14.2816 11.2275C14.171 11.1383 14.0083 11.1591 13.9237 11.2732L13.0579 12.4416C12.8476 12.7254 12.4678 12.824 12.1461 12.6784C9.18971 11.3404 6.81397 8.96472 5.47604 6.00833C5.33042 5.68656 5.42902 5.30681 5.71277 5.09653L6.88115 4.23067C6.99532 4.14606 7.01611 3.98344 6.92687 3.87284L5.13183 1.6478C5.0484 1.54438 4.89866 1.5243 4.79093 1.60207L3.01763 2.88223C2.14884 3.50942 1.84289 4.66226 2.28635 5.63771L2.83969 6.85487C2.83989 6.85531 2.84009 6.85574 2.84028 6.85617ZM11.1699 16.8971C6.87392 15.0735 3.41855 11.7105 1.47651 7.48072L1.47534 7.47822L0.920843 6.2585C0.181743 4.63275 0.691663 2.71134 2.13965 1.66603L3.91294 0.385868C4.66706 -0.158542 5.71529 -0.0179317 6.29928 0.705958L8.09431 2.93101C8.71891 3.70518 8.57341 4.84357 7.77421 5.43581L7.10471 5.93197C8.23571 8.12632 10.028 9.91872 12.2224 11.0496L12.7186 10.3801C13.3108 9.58102 14.4492 9.43552 15.2234 10.0601L17.4481 11.8548C18.1722 12.439 18.3127 13.4877 17.7678 14.2418L16.4934 16.0055C15.4541 17.444 13.5487 17.957 11.9277 17.2347L11.1699 16.8971Z"
-                        fill="#3CB27F"/>
-               </svg>
-               <span>+998999639773</span>
-            </a>
-         </div>
-      </div>
-   </ng-template>
-   <ng-template carouselSlide>
-      <div class="feedback">
-         <div class="feedback__header">
-            <div class="feedback__img">
-               <img src="https://i.pravatar.cc/80?img=3" alt="">
-            </div>
-            <div class="feedback__title">
-               <h3>Bu kurs hayotimni o’zgartirdi</h3>
-               <div>Eshonov Fakhriyor</div>
-            </div>
-         </div>
-         <div class="feedback__text">
-            O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim, Fulfil telegram kanalida suniy intellekt
-            kursini ko’rib qoldim va shu kursda o’qishga niyat qildim, to’grisini aytsam natija bunday bo’ladi deb
-            kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan, ustoz Biyimbetov Azizbek o’z ishi
-            ustasi juda kreativ dasturchi ekan, xozirda ishga kirdim va haligacha ustozimdan maslahat olib turaman,
-            ishlariga omad.
-         </div>
-         <div class="feedback__contact">
-            <p>Izoh muallifining telefon raqami</p>
-            <a class="feedback__phone" href="tel: +998999639773">
-               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.84028 6.85617C4.6276 10.748 7.80811 13.8422 11.7618 15.5188L11.7743 15.5241L12.5381 15.8645C13.5108 16.2979 14.654 15.9901 15.2776 15.127L16.552 13.3633C16.6298 13.2556 16.6097 13.1058 16.5063 13.0223L14.2816 11.2275C14.171 11.1383 14.0083 11.1591 13.9237 11.2732L13.0579 12.4416C12.8476 12.7254 12.4678 12.824 12.1461 12.6784C9.18971 11.3404 6.81397 8.96472 5.47604 6.00833C5.33042 5.68656 5.42902 5.30681 5.71277 5.09653L6.88115 4.23067C6.99532 4.14606 7.01611 3.98344 6.92687 3.87284L5.13183 1.6478C5.0484 1.54438 4.89866 1.5243 4.79093 1.60207L3.01763 2.88223C2.14884 3.50942 1.84289 4.66226 2.28635 5.63771L2.83969 6.85487C2.83989 6.85531 2.84009 6.85574 2.84028 6.85617ZM11.1699 16.8971C6.87392 15.0735 3.41855 11.7105 1.47651 7.48072L1.47534 7.47822L0.920843 6.2585C0.181743 4.63275 0.691663 2.71134 2.13965 1.66603L3.91294 0.385868C4.66706 -0.158542 5.71529 -0.0179317 6.29928 0.705958L8.09431 2.93101C8.71891 3.70518 8.57341 4.84357 7.77421 5.43581L7.10471 5.93197C8.23571 8.12632 10.028 9.91872 12.2224 11.0496L12.7186 10.3801C13.3108 9.58102 14.4492 9.43552 15.2234 10.0601L17.4481 11.8548C18.1722 12.439 18.3127 13.4877 17.7678 14.2418L16.4934 16.0055C15.4541 17.444 13.5487 17.957 11.9277 17.2347L11.1699 16.8971Z"
-                        fill="#3CB27F"/>
-               </svg>
-               <span>+998999639773</span>
-            </a>
-         </div>
-      </div>
-   </ng-template>
-   <ng-template carouselSlide>
-      <div class="feedback">
-         <div class="feedback__header">
-            <div class="feedback__img">
-               <img src="https://i.pravatar.cc/80?img=3" alt="">
-            </div>
-            <div class="feedback__title">
-               <h3>Bu kurs hayotimni o’zgartirdi</h3>
-               <div>Eshonov Fakhriyor</div>
-            </div>
-         </div>
-         <div class="feedback__text">
-            O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim, Fulfil telegram kanalida suniy intellekt
-            kursini ko’rib qoldim va shu kursda o’qishga niyat qildim, to’grisini aytsam natija bunday bo’ladi deb
-            kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan, ustoz Biyimbetov Azizbek o’z ishi
-            ustasi juda kreativ dasturchi ekan, xozirda ishga kirdim va haligacha ustozimdan maslahat olib turaman,
-            ishlariga omad.
-         </div>
-         <div class="feedback__contact">
-            <p>Izoh muallifining telefon raqami</p>
-            <a class="feedback__phone" href="tel: +998999639773">
-               <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M2.84028 6.85617C4.6276 10.748 7.80811 13.8422 11.7618 15.5188L11.7743 15.5241L12.5381 15.8645C13.5108 16.2979 14.654 15.9901 15.2776 15.127L16.552 13.3633C16.6298 13.2556 16.6097 13.1058 16.5063 13.0223L14.2816 11.2275C14.171 11.1383 14.0083 11.1591 13.9237 11.2732L13.0579 12.4416C12.8476 12.7254 12.4678 12.824 12.1461 12.6784C9.18971 11.3404 6.81397 8.96472 5.47604 6.00833C5.33042 5.68656 5.42902 5.30681 5.71277 5.09653L6.88115 4.23067C6.99532 4.14606 7.01611 3.98344 6.92687 3.87284L5.13183 1.6478C5.0484 1.54438 4.89866 1.5243 4.79093 1.60207L3.01763 2.88223C2.14884 3.50942 1.84289 4.66226 2.28635 5.63771L2.83969 6.85487C2.83989 6.85531 2.84009 6.85574 2.84028 6.85617ZM11.1699 16.8971C6.87392 15.0735 3.41855 11.7105 1.47651 7.48072L1.47534 7.47822L0.920843 6.2585C0.181743 4.63275 0.691663 2.71134 2.13965 1.66603L3.91294 0.385868C4.66706 -0.158542 5.71529 -0.0179317 6.29928 0.705958L8.09431 2.93101C8.71891 3.70518 8.57341 4.84357 7.77421 5.43581L7.10471 5.93197C8.23571 8.12632 10.028 9.91872 12.2224 11.0496L12.7186 10.3801C13.3108 9.58102 14.4492 9.43552 15.2234 10.0601L17.4481 11.8548C18.1722 12.439 18.3127 13.4877 17.7678 14.2418L16.4934 16.0055C15.4541 17.444 13.5487 17.957 11.9277 17.2347L11.1699 16.8971Z"
-                        fill="#3CB27F"/>
-               </svg>
-               <span>+998999639773</span>
+               <span>+998{{ comment.phone }}</span>
             </a>
          </div>
       </div>

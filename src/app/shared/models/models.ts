@@ -13,6 +13,7 @@ export interface IFaq {
    id?: string;
    question: string;
    answer: string;
+   open?: boolean;
 }
 
 export interface IIntroLesson {
@@ -88,6 +89,7 @@ export interface ICourse {
    whyThisCourse: string[];
    courseProjectsList: string[];
    id: string;
+   comments: IComment[];
 }
 
 export interface IComment {

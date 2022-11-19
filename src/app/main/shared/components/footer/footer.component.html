@@ -42,28 +42,36 @@
          </div>
          <div class="info__col">
             <h3>Kurslar</h3>
-            <ul class="info__list">
-               <li class="info__item">Python Backend</li>
-               <li class="info__item">Python Sun’iy intellekt</li>
-               <li class="info__item">Android</li>
-               <li class="info__item">Frontend ReactJS</li>
-               <li class="info__item">JavaScript NodeJS</li>
-               <li class="info__item">Sun’iy intellekt videolar</li>
-               <li class="info__item">ReactJS</li>
-               <li class="info__item">Frontend videolar</li>
+            <ul class="info__list" *ngIf="courses.length">
+               <li class="info__item" *ngFor="let course of courses">
+                  <a routerLink="/course/{{ course.id }}">{{ course.courseName }}</a>
+               </li>
             </ul>
          </div>
          <div class="info__col">
             <h3>Biz haqimizda </h3>
             <ul class="info__list">
-               <li class="info__item">Ustozlar</li>
-               <li class="info__item">O’quvchi loyihalari</li>
-               <li class="info__item">Ishga kirgan o’quvchilar</li>
-               <li class="info__item">Bepul ochiq darslar</li>
-               <li class="info__item">Ishga yordam</li>
-               <li class="info__item">Fulfil</li>
-               <li class="info__item">ReactJS</li>
-               <li class="info__item">Aloqa</li>
+               <li class="info__item">
+                  <a routerLink="/about/mentors">Ustozlar</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/students-projects">O’quvchi loyihalari</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/employed-students">Ishga kirgan o’quvchilar</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/intro-lessons">Bepul ochiq darslar</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/help-to-work">Ishga yordam</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/what-is-fulfil">Fulfil</a>
+               </li>
+               <li class="info__item">
+                  <a routerLink="/about/contact">Aloqa</a>
+               </li>
             </ul>
          </div>
       </div>

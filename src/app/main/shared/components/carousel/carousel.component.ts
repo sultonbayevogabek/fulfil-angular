@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { IComment } from '../../../../shared/models/models';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
    selector: 'app-carousel',
@@ -8,6 +10,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 
 export class CarouselComponent {
+   host = environment.host;
+   @Input('comments') comments?: IComment[] = [];
+
    customOptions: OwlOptions = {
       loop: true,
       mouseDrag: true,

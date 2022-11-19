@@ -1,13 +1,13 @@
 <app-intro
    introType="course"
-   introSubTitle="Angliya"
-   introBigTitle="Android dasturlash kursi"
-   introDescription="Har qanday o’z mobil dasturlaringizni ishlab chiqing"
+   introSubTitle="{{ course.courseSubtitle }}"
+   introBigTitle="{{ course.courseTitle }}"
+   introDescription="{{ course.courseDescription }}"
    [introCourseInfo]="course.courseDetails"
-   introImgUrl="/assets/images/home-page/intro/android.png"
+   introImgUrl="{{ host + course.coursePageImage.slice(2) }}"
 ></app-intro>
 
-<section class="section what-we-learn">
+<section class="section what-we-learn" *ngIf="course.courseDetails.length">
    <div class="container">
       <div class="section__header">
          <div class="section__subtitle">Demak...</div>
@@ -16,62 +16,30 @@
          </h2>
       </div>
       <div class="section__body">
-         <div class="what-we-learn__item">
-            JavaScript NPM, NodeJS, ExpressJS, EJS, MongoDB,
-            PostgreSql, Socket.io,
-            Telegram bot va qo'shimcha tarzda
-            ReactJS ham o'rgatiladi
-         </div>
-         <div class="what-we-learn__item">
-            7 oy davomida Java, Kotlin, Ma'lumotlar bazasi, Android
-            dasturlash o'rgatiladi. Kurs Zoomda onlayn olib boriladi, har bir
-            dars 2 soat atrofida olib boriladi va vazifalar doimo tekshirib ustoz
-            tomonidan #feedback berilib boriladi. Vaqti vaqti bilan imtihonlar
-            talab ustoz tomonidan bo'lib o'tadi
+         <div class="what-we-learn__item" *ngFor="let skill of course.courseSkills">
+            {{ skill }}
          </div>
       </div>
    </div>
 </section>
 
-<section class="section topics">
+<section class="section topics" *ngIf="topicsCount">
    <div class="container">
       <h2 class="topics__heading">Qisqacha <span class="highlight">mavzular ro’yxati</span> bilan tanishing:</h2>
       <div class="section__body topics__body">
          <div class="topics__col">
             <ul class="topics__list blue">
-               <li>UI design</li>
-               <li>REST AP Networking (internet bilan ishlash)</li>
-               <li>SQLite</li>
-               <li>Room</li>
-               <li>Kutubxonalar bilan ishlash</li>
-               <li>Multithreading Dependency Injection</li>
+               <li *ngFor="let topic of course.listOfTopics.slice(0, topicsCount / 3)">{{ topic }}</li>
             </ul>
          </div>
          <div class="topics__col">
             <ul class="topics__list red">
-               <li>MVVM</li>
-               <li>Clean architecture</li>
-               <li>Permissionlar</li>
-               <li>Asynchronous tasks - Coroutines</li>
-               <li>AsyncTask</li>
-               <li>Components</li>
-               <li>Services</li>
-               <li>Broadcast</li>
-               <li>Animations</li>
+               <li *ngFor="let topic of course.listOfTopics.slice(topicsCount / 3, 2 * topicsCount / 3)">{{ topic }}</li>
             </ul>
          </div>
          <div class="topics__col">
             <ul class="topics__list green">
-               <li>Firebase Realtime Database</li>
-               <li>Firebase Firestore</li>
-               <li>Firebase Cloud</li>
-               <li>Messaging</li>
-               <li>Firebase Google</li>
-               <li>Facebook Auth</li>
-               <li>Firebase analytics</li>
-               <li>Firebase Admob</li>
-               <li>Firebase Auth</li>
-               <li>Collections</li>
+               <li *ngFor="let topic of course.listOfTopics.slice(2 * topicsCount / 3)">{{ topic }}</li>
             </ul>
          </div>
       </div>
@@ -79,7 +47,7 @@
    </div>
 </section>
 
-<section class="section projects">
+<section class="section projects" *ngIf="course.courseProjectsList.length">
    <div class="container">
       <div class="projects__left">
          <div class="section__header">
@@ -96,77 +64,11 @@
       </div>
       <div class="projects__right">
          <ul class="details">
-            <li class="details__item">
+            <li class="details__item" *ngFor="let project of course.courseProjectsList">
                <div class="details__icon">
                   <img src="/assets/icons/checked.svg" alt="Checked icon">
                </div>
-               <p class="details__text">Ma’lumotlar bazasi bilan ishlaydigan dasturlar</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Firebase bilan ishlaydigan dasturlar</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Puzzle 15 o'yin</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Quiz game</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Calculator</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Weather app (Internet bilan ishlaydigan)</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">News app</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Currency app (Internet bilan ishlaydigan)</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Note app (Ma’lumotlar bazasi)</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text"> Movie app</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Word game</p>
-            </li>
-            <li class="details__item">
-               <div class="details__icon">
-                  <img src="/assets/icons/checked.svg" alt="Checked icon">
-               </div>
-               <p class="details__text">Pdf viewer</p>
+               <p class="details__text">{{ project }}</p>
             </li>
          </ul>
       </div>
@@ -180,7 +82,9 @@
             <span class="highlight">Kursimiz</span> haqida izohlar
          </h2>
       </div>
-      <app-carousel></app-carousel>
+      <app-carousel
+         [comments]="course.comments"
+      ></app-carousel>
    </div>
 </section>
 
@@ -289,7 +193,7 @@
    </div>
 </section>
 
-<section class="section faq">
+<section class="section faq" *ngIf="faqList.length">
    <div class="container">
       <div class="faq__left">
          <div class="section__header">
@@ -307,7 +211,7 @@
       </div>
       <div class="faq__right">
          <ul class="faq__list">
-            <li class="faq__item" [class.faq__item--open]="item.open" *ngFor="let item of faq">
+            <li class="faq__item" [class.faq__item--open]="item.open" *ngFor="let item of faqList">
                <div class="faq__question" (click)="toggleFaq(item)">
                   <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path fill-rule="evenodd" clip-rule="evenodd"

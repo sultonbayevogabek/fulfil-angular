@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 import { CourseResolver } from '../../app.resolvers';
 
 const routes: Routes = [
@@ -22,7 +22,8 @@ const routes: Routes = [
    imports: [
       SharedModule,
       RouterModule.forChild(routes),
-      NgForOf
+      NgForOf,
+      NgIf
    ]
 })
 
