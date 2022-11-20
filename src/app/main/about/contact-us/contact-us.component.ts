@@ -4,9 +4,9 @@ import { ApiService } from '../../../shared/services/api.service';
 import { validateName, validatePhone } from '../../shared/components/enroll-form/enroll-form.component';
 
 @Component({
-   selector: 'app-what-is-fulfil',
+   selector: 'app-contact-us',
    templateUrl: './contact-us.component.html',
-   styleUrls: ['./contact-us.component.scss']
+   styleUrls: ['contact-us.component.scss']
 })
 
 export class ContactUsComponent implements OnInit {
