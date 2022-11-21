@@ -51,7 +51,15 @@ export class RecordedIntroLessonsComponent implements OnInit {
          return;
       }
 
-      const { name, posterImage, teacherImage, videoTitle, youtube, themes, duration } = this.recordedIntroLessonForm.value;
+      const {
+         name,
+         posterImage,
+         teacherImage,
+         videoTitle,
+         youtube,
+         themes,
+         duration
+      } = this.recordedIntroLessonForm.value;
 
       const formData = new FormData();
 
@@ -78,7 +86,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
       this._apiService.getRecordedIntroLessons()
          .subscribe((res: any) => {
             this.recordedIntroLessons = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

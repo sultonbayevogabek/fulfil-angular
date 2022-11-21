@@ -50,7 +50,7 @@ export class FaqComponent implements OnInit {
       this._apiService.getFaqList()
          .subscribe(res => {
             this.faqList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

@@ -74,7 +74,7 @@ export class MentorsComponent implements OnInit {
       this._apiService.getMentors()
          .subscribe(res => {
             this.mentorsList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

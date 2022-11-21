@@ -71,7 +71,7 @@ export class CommentComponent implements OnInit {
       this._apiService.getComments()
          .subscribe(res => {
             this.commentList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

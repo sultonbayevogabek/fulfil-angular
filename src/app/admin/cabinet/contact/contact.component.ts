@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
       this._apiService.getContacts()
          .subscribe(res => {
             this.contacts = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

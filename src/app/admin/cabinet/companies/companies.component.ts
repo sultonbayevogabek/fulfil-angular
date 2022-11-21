@@ -56,7 +56,7 @@ export class CompaniesComponent implements OnInit {
       this._apiService.getCompanies()
          .subscribe((res: any) => {
             this.companiesList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

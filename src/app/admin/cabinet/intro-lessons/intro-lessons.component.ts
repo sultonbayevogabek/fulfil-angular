@@ -52,7 +52,7 @@ export class IntroLessonsComponent implements OnInit {
       this._apiService.getIntroLessonsList()
          .subscribe(res => {
             this.introLessonsList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }
