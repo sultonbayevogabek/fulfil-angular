@@ -141,6 +141,7 @@
       </div>
    </div>
 </div>
+
 <div class="mobile-menu" *ngIf="bottomPanel === 'courses' || bottomPanel === 'about'">
    <div class="flex-container">
       <div class="mobile-menu__header">
@@ -153,36 +154,42 @@
          </svg>
       </div>
       <ul class="mobile-menu__ul">
-         <li class="mobile-menu__li">
-            <span class="mobile-menu__icon">
-               <img src="/assets/images/courses-dropdown/python.svg" alt="Course Python Icon">
-            </span>
-            <span class="mobile-menu__text">Python</span>
-         </li>
-         <li class="mobile-menu__li">
+         <ng-container *ngIf="bottomPanel === 'courses' && courses.length">
+            <li class="mobile-menu__li" *ngFor="let course of courses">
+               <a class="mobile-menu__link" routerLink="/course/{{ course.id }}">
+                  <span class="mobile-menu__icon">
+                     <img src="{{ host + course.courseImage.slice(2) }}" alt="{{ course.courseName }} Icon">
+                  </span>
+                  <span class="mobile-menu__text">{{ course.courseName }}</span>
+               </a>
+            </li>
+         </ng-container>
+         <ng-container *ngIf="bottomPanel === 'about'">
+            <li class="mobile-menu__li">
             <span class="mobile-menu__icon">
                <img src="/assets/images/courses-dropdown/ai.svg" alt="Course AI Icon">
             </span>
-            <span class="mobile-menu__text">Sun’iy intellekt</span>
-         </li>
-         <li class="mobile-menu__li">
+               <span class="mobile-menu__text">Sun’iy intellekt</span>
+            </li>
+            <li class="mobile-menu__li">
             <span class="mobile-menu__icon">
                <img src="/assets/images/courses-dropdown/nodejs.svg" alt="Course NodeJS Icon">
             </span>
-            <span class="mobile-menu__text">NodeJS</span>
-         </li>
-         <li class="mobile-menu__li">
+               <span class="mobile-menu__text">NodeJS</span>
+            </li>
+            <li class="mobile-menu__li">
             <span class="mobile-menu__icon">
                <img src="/assets/images/courses-dropdown/frontend.svg" alt="Course Front End Icon">
             </span>
-            <span class="mobile-menu__text">Frontend</span>
-         </li>
-         <li class="mobile-menu__li">
+               <span class="mobile-menu__text">Frontend</span>
+            </li>
+            <li class="mobile-menu__li">
             <span class="mobile-menu__icon">
                <img src="/assets/images/courses-dropdown/react.svg" alt="Course React Icon">
             </span>
-            <span class="mobile-menu__text">React</span>
-         </li>
+               <span class="mobile-menu__text">React</span>
+            </li>
+         </ng-container>
       </ul>
    </div>
 </div>

@@ -55,7 +55,7 @@ header {
    animation-timing-function: ease-out;
 }
 
-.dropdown__item, .mobile-menu__li {
+.dropdown__item {
    display: flex;
    align-items: center;
    cursor: pointer;
@@ -70,6 +70,25 @@ header {
       }
 
       .dropdown__text, .mobile-menu__text {
+         color: #3CB27F;
+      }
+   }
+}
+
+.mobile-menu__li:not(:last-child) {
+   margin-bottom: 18px;
+}
+
+.mobile-menu__link {
+   display: flex;
+   align-items: center;
+
+   &:hover {
+      .mobile-menu__icon {
+         box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      .mobile-menu__text {
          color: #3CB27F;
       }
    }
@@ -121,7 +140,6 @@ header {
    right: 0;
    z-index: 5;
    display: none;
-   height: 70px;
    background-color: #fff;
    border: 1px solid #DADFDD;
    box-shadow: 0px -4px 18px rgba(0, 0, 0, 0.06);
