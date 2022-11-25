@@ -96,3 +96,19 @@ export class CourseResolver implements Resolve<{ status: number; data: ICourse }
       return this._apiService.getCourseById(id);
    }
 }
+
+
+
+@Injectable({
+   providedIn: 'root'
+})
+export class CoursesResolver implements Resolve<{ status: number; data: ICourse[] }> {
+   constructor(
+      private _apiService: ApiService
+   ) {
+   }
+
+   resolve(): Observable<{ status: number; data: ICourse[] }> {
+      return this._apiService.getCourses();
+   }
+}

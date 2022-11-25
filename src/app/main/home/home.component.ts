@@ -3,8 +3,7 @@ import { ICompany, ICourse, IHeader } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
 import { environment } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
-import { CommunicateService } from '../shared/services/communicate.service';
-import { Subscription } from 'rxjs';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
    selector: 'app-home',
@@ -13,8 +12,6 @@ import { Subscription } from 'rxjs';
 })
 
 export class HomeComponent implements OnInit {
-   private _coursesSubscription: Subscription;
-
    host = environment.host;
    header: IHeader;
    companies: ICompany[] = [];
@@ -23,27 +20,19 @@ export class HomeComponent implements OnInit {
    constructor(
       private _apiService: ApiService,
       private _route: ActivatedRoute,
-      private _communicateService: CommunicateService
+      private _coursesService: CoursesService
    ) {
    }
 
    ngOnInit() {
       this._route.data.subscribe(data => {
          this.header = data['header'];
-         this.courses = data['courses'];
       });
       this._apiService.getCompanies()
          .subscribe(res => {
             this.companies = res.data;
          });
-      this._coursesSubscription = this._communicateService.coursesEmitter.subscribe(data => {
-         this.courses = data;
-         console.log(this.courses);
-      });
-   }
-
-   ngOnDestroy() {
-      this._coursesSubscription.unsubscribe();
+      this.courses = this._coursesService.courses;
    }
 
    details = [

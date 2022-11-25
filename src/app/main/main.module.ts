@@ -4,7 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main.component';
 import { SharedModule } from './shared/shared.module';
 import { NgForOf, NgIf } from '@angular/common';
-import { HeaderResolver } from '../app.resolvers';
+import { CoursesResolver, HeaderResolver } from '../app.resolvers';
+import { CoursesService } from './shared/services/courses.service';
 
 const routes: Routes = [
    {
@@ -26,7 +27,10 @@ const routes: Routes = [
             path: 'about',
             loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
          }
-      ]
+      ],
+      resolve: {
+         courses: CoursesResolver
+      }
    }
 ];
 
@@ -40,6 +44,9 @@ const routes: Routes = [
       RouterModule.forChild(routes),
       NgIf,
       NgForOf
+   ],
+   providers: [
+      CoursesService
    ]
 })
 

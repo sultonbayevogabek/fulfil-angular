@@ -76,15 +76,3 @@ export class CommentsResolver implements Resolve<{ status: number; data: any }> 
       return this._apiService.getComments();
    }
 }
-
-@Injectable()
-export class CoursesResolver implements Resolve<{ status: number; data: ICourse[] }> {
-   constructor(
-      private _apiService: ApiService
-   ) {
-   }
-
-   resolve(): Observable<{ status: number; data: ICourse[] }> {
-      return this._apiService.getCourses();
-   }
-}

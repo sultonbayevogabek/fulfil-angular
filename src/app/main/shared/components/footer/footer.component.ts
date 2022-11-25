@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../../../../shared/services/api.service';
 import { ICourse, IIntroLesson } from '../../../../shared/models/models';
-import { CommunicateService } from '../../services/communicate.service';
 import { Subscription } from 'rxjs';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
    selector: 'app-footer',
@@ -10,15 +10,13 @@ import { Subscription } from 'rxjs';
    styleUrls: ['./footer.component.scss']
 })
 
-export class FooterComponent implements OnInit, OnDestroy {
-   private _courseSubscription: Subscription;
-
+export class FooterComponent implements OnInit {
    introLessons: IIntroLesson[] = [];
    courses: ICourse[] = [];
 
    constructor(
       private _apiService: ApiService,
-      private _communicateService: CommunicateService
+      private _coursesService: CoursesService
    ) {
    }
 
@@ -27,14 +25,6 @@ export class FooterComponent implements OnInit, OnDestroy {
          .subscribe(res => {
             this.introLessons = res.data;
          });
-      this._courseSubscription = this._communicateService.coursesEmitter
-         .subscribe(data => {
-            this.courses = data;
-         });
-   }
-
-
-   ngOnDestroy() {
-      this._courseSubscription.unsubscribe();
+      this.courses = this._coursesService.courses;
    }
 }

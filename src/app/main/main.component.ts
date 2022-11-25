@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CoursesService } from './shared/services/courses.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-main',
@@ -24,5 +26,15 @@ import { Component } from '@angular/core';
    ]
 })
 
-export class MainComponent {
+export class MainComponent implements OnInit {
+   constructor(
+      private _coursesService: CoursesService,
+      private _route: ActivatedRoute
+   ) {
+   }
+   ngOnInit() {
+      this._route.data.subscribe(data => {
+         this._coursesService.courses = data['courses'].data;
+      })
+   }
 }

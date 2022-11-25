@@ -1,9 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ApiService } from '../../../../shared/services/api.service';
-import { CommunicateService } from '../../services/communicate.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { CoursesService } from '../../services/courses.service';
 import { ICourse } from '../../../../shared/models/models';
 import { environment } from '../../../../../environments/environment';
+import { filter } from 'rxjs';
 
 @Component({
    selector: 'app-header',
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
    showCoursesDropdown = false;
    showAboutDropdown = false;
    bottomPanel = null;
+   showMenu = false;
    courses: ICourse[] = [];
    sliceIndex: number;
    coursesCount: number;
@@ -38,19 +39,24 @@ export class HeaderComponent implements OnInit {
 
    constructor(
       private _router: Router,
-      private _apiService: ApiService,
-      private _communicateService: CommunicateService
+      private _coursesService: CoursesService
    ) {
+      this._router.events
+         .pipe(filter(event => event instanceof NavigationEnd))
+         .subscribe(() => {
+            window.scroll({
+               top: 0,
+               left: 0,
+               behavior: 'smooth'
+            });
+            this.closeMenu();
+         });
    }
 
    ngOnInit() {
-      this._apiService.getCourses().subscribe(res => {
-         this.courses = res.data;
-
-         this._communicateService.coursesEmitter.next(this.courses);
-         this.coursesCount = this.courses.length;
-         this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
-      });
+      this.courses = this._coursesService.courses;
+      this.coursesCount = this.courses.length;
+      this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
    }
 
    toggleDropdown(courses: 'courses' | 'about') {
@@ -69,6 +75,35 @@ export class HeaderComponent implements OnInit {
 
       if (bottomPanel === 'intro-lessons' || bottomPanel === 'students-projects') {
          this._router.navigate(['about', bottomPanel]).then();
+         return;
       }
+
+      this.showMenu = true;
+   }
+
+   closeMenu() {
+      this.showMenu = false;
+      const url = this._router.url;
+      if (url.includes('course')) {
+         this.bottomPanel = 'courses';
+         return;
+      }
+      if (url.includes('about') && !url.includes('about/intro-lessons') && !url.includes('about/students-projects')) {
+         this.bottomPanel = 'about';
+         return;
+      }
+      if (url.includes('about/intro-lessons')) {
+         this.bottomPanel = 'intro-lessons';
+         return;
+      }
+      if (url.includes('about/intro-lessons')) {
+         this.bottomPanel = 'intro-lessons';
+         return;
+      }
+      if (url.includes('about/students-projects')) {
+         this.bottomPanel = 'students-projects';
+         return;
+      }
+      this.bottomPanel = null;
    }
 }

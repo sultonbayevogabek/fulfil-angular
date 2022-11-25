@@ -11,14 +11,13 @@ import {
    CommentsResolver,
    CompaniesResolver,
    ContactsResolver,
-   CoursesResolver,
    FaqResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 import {
-   CourseResolver,
+   CourseResolver, CoursesResolver,
    EmployedStudentsResolver,
    MentorsResolver,
    RecordedIntroLessonsResolver,
@@ -160,8 +159,7 @@ const routes: Routes = [
       EmployedStudentsResolver,
       CompaniesResolver,
       ContactsResolver,
-      CommentsResolver,
-      CoursesResolver
+      CommentsResolver
    ]
 })
 
