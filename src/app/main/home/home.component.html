@@ -26,10 +26,10 @@
        </div>-->
       <div class="video__iframe">
          <iframe
-            src="https://www.youtube.com/embed/HwUSkVSD1xw"
+            [src]="iframeURL(header.youtube)"
             title="YouTube video player"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
       </div>
    </div>
@@ -242,13 +242,15 @@
    </div>
 </section>
 
-<section class="section feedbacks">
+<section class="section feedbacks" *ngIf="comments.length">
    <div class="container">
       <div class="section__header">
          <h2 class="section__title">Kursimiz haqida <span class="highlight">izohlar</span></h2>
       </div>
       <div class="section__body">
-         <app-carousel></app-carousel>
+         <app-carousel
+            [comments]="comments"
+         ></app-carousel>
       </div>
    </div>
 </section>

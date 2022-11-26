@@ -1,8 +1,31 @@
 <h3 class="fw-500 mb-30">Izoh - qo'shish</h3>
 <hr class="mb-20">
+<div class="grid grid-4 gap-20 mb-20">
+   <label>
+      <input
+         class="mr-10"
+         type="radio"
+         name="courseType"
+         value="course"
+         [(ngModel)]="commentType"
+         (ngModelChange)="changeCommentType()">
+      <span>Kurs uchun izoh</span>
+   </label>
+   <label>
+      <input
+         class="mr-10"
+         type="radio"
+         name="courseType"
+         value="main"
+         [(ngModel)]="commentType"
+         (ngModelChange)="changeCommentType()">
+      <span>Asosiy sahifa uchun izoh</span>
+   </label>
+</div>
+
 <form class="mb-40" [formGroup]="commentForm" (ngSubmit)="createComment()">
    <div class="grid grid-3 gap-20 mb-20">
-      <label class="form-label">
+      <label class="form-label" *ngIf="commentType === 'course'">
          <span>Kurs</span>
          <select class="form-control" formControlName="courseId">
             <option *ngFor="let course of courses" value="{{ course.id }}">{{ course.courseName }}</option>
@@ -17,8 +40,6 @@
          <span>Izoh egasining ismi</span>
          <input class="form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
       </label>
-   </div>
-   <div class="grid grid-3 gap-20 mb-20">
       <label class="form-label form-label--phone">
          <span>Izoh egasining raqami</span>
          <input class="form-control" type="text" placeholder="000000000" formControlName="phone">
@@ -38,7 +59,51 @@
    </div>
 </form>
 
-<h3 class="fw-500 mb-30">Izohlar ro'yxati</h3>
+<h3 class="fw-500 mb-30">Asosiy sahifadagi izohlar</h3>
+<hr class="mb-20">
+
+<table class="mb-40">
+   <thead>
+   <tr>
+      <th>N</th>
+      <th>Ismi</th>
+      <th>Izoh egasi rasmi</th>
+      <th>Sarlavhasi</th>
+      <th>Tel. raqami</th>
+      <th>Izoh matni</th>
+      <th>O'chirish</th>
+   </tr>
+   </thead>
+   <tbody>
+   <ng-container *ngIf="homePageCommentList.length; else noData">
+      <tr *ngFor="let comment of homePageCommentList; let i = index;">
+         <td>{{ i + 1 }}</td>
+         <td>{{ comment.name }}</td>
+         <td>
+            <img style="width: 40px" src="{{ host + comment.image.slice(2) }}" alt="">
+         </td>
+         <td>{{ comment.commentTitle }}</td>
+         <td>+998{{ comment.phone }}</td>
+         <td>{{ comment.commentDescription }}</td>
+         <td>
+            <svg (click)="deleteComment(comment.id, 'main')" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20"
+                 fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path
+                  d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
+                  fill="#FE7062"/>
+            </svg>
+         </td>
+      </tr>
+   </ng-container>
+   <ng-template #noData>
+      <tr>
+         <td align="center" colspan="7">Ma'lumot topilmadi</td>
+      </tr>
+   </ng-template>
+   </tbody>
+</table>
+
+<h3 class="fw-500 mb-30">Kurslarga berilgan o'quvchilarning izohlari</h3>
 <hr class="mb-20">
 
 <table>
@@ -67,7 +132,7 @@
          <td>+998{{ comment.phone }}</td>
          <td>{{ comment.commentDescription }}</td>
          <td>
-            <svg (click)="deleteComment(comment.id)" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20"
+            <svg (click)="deleteComment(comment.id, 'course')" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ICompany, ICourse, IHeader } from '../../shared/models/models';
+import { IComment, ICompany, ICourse, IHeader } from '../../shared/models/models';
 import { ApiService } from '../../shared/services/api.service';
 import { environment } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { CoursesService } from '../shared/services/courses.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
    selector: 'app-home',
@@ -16,11 +17,13 @@ export class HomeComponent implements OnInit {
    header: IHeader;
    companies: ICompany[] = [];
    courses: ICourse[] = [];
+   comments: IComment[] = [];
 
    constructor(
       private _apiService: ApiService,
       private _route: ActivatedRoute,
-      private _coursesService: CoursesService
+      private _coursesService: CoursesService,
+      private _sanitizer: DomSanitizer
    ) {
    }
 
@@ -32,13 +35,14 @@ export class HomeComponent implements OnInit {
          .subscribe(res => {
             this.companies = res.data;
          });
+      this._apiService.getHomePageComments()
+         .subscribe(res => {
+            this.comments = res.data;
+         });
       this.courses = this._coursesService.courses;
    }
 
-   details = [
-      '7 oy davomida o’qish',
-      'Yordamchi mutaxassislar',
-      '168 soatdan iborat 87 ta darslar (zoom orqali)',
-      'Real loyihalardan namunalar, ko’plab va ish o’rinlari'
-   ];
+   iframeURL(url: string) {
+      return this._sanitizer.bypassSecurityTrustResourceUrl(url);
+   }
 }

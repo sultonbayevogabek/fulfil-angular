@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CabinetComponent } from './cabinet.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
@@ -11,7 +11,7 @@ import {
    CommentsResolver,
    CompaniesResolver,
    ContactsResolver,
-   FaqResolver,
+   FaqResolver, HomePageCommentsResolver,
    IntroLessonResolver,
    IntroLessonsRegistrationsResolver
 } from './cabinet.resolvers';
@@ -121,6 +121,7 @@ const routes: Routes = [
             component: CommentComponent,
             resolve: {
                comments: CommentsResolver,
+               homePageComments: HomePageCommentsResolver,
                courses: CoursesResolver
             }
          }
@@ -149,7 +150,8 @@ const routes: Routes = [
       RouterModule.forChild(routes),
       ReactiveFormsModule,
       NgIf,
-      NgForOf
+      NgForOf,
+      FormsModule
    ],
    exports: [RouterModule],
    providers: [
@@ -159,7 +161,8 @@ const routes: Routes = [
       EmployedStudentsResolver,
       CompaniesResolver,
       ContactsResolver,
-      CommentsResolver
+      CommentsResolver,
+      HomePageCommentsResolver
    ]
 })
 

@@ -31,7 +31,7 @@
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of recordedIntroLessonForm.controls['themes']['controls']; let i = index">
          <label class="form-label mr-20" style="flex-grow: 1">
-            <span>{{ i + 1 }} - ma'lumot</span>
+            <span>{{ i + 1 }} - mavzu</span>
             <input class="form-control" type="text" placeholder="Info - {{ i + 1 }}" formControlName="{{ i }}">
          </label>
          <svg *ngIf="i !== 0" (click)="removeInfo(i)" class="cursor-pointer" width="20" height="20" viewBox="0 0 20 20"

@@ -200,4 +200,16 @@ export class ApiService {
    deleteComment(id: string) {
       return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/comment/${id}`);
    }
+
+   createHomePageComment(payload: FormData) {
+      return this.http.post<{ status: number; data: IComment }>(environment.host + `/api/v1/company-comments`, payload);
+   }
+
+   getHomePageComments() {
+      return this.http.get<{ status: number; data: IComment[] }>(environment.host + `/api/v1/company-comments`);
+   }
+
+   deleteHomePageComment(id: string) {
+      return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/company-comments/${id}`);
+   }
 }

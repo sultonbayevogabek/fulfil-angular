@@ -32,9 +32,10 @@ export class HttpInterceptorService implements HttpInterceptor {
                }
             }),
             catchError(err => {
-               if (err.status === 400) {
+               if ([400, 404].includes(err.status)) {
                   this._loader.hide();
                }
+
                if (err.status === 401) {
                   this._router.navigate(['admin', 'login']).then();
                }

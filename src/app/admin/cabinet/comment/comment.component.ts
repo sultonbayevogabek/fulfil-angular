@@ -16,7 +16,9 @@ export class CommentComponent implements OnInit {
    host = environment.host;
    commentForm: FormGroup;
    commentList: IComment[] = [];
+   homePageCommentList: IComment[] = [];
    courses: ICourse[] = [];
+   commentType = 'course';
 
    constructor(
       private _apiService: ApiService,
@@ -39,6 +41,7 @@ export class CommentComponent implements OnInit {
       });
       this._route.data.subscribe(data => {
          this.commentList = data['comments'].data;
+         this.homePageCommentList = data['homePageComments'].data;
          this.courses = data['courses'].data;
       });
    }
@@ -48,7 +51,7 @@ export class CommentComponent implements OnInit {
          return;
       }
 
-      const { courseId, commentTitle, name, phone, image, commentDescription } = this.commentForm.value;
+      const {courseId, commentTitle, name, phone, image, commentDescription} = this.commentForm.value;
 
       const formData = new FormData();
 
@@ -58,13 +61,24 @@ export class CommentComponent implements OnInit {
       formData.append('image', image);
       formData.append('commentDescription', commentDescription);
 
-      this._apiService.createComment(courseId, formData)
-         .subscribe((res) => {
-            this.getCommentsList();
+      if (this.commentType === 'course') {
+         this._apiService.createComment(courseId, formData)
+            .subscribe(() => {
+               this.getCommentsList();
+               this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
+            }, (err: HttpErrorResponse) => {
+               this._toasterService.error(err.error.errors[0].message);
+            });
+         return;
+      }
+      this._apiService.createHomePageComment(formData)
+         .subscribe(() => {
+            this.getHomePageCommentsList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });
+      return;
    }
 
    getCommentsList() {
@@ -76,12 +90,29 @@ export class CommentComponent implements OnInit {
          });
    }
 
-   deleteComment(id: string) {
+   getHomePageCommentsList() {
+      this._apiService.getHomePageComments()
+         .subscribe(res => {
+            this.homePageCommentList = res.data;
+         }, () => {
+            this._toasterService.error();
+         });
+   }
+
+   deleteComment(id: string, commentType: 'course' | 'main') {
       if (window.confirm(`Rostan ham o'chirmoqchimisiz?`)) {
-         this._apiService.deleteComment(id)
+         if (commentType === 'course') {
+            this._apiService.deleteComment(id)
+               .subscribe(() => {
+                  this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
+                  this.getCommentsList();
+               });
+            return;
+         }
+         this._apiService.deleteHomePageComment(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this.getCommentsList();
+               this.getHomePageCommentsList();
             });
       }
    }
@@ -93,5 +124,15 @@ export class CommentComponent implements OnInit {
             'image': files[0]
          });
       }
+   }
+
+   changeCommentType() {
+      if (this.commentType === 'main') {
+         this.commentForm.controls['courseId'].removeValidators(Validators.required);
+      }
+      if (this.commentType === 'course') {
+         this.commentForm.controls['courseId'].addValidators(Validators.required);
+      }
+      this.commentForm.controls['courseId'].updateValueAndValidity();
    }
 }

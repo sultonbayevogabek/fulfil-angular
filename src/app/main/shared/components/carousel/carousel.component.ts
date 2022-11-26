@@ -14,10 +14,12 @@ export class CarouselComponent {
    @Input('comments') comments?: IComment[] = [];
 
    customOptions: OwlOptions = {
-      loop: true,
+      loop: false,
       mouseDrag: true,
       touchDrag: true,
       pullDrag: false,
+      autoplay: false,
+      autoHeight: false,
       margin: 30,
       dots: false,
       navSpeed: 700,
