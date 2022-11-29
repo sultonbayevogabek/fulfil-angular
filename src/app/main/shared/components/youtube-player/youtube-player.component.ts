@@ -35,7 +35,7 @@ export class YoutubePlayer implements OnInit, AfterViewInit {
          1200
       );
 
-      this.videoHeight = this.videoWidth * 0.6;
+      this.videoHeight = this.videoWidth * 9 / 16;
       this._changeDetectorRef.detectChanges();
    }
 }
