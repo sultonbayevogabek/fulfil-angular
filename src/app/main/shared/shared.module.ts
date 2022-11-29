@@ -8,6 +8,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { EnrollFormComponent } from './components/enroll-form/enroll-form.component';
 import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { YoutubePlayer } from './components/youtube-player/youtube-player.component';
 
 @NgModule({
    declarations: [
@@ -15,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
       FooterComponent,
       IntroComponent,
       CarouselComponent,
-      EnrollFormComponent
+      EnrollFormComponent,
+      YoutubePlayer
    ],
    imports: [
       NgIf,
@@ -24,14 +27,16 @@ import { ReactiveFormsModule } from '@angular/forms';
       RouterLinkWithHref,
       ReactiveFormsModule,
       RouterLink,
-      RouterLinkActive
+      RouterLinkActive,
+      YouTubePlayerModule
    ],
    exports: [
       HeaderComponent,
       FooterComponent,
       IntroComponent,
       CarouselComponent,
-      EnrollFormComponent
+      EnrollFormComponent,
+      YoutubePlayer
    ]
 })
 
