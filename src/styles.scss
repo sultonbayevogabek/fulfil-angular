@@ -454,6 +454,15 @@ textarea.form-control {
    }
 }
 
+.owl-stage {
+   display: flex;
+   align-items: stretch;
+}
+
+.owl-item {
+   padding: 1px;
+}
+
 @media screen and (min-width: 768px) {
    .container, .flex-container {
       max-width: 720px;
