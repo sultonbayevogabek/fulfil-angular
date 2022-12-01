@@ -14,6 +14,7 @@ export class EnrollFormComponent implements OnInit {
    @Input() currentCourse?: string;
    enrollForm: FormGroup;
    successModalOpen = false;
+   pending = false;
 
    @HostListener('window:keydown.esc', ['$event']) handleKeyDown() {
       this.successModalOpen = false;
@@ -43,9 +44,11 @@ export class EnrollFormComponent implements OnInit {
          return;
       }
 
+      this.pending = true;
       this._apiService.enrollCourse(this.enrollForm.value)
          .subscribe(() => {
             this.successModalOpen = true;
+            this.pending = false;
 
             setTimeout(() => {
                this.successModalOpen = false;

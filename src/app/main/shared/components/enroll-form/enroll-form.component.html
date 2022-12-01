@@ -16,7 +16,7 @@
       </select>
    </label>
    <div class="enroll-form__send">
-      <button class="button" type="submit" [disabled]="enrollForm.invalid">Yozilish</button>
+      <button class="button" type="submit" [disabled]="enrollForm.invalid || pending">Yozilish</button>
    </div>
 </form>
 

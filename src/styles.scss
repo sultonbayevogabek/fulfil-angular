@@ -258,18 +258,25 @@ textarea.form-control {
    left: 0;
    z-index: 10;
    width: 100%;
+   padding: 0 10px;
    background-color: rgba(3, 47, 28, 0.6);
    backdrop-filter: blur(5px);
    overflow: auto;
+   animation-name: modal-backdrop;
+   animation-duration: 0.1s;
 }
 
 .modal-content {
    width: 500px;
+   max-width: 100%;
    margin: 100px auto;
    padding: 50px 60px;
    background-color: #FFFFFF;
    border-radius: 4px;
    text-align: center;
+   animation-name: modal-content;
+   animation-duration: 0.3s;
+   animation-timing-function: ease-out;
 
    svg {
       width: 150px;
@@ -290,6 +297,26 @@ textarea.form-control {
       font-size: 1rem;
       line-height: 140%;
       color: #55645E;
+   }
+}
+
+@keyframes modal-backdrop {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+@keyframes modal-content {
+   from {
+      opacity: 0;
+      transform: scale(0.9);
+   }
+   to {
+      opacity: 1;
+      transform: scale(1);
    }
 }
 
@@ -542,10 +569,26 @@ textarea.form-control {
          font-size: 1rem;
       }
    }
+
+   .modal-content {
+      margin: 50px auto;
+      padding: 30px;
+
+      svg {
+         width: 120px;
+         height: 120px;
+      }
+   }
 }
 
 @media only screen and (max-width: 578px) {
    .owl-theme .owl-nav {
       display: none;
+   }
+
+   .modal-content {
+      .button {
+         width: 100%;
+      }
    }
 }

@@ -12,6 +12,7 @@ import { validateName, validatePhone } from '../../shared/components/enroll-form
 export class ContactUsComponent implements OnInit {
    successModalOpen = false;
    contactForm: FormGroup;
+   pending = false;
 
    @HostListener('window:keydown.esc', ['$event']) handleKeyDown() {
       this.successModalOpen = false;
@@ -24,9 +25,9 @@ export class ContactUsComponent implements OnInit {
 
    ngOnInit() {
       this.contactForm = new FormGroup({
-         name: new FormControl('Suhrob Abduaxatov', [Validators.required, validateName]),
-         phone: new FormControl('999639773', [Validators.required, validatePhone]),
-         message: new FormControl('Nimadirlar yozish', [Validators.required, validateName])
+         name: new FormControl('', [Validators.required, validateName]),
+         phone: new FormControl('', [Validators.required, validatePhone]),
+         message: new FormControl('', [Validators.required, validateName])
       });
    }
 
@@ -37,12 +38,14 @@ export class ContactUsComponent implements OnInit {
 
       const { name, phone, message } = this.contactForm.value;
 
+      this.pending = true;
       this._apiService.sendContact({
          name: name.trim(),
          phone: +`998${phone}`,
          message: message.trim()
       })
          .subscribe(() => {
+            this.pending = false;
             this.successModalOpen = true;
 
             setTimeout(() => {
