@@ -63,39 +63,41 @@
             [videoID]="recordedIntroLesson.youtube"
          ></app-video>
       </div>
-      <div class="info">
-         <div class="teacher">
-            <div class="teacher__avatar skeleton">
-               <img src="{{ host + recordedIntroLesson.teacherImage.slice(2) }}" alt="">
+      <div class="modal-body">
+         <div class="info">
+            <div class="teacher">
+               <div class="teacher__avatar skeleton">
+                  <img src="{{ host + recordedIntroLesson.teacherImage.slice(2) }}" alt="">
+               </div>
+               <div class="teacher__info">
+                  <div>Ustoz</div>
+                  <h3>{{ recordedIntroLesson.name }}</h3>
+               </div>
             </div>
-            <div class="teacher__info">
-               <div>Ustoz</div>
-               <h3>{{ recordedIntroLesson.name }}</h3>
+            <div class="duration">
+               <div class="duration__label">
+                  <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M14.266 9.0162C15.2579 8.2487 15.2579 6.7513 14.266 5.9838C11.2685 3.6644 7.92133 1.83625 4.34979 0.567772L3.69732 0.336032C2.44904 -0.107308 1.13053 0.737252 0.961542 2.0258C0.489382 5.626 0.489382 9.374 0.961542 12.9742C1.13053 14.2628 2.44904 15.1073 3.69731 14.664L4.34979 14.4322C7.92133 13.1638 11.2685 11.3356 14.266 9.0162Z"
+                        fill="#C3C8C6"/>
+                  </svg>
+                  <span>Davomiyligi</span>
+               </div>
+               <div class="duration__value">
+                  {{ recordedIntroLesson.duration }}
+               </div>
             </div>
          </div>
-         <div class="duration">
-            <div class="duration__label">
-               <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                     d="M14.266 9.0162C15.2579 8.2487 15.2579 6.7513 14.266 5.9838C11.2685 3.6644 7.92133 1.83625 4.34979 0.567772L3.69732 0.336032C2.44904 -0.107308 1.13053 0.737252 0.961542 2.0258C0.489382 5.626 0.489382 9.374 0.961542 12.9742C1.13053 14.2628 2.44904 15.1073 3.69731 14.664L4.34979 14.4322C7.92133 13.1638 11.2685 11.3356 14.266 9.0162Z"
-                     fill="#C3C8C6"/>
-               </svg>
-               <span>Davomiyligi</span>
-            </div>
-            <div class="duration__value">
-               {{ recordedIntroLesson.duration }}
-            </div>
+         <h2 class="title">{{ recordedIntroLesson.videoTitle }}</h2>
+         <div class="topics">
+            <h3 class="topics__title">Mavzular:</h3>
+            <ol class="topics__ol" *ngIf="recordedIntroLesson.themes.length">
+               <li class="topics__li" *ngFor="let theme of recordedIntroLesson.themes; let i = index">
+                  <div>{{ i + 1 }}</div>
+                  <p>{{ theme }}</p>
+               </li>
+            </ol>
          </div>
-      </div>
-      <h2 class="title">{{ recordedIntroLesson.videoTitle }}</h2>
-      <div class="topics">
-         <h3 class="topics__title">Mavzular:</h3>
-         <ol class="topics__ol" *ngIf="recordedIntroLesson.themes.length">
-            <li class="topics__li" *ngFor="let theme of recordedIntroLesson.themes; let i = index">
-               <div>{{ i + 1 }}</div>
-               <p>{{ theme }}</p>
-            </li>
-         </ol>
       </div>
    </div>
 </div>

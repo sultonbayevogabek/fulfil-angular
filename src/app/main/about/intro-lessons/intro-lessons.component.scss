@@ -117,8 +117,13 @@
 
 .modal-content {
    width: 860px;
+   padding: 0;
    margin: 50px auto;
    text-align: left;
+}
+
+.modal-body {
+   padding: 0 50px 50px;
 }
 
 .video {
@@ -238,6 +243,14 @@
 
    .card__footer div:last-child {
       font-size: 0.875rem;
+   }
+
+   .modal-content {
+      padding: 0;
+   }
+
+   .modal-body {
+      padding: 10px 20px 20px;
    }
 
    .info {
