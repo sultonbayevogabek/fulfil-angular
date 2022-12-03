@@ -30,7 +30,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
          'posterImage': new FormControl(null, Validators.required),
          'teacherImage': new FormControl(null, Validators.required),
          'videoTitle': new FormControl('NodeJS. Kirish darsi. 11-noyabr, 2022', Validators.required),
-         'youtube': new FormControl('https://www.youtube.com/embed/ECTIE39k-_0', Validators.required),
+         'youtube': new FormControl('raYCjkSMaP0', Validators.required),
          'themes': new FormArray([
             new FormControl('Tanishuv', Validators.required),
             new FormControl('NodeJS nima?', Validators.required),

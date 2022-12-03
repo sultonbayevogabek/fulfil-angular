@@ -12,6 +12,7 @@ import { environment } from '../../../../environments/environment';
 export class IntroLessonsComponent implements OnInit {
    host = environment.host;
    recordedIntroLessons: IRecordedIntroLesson[] = [];
+   recordedIntroLesson: IRecordedIntroLesson = null;
 
    constructor(
       private _route: ActivatedRoute
@@ -22,5 +23,9 @@ export class IntroLessonsComponent implements OnInit {
       this._route.data.subscribe(data => {
          this.recordedIntroLessons = data['recordedIntroLessons'].data;
       });
+   }
+
+   openRecordedIntroLessonModal(lesson: IRecordedIntroLesson) {
+      this.recordedIntroLesson = lesson;
    }
 }

@@ -64,6 +64,7 @@ export interface IRecordedIntroLesson {
    duration: string;
    name: string;
    teacherImage: string;
+   playerShow?: boolean;
 }
 
 export interface IContact {
