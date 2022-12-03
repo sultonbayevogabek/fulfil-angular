@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { IRecordedIntroLesson } from '../../../shared/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
@@ -13,6 +13,10 @@ export class IntroLessonsComponent implements OnInit {
    host = environment.host;
    recordedIntroLessons: IRecordedIntroLesson[] = [];
    recordedIntroLesson: IRecordedIntroLesson = null;
+
+   @HostListener('window:keydown.esc', ['$event']) handleKeyDown() {
+      this.recordedIntroLesson = null;
+   }
 
    constructor(
       private _route: ActivatedRoute

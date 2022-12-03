@@ -57,7 +57,7 @@
 </section>
 
 <div class="modal-backdrop" *ngIf="recordedIntroLesson" (click)="recordedIntroLesson = null">
-   <div class="modal-content">
+   <div class="modal-content" (click)="$event.stopPropagation()">
       <div class="video">
          <app-video
             [videoID]="recordedIntroLesson.youtube"
