@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { validateName, validatePhone } from '../enroll-form/enroll-form.component';
 
@@ -16,6 +16,10 @@ export class IntroComponent implements OnInit {
    @Input() introCourseInfo?: string[];
    @Input() introImgUrl?: string;
    @Input() introStatistic?: { students: number, teachers: number, lessons: number };
+
+   @HostListener('window:keydown.esc', ['$event']) handleKeyDown() {
+      this.startModalOpen = false;
+   }
 
    startForm: FormGroup;
    startModalOpen = false;
