@@ -54,7 +54,7 @@ export class EnrollFormComponent implements OnInit {
 }
 
 export const validatePhone = (control: AbstractControl) => {
-   if (control.value.toString().replace(/\D/g, '').length !== 9) {
+   if (control.value.toString().replace(/\D/g, '').length < 9) {
       return { invalidPhone: true };
    }
    return null;

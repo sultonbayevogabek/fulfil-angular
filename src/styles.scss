@@ -190,18 +190,17 @@ th {
    position: relative;
 
    &::before {
-      content: "+998";
+      content: "+";
       position: absolute;
       top: 45.5px;
       left: 17px;
       font-weight: 400;
       font-size: 1rem;
-      line-height: 1.375rem;
       color: #000000;
    }
 
    .form-control {
-      padding-left: 60px;
+      padding-left: 30px;
    }
 }
 

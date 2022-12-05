@@ -41,7 +41,7 @@ export class ContactUsComponent implements OnInit {
       this.pending = true;
       this._apiService.sendContact({
          name: name.trim(),
-         phone: +`998${phone}`,
+         phone: phone.trim(),
          message: message.trim()
       })
          .subscribe(() => {
