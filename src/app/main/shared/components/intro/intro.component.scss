@@ -119,6 +119,41 @@
    padding-top: 70px;
 }
 
+.start {
+   width: 986px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 0 0;
+   text-align: left;
+}
+
+.start__form {
+   padding: 50px;
+
+   h2 {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+   }
+
+   .button {
+      width: 100%;
+   }
+}
+
+.form-label {
+   margin-bottom: 24px;
+}
+
+.start__text {
+   margin-bottom: 24px;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 140%;
+   color: #55645E;
+}
+
 @media only screen and (max-width: 992px) {
    .intro {
       padding-top: 30px;
@@ -180,6 +215,20 @@
 
    .intro__course-details {
       padding-top: 0;
+   }
+
+   .start {
+      grid-template-columns: 1fr;
+   }
+
+   .start__img {
+      img {
+         width: 100%;
+      }
+   }
+
+   .start__form {
+      padding: 30px;
    }
 }
 

@@ -53,3 +53,40 @@
       </div>
    </div>
 </section>
+
+<div class="modal-backdrop">
+   <div class="modal-content start">
+      <div class="start__img">
+         <picture>
+            <source media="(min-width: 992px)" srcset="/assets/images/home-page/intro/start@desktop.png">
+            <source srcset="/assets/images/home-page/intro/start@mobile.png">
+            <img src="/assets/images/home-page/intro/start@desktop.png" alt="">
+         </picture>
+      </div>
+      <form class="start__form" [formGroup]="startForm">
+         <h2>Kursga <span class="highlight">ro’yxatdan o’tish</span></h2>
+         <label class="form-label">
+            <span>Ismingiz</span>
+            <input class="form-control" type="text" placeholder="Abdullajon" formControlName="name">
+         </label>
+         <label class="form-label form-label--select">
+            <span>Ochiqdarsni tanlang</span>
+            <select class="form-control" formControlName="course">
+               <!--               <ng-container *ngIf="introLessons.length">-->
+               <!--                  <option *ngFor="let lesson of introLessons" value="{{ lesson.name }}">{{ lesson.name }}</option>-->
+               <!--               </ng-container>-->
+            </select>
+         </label>
+         <label class="form-label form-label--phone">
+            <span>Telefon raqamingiz</span>
+            <input class="form-control" type="text" formControlName="phone" maxlength="9">
+         </label>
+
+         <p class="start__text">
+            * Diqqat! chet eldan o’qimoqchi bo’lsangiz, telegram raqamini kiritishingiz mumkin!
+         </p>
+
+         <button class="button" type="submit" [disabled]="startForm.invalid">Yuborish</button>
+      </form>
+   </div>
+</div>
