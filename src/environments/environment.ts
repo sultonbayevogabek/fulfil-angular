@@ -1,4 +1,4 @@
 export const environment = {
    production: false,
-   host: 'https://xalilov-project.online'
+   host: 'https://fulfil.uz'
 }
