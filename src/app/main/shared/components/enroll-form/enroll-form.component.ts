@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IIntroLesson } from '../../../../shared/models/models';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../shared/services/api.service';
@@ -15,10 +15,6 @@ export class EnrollFormComponent implements OnInit {
    enrollForm: FormGroup;
    successModalOpen = false;
    pending = false;
-
-   @HostListener('window:keydown.esc', ['$event']) handleKeyDown() {
-      this.successModalOpen = false;
-   }
 
    constructor(
       private _apiService: ApiService

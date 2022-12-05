@@ -54,15 +54,9 @@
    </div>
 </section>
 
-<div class="modal-backdrop">
+<div class="modal-backdrop" *ngIf="false">
    <div class="modal-content start">
-      <div class="start__img">
-         <picture>
-            <source media="(min-width: 992px)" srcset="/assets/images/home-page/intro/start@desktop.png">
-            <source srcset="/assets/images/home-page/intro/start@mobile.png">
-            <img src="/assets/images/home-page/intro/start@desktop.png" alt="">
-         </picture>
-      </div>
+      <div class="start__img"></div>
       <form class="start__form" [formGroup]="startForm">
          <h2>Kursga <span class="highlight">ro’yxatdan o’tish</span></h2>
          <label class="form-label">

@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive, RouterLinkWithHref } from '@angular/route
 import { ReactiveFormsModule } from '@angular/forms';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { YoutubePlayer } from './components/youtube-player/youtube-player.component';
+import { SuccessModalComponent } from './components/success-modal/success-modal.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { YoutubePlayer } from './components/youtube-player/youtube-player.compon
       IntroComponent,
       CarouselComponent,
       EnrollFormComponent,
-      YoutubePlayer
+      YoutubePlayer,
+      SuccessModalComponent
    ],
    imports: [
       NgIf,
@@ -36,7 +38,8 @@ import { YoutubePlayer } from './components/youtube-player/youtube-player.compon
       IntroComponent,
       CarouselComponent,
       EnrollFormComponent,
-      YoutubePlayer
+      YoutubePlayer,
+      SuccessModalComponent
    ]
 })
 

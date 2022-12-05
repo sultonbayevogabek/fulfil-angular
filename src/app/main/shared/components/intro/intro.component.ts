@@ -18,6 +18,8 @@ export class IntroComponent implements OnInit {
    @Input() introStatistic?: { students: number, teachers: number, lessons: number };
 
    startForm: FormGroup;
+   startModalOpen = false;
+   pending = false;
 
    ngOnInit() {
       this.startForm = new FormGroup({

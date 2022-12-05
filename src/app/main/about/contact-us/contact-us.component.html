@@ -30,14 +30,4 @@
    </div>
 </section>
 
-<div class="modal-backdrop" *ngIf="successModalOpen" (click)="successModalOpen = false">
-   <div class="modal-content">
-      <svg class="sucsess" width="163" height="163" viewBox="0 0 163 163" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <circle cx="81.5" cy="81.5" r="81.5" fill="#E2F4ED"/>
-         <path fill-rule="evenodd" clip-rule="evenodd" d="M117.805 60.1888C119.398 61.7738 119.398 64.3438 117.805 65.9289L79.7249 103.811C78.1315 105.396 75.5486 105.396 73.955 103.811L52.195 82.164C50.6017 80.5789 50.6017 78.0094 52.195 76.4243C53.7883 74.8392 56.3717 74.8392 57.965 76.4243L76.84 95.201L112.035 60.1888C113.629 58.6037 116.212 58.6037 117.805 60.1888Z" fill="#3CB27F"/>
-      </svg>
-      <h3><span class="highlight">Muvaffaqiyatli</span> yuborildi!</h3>
-      <p>Operatorlar tez orada siz bilan aloqaga chiqishadi, murojaatingiz uchun katta rahmat!</p>
-      <button class="button">Tushunarli</button>
-   </div>
-</div>
+<app-success-modal *ngIf="successModalOpen" (onCloseSuccessModal)="successModalOpen = false"></app-success-modal>
