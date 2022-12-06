@@ -73,7 +73,7 @@ export class HeaderComponent implements OnInit {
    bottomPanelAction(bottomPanel: string) {
       this.bottomPanel = bottomPanel;
 
-      if (bottomPanel === 'intro-lessons' || bottomPanel === 'students-projects') {
+      if (bottomPanel === 'course-registrations' || bottomPanel === 'students-projects') {
          this._router.navigate(['about', bottomPanel]).then();
          return;
       }
@@ -88,16 +88,16 @@ export class HeaderComponent implements OnInit {
          this.bottomPanel = 'courses';
          return;
       }
-      if (url.includes('about') && !url.includes('about/intro-lessons') && !url.includes('about/students-projects')) {
+      if (url.includes('about') && !url.includes('about/course-registrations') && !url.includes('about/students-projects')) {
          this.bottomPanel = 'about';
          return;
       }
-      if (url.includes('about/intro-lessons')) {
-         this.bottomPanel = 'intro-lessons';
+      if (url.includes('about/course-registrations')) {
+         this.bottomPanel = 'course-registrations';
          return;
       }
-      if (url.includes('about/intro-lessons')) {
-         this.bottomPanel = 'intro-lessons';
+      if (url.includes('about/course-registrations')) {
+         this.bottomPanel = 'course-registrations';
          return;
       }
       if (url.includes('about/students-projects')) {

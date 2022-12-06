@@ -3,15 +3,15 @@
       <span>Ismingiz</span>
       <input class="form-control" type="text" placeholder="Abdullajon" formControlName="name">
    </label>
-   <label class="form-label form-label--phone">
-      <span>Telefon raqamingiz</span>
-      <input class="form-control" type="text" formControlName="phone" maxlength="15">
+   <label class="form-label">
+      <span>Telefon raqam yoki telegram</span>
+      <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" maxlength="15" formControlName="phone">
    </label>
    <label class="form-label form-label--select">
-      <span>Ochiqdarsni tanlang</span>
+      <span>Kursni tanlang</span>
       <select class="form-control" formControlName="course">
-         <ng-container *ngIf="introLessons.length">
-            <option *ngFor="let lesson of introLessons" value="{{ lesson.name }}">{{ lesson.name }}</option>
+         <ng-container *ngIf="courses.length">
+            <option *ngFor="let course of courses" value="{{ course.courseName }}">{{ course.courseName }}</option>
          </ng-container>
       </select>
    </label>

@@ -6,14 +6,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings/settings.component';
 import { FaqComponent } from './faq/faq.component';
 import { NgForOf, NgIf } from '@angular/common';
-import { IntroLessonsComponent } from './intro-lessons/intro-lessons.component';
+import { CourseRegistrationsComponent } from './course-registrations/course-registrations.component';
 import {
    CommentsResolver,
    CompaniesResolver,
-   ContactsResolver,
-   FaqResolver, HomePageCommentsResolver,
-   IntroLessonResolver,
-   IntroLessonsRegistrationsResolver
+   ContactsResolver, CourseRegistrationsResolver,
+   FaqResolver, HomePageCommentsResolver
 } from './cabinet.resolvers';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
 import {
@@ -53,11 +51,10 @@ const routes: Routes = [
             }
          },
          {
-            path: 'intro-lessons',
-            component: IntroLessonsComponent,
+            path: 'course-registrations',
+            component: CourseRegistrationsComponent,
             resolve: {
-               introLessons: IntroLessonResolver,
-               introLessonsRegistrations: IntroLessonsRegistrationsResolver
+               courseRegistrations: CourseRegistrationsResolver
             }
          },
          {
@@ -89,7 +86,7 @@ const routes: Routes = [
             }
          },
          {
-            path: 'recorded-intro-lessons',
+            path: 'recorded-course-registrations',
             component: RecordedIntroLessonsComponent,
             resolve: {
                recordedIntroLessons: RecordedIntroLessonsResolver
@@ -135,7 +132,7 @@ const routes: Routes = [
       HeaderComponent,
       SettingsComponent,
       FaqComponent,
-      IntroLessonsComponent,
+      CourseRegistrationsComponent,
       EmployedStudentsComponent,
       CompaniesComponent,
       MentorsComponent,
@@ -156,8 +153,7 @@ const routes: Routes = [
    exports: [RouterModule],
    providers: [
       FaqResolver,
-      IntroLessonResolver,
-      IntroLessonsRegistrationsResolver,
+      CourseRegistrationsResolver,
       EmployedStudentsResolver,
       CompaniesResolver,
       ContactsResolver,

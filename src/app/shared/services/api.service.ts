@@ -15,7 +15,6 @@ import {
    IEmployedStudent,
    IFaq,
    IHeader,
-   IIntroLesson,
    IMentor,
    IRecordedIntroLesson,
    IStudentProject
@@ -73,14 +72,6 @@ export class ApiService {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/faq/${id}`);
    }
 
-   createIntroLesson(payload: IIntroLesson) {
-      return this.http.post(environment.host + '/api/v1/register-free-lesson/lessons', payload);
-   }
-
-   getIntroLessonsList() {
-      return this.http.get<{ status: number; data: IIntroLesson[] }>(environment.host + '/api/v1/register-free-lesson/lessons');
-   }
-
    deleteIntroLesson(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson/lessons/${id}`);
    }
@@ -89,11 +80,11 @@ export class ApiService {
       return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson`, payload);
    }
 
-   getIntroLessonsRegistrations() {
+   getCourseRegistrations() {
       return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/api/v1/register-free-lesson');
    }
 
-   deleteIntroLessonRegistration(id: string) {
+   deleteCourseRegistration(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson/${id}`);
    }
 

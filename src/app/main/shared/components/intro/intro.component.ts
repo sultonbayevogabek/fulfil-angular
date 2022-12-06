@@ -1,6 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { validateName, validatePhone } from '../enroll-form/enroll-form.component';
+import { validateName, validatePhoneUsername } from '../enroll-form/enroll-form.component';
 
 @Component({
    selector: 'app-intro',
@@ -28,7 +28,7 @@ export class IntroComponent implements OnInit {
    ngOnInit() {
       this.startForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),
-         'phone': new FormControl('', [Validators.required, validatePhone]),
+         'phone': new FormControl('', [Validators.required, validatePhoneUsername]),
          'course': new FormControl('', Validators.required)
       });
    }

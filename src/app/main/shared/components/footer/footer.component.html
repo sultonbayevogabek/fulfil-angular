@@ -1,11 +1,11 @@
 <footer class="footer">
-   <div class="footer__enroll" *ngIf="introLessons.length">
+   <div class="footer__enroll" *ngIf="courses.length">
       <div class="container">
          <h2>Bizda ochiq dars...</h2>
          <p>Har bir kurs ochilishdan oldin bepul ochiq darslarimiz bo’lib o’tadi, hoziroq bepulda darsga ro’yxatdan
             o’ting va xulosa chiqaring</p>
          <app-enroll-form
-            [introLessons]="introLessons"
+            [courses]="courses"
          ></app-enroll-form>
       </div>
    </div>

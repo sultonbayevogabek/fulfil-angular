@@ -45,7 +45,7 @@ const routes: Routes = [
             }
          },
          {
-            path: 'intro-lessons',
+            path: 'course-registrations',
             component: IntroLessonsComponent,
             resolve: {
                recordedIntroLessons: RecordedIntroLessonsResolver

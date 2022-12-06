@@ -186,24 +186,6 @@ th {
    }
 }
 
-.form-label--phone {
-   position: relative;
-
-   &::before {
-      content: "+";
-      position: absolute;
-      top: 45.5px;
-      left: 17px;
-      font-weight: 400;
-      font-size: 1rem;
-      color: #000000;
-   }
-
-   .form-control {
-      padding-left: 30px;
-   }
-}
-
 .form-label--select {
    position: relative;
 

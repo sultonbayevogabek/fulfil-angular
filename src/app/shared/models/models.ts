@@ -16,11 +16,6 @@ export interface IFaq {
    open?: boolean;
 }
 
-export interface IIntroLesson {
-   id?: string;
-   name: string;
-}
-
 export interface IEmployedStudent {
    name: string;
    image: string;

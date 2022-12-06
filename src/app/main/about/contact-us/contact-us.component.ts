@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../shared/services/api.service';
-import { validateName, validatePhone } from '../../shared/components/enroll-form/enroll-form.component';
+import { validateName, validatePhoneUsername } from '../../shared/components/enroll-form/enroll-form.component';
 
 @Component({
    selector: 'app-contact-us',
@@ -26,7 +26,7 @@ export class ContactUsComponent implements OnInit {
    ngOnInit() {
       this.contactForm = new FormGroup({
          name: new FormControl('', [Validators.required, validateName]),
-         phone: new FormControl('', [Validators.required, validatePhone]),
+         phone: new FormControl('', [Validators.required, validatePhoneUsername]),
          message: new FormControl('', [Validators.required, validateName])
       });
    }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IIntroLesson } from '../../../../shared/models/models';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../shared/services/api.service';
+import { ICourse } from '../../../../shared/models/models';
 
 @Component({
    selector: 'app-enroll-form',
@@ -10,8 +10,8 @@ import { ApiService } from '../../../../shared/services/api.service';
 })
 
 export class EnrollFormComponent implements OnInit {
-   @Input() introLessons?: IIntroLesson[] = [];
-   @Input() currentCourse?: string;
+   @Input() courses?: ICourse[] = [];
+   @Input() currentCourse?: ICourse;
    enrollForm: FormGroup;
    successModalOpen = false;
    pending = false;
@@ -24,13 +24,20 @@ export class EnrollFormComponent implements OnInit {
    ngOnInit() {
       this.enrollForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),
-         'phone': new FormControl('', [Validators.required, validatePhone]),
-         'course': new FormControl(this.introLessons[0]?.name, Validators.required)
+         'phone': new FormControl('', [Validators.required, validatePhoneUsername]),
+         'course': new FormControl('', Validators.required)
       });
 
       if (this.currentCourse) {
          this.enrollForm.patchValue({
-            'course': this.currentCourse
+            'course': this.currentCourse.courseName
+         });
+         return
+      }
+
+      if (this.courses.length) {
+         this.enrollForm.patchValue({
+            'course': this.courses[0].courseName
          });
       }
    }
@@ -53,9 +60,9 @@ export class EnrollFormComponent implements OnInit {
    }
 }
 
-export const validatePhone = (control: AbstractControl) => {
-   if (control.value.toString().replace(/\D/g, '').length < 9) {
-      return { invalidPhone: true };
+export const validatePhoneUsername = (control: AbstractControl) => {
+   if (control.value.toString().replace(/ /g, '').length < 4) {
+      return { invalidPhoneUsername: true };
    }
    return null;
 }
