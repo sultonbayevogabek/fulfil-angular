@@ -5,6 +5,7 @@
    introDescription="{{ course.courseDescription }}"
    [introCourseInfo]="course.courseDetails"
    introImgUrl="{{ host + course.coursePageImage.slice(2) }}"
+   [currentCourse]="course"
 ></app-intro>
 
 <section class="section what-we-learn" *ngIf="course.courseDetails.length">
@@ -141,7 +142,7 @@
          </h2>
       </div>
       <div class="section__body">
-         <app-enroll-form [courses]="[course]"></app-enroll-form>
+         <app-enroll-form [currentCourse]="course"></app-enroll-form>
       </div>
    </div>
 </section>

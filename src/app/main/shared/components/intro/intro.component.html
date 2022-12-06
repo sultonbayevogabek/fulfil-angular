@@ -8,7 +8,7 @@
                {{ introBigTitle.split(' ').slice(1).join(' ') }}
             </h1>
             <p class="intro__description">{{ introDescription }}</p>
-            <button class="intro__button button" (click)="startModalOpen = true">Darsni boshlash</button>
+            <button class="intro__button button" (click)="onOpenStartModal()">Darsni boshlash</button>
             <div class="intro__statistics statistics" *ngIf="introStatistic && introType !== 'course'">
                <div class="statistics__item">
                   <div class="statistics__value">
@@ -57,7 +57,7 @@
 <div class="modal-backdrop" *ngIf="startModalOpen" (click)="startModalOpen = false">
    <div class="modal-content start" (click)="$event.stopPropagation()">
       <div class="start__img"></div>
-      <form class="start__form" [formGroup]="startForm">
+      <form class="start__form" [formGroup]="startForm" (ngSubmit)="startFormSubmit()">
          <h2>Kursga <span class="highlight">ro’yxatdan o’tish</span></h2>
          <label class="form-label">
             <span>Ismingiz</span>
@@ -66,21 +66,23 @@
          <label class="form-label form-label--select">
             <span>Ochiqdarsni tanlang</span>
             <select class="form-control" formControlName="course">
-               <!--               <ng-container *ngIf="introLessons.length">-->
-               <!--                  <option *ngFor="let lesson of introLessons" value="{{ lesson.name }}">{{ lesson.name }}</option>-->
-               <!--               </ng-container>-->
+               <ng-container *ngIf="courses.length">
+                  <option *ngFor="let course of courses" value="{{ course.courseName }}">{{ course.courseName }}</option>
+               </ng-container>
             </select>
          </label>
          <label class="form-label">
-            <span>Telefon raqamingiz</span>
-            <input class="form-control" type="text" formControlName="phone" maxlength="9">
+            <span>Telefon raqam yoki telegram</span>
+            <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" maxlength="15" formControlName="phone">
          </label>
 
          <p class="start__text">
             * Diqqat! Ma'lumotlaringizni to'g'ri kiriting
          </p>
 
-         <button class="button" type="submit" [disabled]="startForm.invalid">Yuborish</button>
+         <button class="button" type="submit" [disabled]="startForm.invalid || pending">Yuborish</button>
       </form>
    </div>
 </div>
+
+<app-success-modal *ngIf="successModalOpen"></app-success-modal>

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../shared/services/api.service';
 import { ICourse } from '../../../../shared/models/models';
+import { CoursesService } from '../../services/courses.service';
 
 @Component({
    selector: 'app-enroll-form',
@@ -10,18 +11,21 @@ import { ICourse } from '../../../../shared/models/models';
 })
 
 export class EnrollFormComponent implements OnInit {
-   @Input() courses?: ICourse[] = [];
+   courses: ICourse[] = [];
    @Input() currentCourse?: ICourse;
    enrollForm: FormGroup;
    successModalOpen = false;
    pending = false;
 
    constructor(
-      private _apiService: ApiService
+      private _apiService: ApiService,
+      private _coursesService: CoursesService
    ) {
    }
 
    ngOnInit() {
+      this.courses = this._coursesService.courses;
+
       this.enrollForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),
          'phone': new FormControl('', [Validators.required, validatePhoneUsername]),
