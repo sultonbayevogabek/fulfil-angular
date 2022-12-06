@@ -14,15 +14,15 @@
             <h3>Xabaringizni <span class="highlight">qoldiring</span></h3>
             <label class="form-label">
                <span>Ism</span>
-               <input class="form-control" type="text" placeholder="Abdullajon" formControlName="name">
+               <input class="form-control" type="text" placeholder="Abdullajon" maxlength="30" formControlName="name">
             </label>
             <label class="form-label">
                <span>Telefon raqamingiz yoki telegram</span>
-               <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" formControlName="phone">
+               <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" maxlength="30" formControlName="phone">
             </label>
             <label class="form-label">
                <span>Xabar</span>
-               <textarea class="form-control" placeholder="Xabaringizni kiriting" formControlName="message"></textarea>
+               <textarea class="form-control" placeholder="Xabaringizni kiriting" maxlength="200" formControlName="message"></textarea>
             </label>
             <button class="button" type="submit" [disabled]="contactForm.invalid || pending">Yuborish</button>
          </form>
