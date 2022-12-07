@@ -7,8 +7,8 @@ import {
    IMentor,
    IRecordedIntroLesson,
    IStudentProject
-} from './shared/models/models';
-import { ApiService } from './shared/services/api.service';
+} from './common/models/models';
+import { ApiService } from './common/services/api.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

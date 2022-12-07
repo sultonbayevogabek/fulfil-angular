@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
-import { ICourse } from '../../../shared/models/models';
+import { ICourse } from '../../../common/models/models';
 
 @Component({
    selector: 'app-admin-edit-course',

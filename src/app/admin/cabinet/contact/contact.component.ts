@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
-import { IContact } from '../../../shared/models/models';
+import { IContact } from '../../../common/models/models';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

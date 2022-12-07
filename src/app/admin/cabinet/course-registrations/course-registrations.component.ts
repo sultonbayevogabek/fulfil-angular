@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute } from '@angular/router';
 import { IEnrollCourse } from '../../shared/models/models';

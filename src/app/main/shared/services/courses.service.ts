@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICourse } from '../../../shared/models/models';
+import { ICourse } from '../../../common/models/models';
 
 @Injectable()
 

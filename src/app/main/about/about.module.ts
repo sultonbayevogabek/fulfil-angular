@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { MentorsComponent } from './mentors/mentors.component';
 import { AboutComponent } from './about.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
 import { StudentsProjectsComponent } from './students-projects/students-projects.component';
 import { NgForOf, NgIf } from '@angular/common';
 import { EmployedStudentsComponent } from './employed-students/employed-students.component';
@@ -17,6 +16,8 @@ import {
    StudentsProjectsResolver
 } from '../../app.resolvers';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '../../common/common.module';
 
 const routes: Routes = [
    {
@@ -83,7 +84,10 @@ const routes: Routes = [
       RouterModule.forChild(routes),
       NgForOf,
       NgIf,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      SharedModule,
+      SharedModule,
+      CommonModule
    ],
    exports: [RouterModule]
 })

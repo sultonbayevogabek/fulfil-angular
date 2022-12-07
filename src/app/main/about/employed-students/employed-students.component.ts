@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IEmployedStudent } from '../../../shared/models/models';
+import { IEmployedStudent } from '../../../common/models/models';
 import { environment } from '../../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 

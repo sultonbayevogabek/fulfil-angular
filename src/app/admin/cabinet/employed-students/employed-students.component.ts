@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { IEmployedStudent } from '../../../shared/models/models';
+import { IEmployedStudent } from '../../../common/models/models';
 import { environment } from '../../../../environments/environment';
 
 @Component({

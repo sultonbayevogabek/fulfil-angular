@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { IMentor } from '../../../shared/models/models';
+import { IMentor } from '../../../common/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 

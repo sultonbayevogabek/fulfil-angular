@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../../shared/services/api.service';
-import { ICourse } from '../../../../shared/models/models';
+import { ApiService } from '../../../../common/services/api.service';
+import { ICourse } from '../../../../common/models/models';
 import { CoursesService } from '../../services/courses.service';
 
 @Component({

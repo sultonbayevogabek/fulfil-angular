@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { IComment } from '../../../../shared/models/models';
+import { IComment } from '../../../../common/models/models';
 import { environment } from '../../../../../environments/environment';
 
 @Component({

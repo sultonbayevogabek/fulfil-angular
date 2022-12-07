@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IComment, ICompany, ICourse, IHeader } from '../../shared/models/models';
-import { ApiService } from '../../shared/services/api.service';
+import { IComment, ICompany, ICourse, IHeader } from '../../common/models/models';
+import { ApiService } from '../../common/services/api.service';
 import { environment } from '../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
 import { CoursesService } from '../shared/services/courses.service';

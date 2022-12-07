@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { CoursesService } from '../../services/courses.service';
-import { ICourse } from '../../../../shared/models/models';
+import { ICourse } from '../../../../common/models/models';
 import { environment } from '../../../../../environments/environment';
 import { filter } from 'rxjs';
 

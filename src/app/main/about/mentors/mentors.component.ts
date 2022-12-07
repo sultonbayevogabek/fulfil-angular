@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IMentor } from '../../../shared/models/models';
+import { IMentor } from '../../../common/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 

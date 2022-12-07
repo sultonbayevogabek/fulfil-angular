@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
-import { IComment, ICompany, IContact, IFaq } from '../../shared/models/models';
-import { ApiService } from '../../shared/services/api.service';
+import { IComment, ICompany, IContact, IFaq } from '../../common/models/models';
+import { ApiService } from '../../common/services/api.service';
 import { IEnrollCourse } from '../shared/models/models';
 
 @Injectable()

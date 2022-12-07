@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { IRecordedIntroLesson } from '../../../shared/models/models';
+import { IRecordedIntroLesson } from '../../../common/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 

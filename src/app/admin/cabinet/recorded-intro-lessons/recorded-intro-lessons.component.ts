@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
-import { IRecordedIntroLesson } from '../../../shared/models/models';
+import { IRecordedIntroLesson } from '../../../common/models/models';
 
 @Component({
    selector: 'app-admin-mentors',

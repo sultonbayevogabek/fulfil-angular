@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ICourse } from '../../../../shared/models/models';
+import { ICourse } from '../../../../common/models/models';
 import { CoursesService } from '../../services/courses.service';
 
 @Component({

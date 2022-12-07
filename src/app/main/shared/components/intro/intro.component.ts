@@ -1,9 +1,9 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { validateName, validatePhoneUsername } from '../enroll-form/enroll-form.component';
-import { ICourse } from '../../../../shared/models/models';
+import { ICourse } from '../../../../common/models/models';
 import { CoursesService } from '../../services/courses.service';
-import { ApiService } from '../../../../shared/services/api.service';
+import { ApiService } from '../../../../common/services/api.service';
 
 @Component({
    selector: 'app-intro',

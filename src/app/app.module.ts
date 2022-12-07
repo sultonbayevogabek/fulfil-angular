@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { HttpInterceptorService } from './shared/interceptors/http-interceptor.service';
-import { LoaderComponent } from './shared/components/loader/loader.component';
+import { HttpInterceptorService } from './common/interceptors/http-interceptor.service';
+import { CommonModule } from './common/common.module';
 
 @NgModule({
    declarations: [
-      AppComponent,
-      LoaderComponent
+      AppComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       BrowserAnimationsModule,
-      HttpClientModule
+      HttpClientModule,
+      CommonModule
    ],
    providers: [
       {

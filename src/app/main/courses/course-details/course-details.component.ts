@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ICourse, IFaq } from '../../../shared/models/models';
+import { ICourse, IFaq } from '../../../common/models/models';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
-import { ApiService } from '../../../shared/services/api.service';
+import { ApiService } from '../../../common/services/api.service';
 
 @Component({
    selector: 'app-course-details',

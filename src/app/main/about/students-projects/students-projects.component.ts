@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { ActivatedRoute } from '@angular/router';
-import { IStudentProject } from '../../../shared/models/models';
+import { IStudentProject } from '../../../common/models/models';
 
 @Component({
    selector: 'app-students-projects',
