@@ -44,12 +44,12 @@ export class HeaderComponent implements OnInit {
       this._router.events
          .pipe(filter(event => event instanceof NavigationEnd))
          .subscribe(() => {
+            this.closeMenu();
             window.scroll({
                top: 0,
                left: 0,
                behavior: 'smooth'
             });
-            this.closeMenu();
          });
    }
 
@@ -74,6 +74,7 @@ export class HeaderComponent implements OnInit {
       this.bottomPanel = bottomPanel;
 
       if (bottomPanel === 'intro-lessons' || bottomPanel === 'students-projects') {
+         this.showMenu = false;
          this._router.navigate(['about', bottomPanel]).then();
          return;
       }
@@ -83,6 +84,7 @@ export class HeaderComponent implements OnInit {
 
    closeMenu() {
       this.showMenu = false;
+
       const url = this._router.url;
       if (url.includes('course')) {
          this.bottomPanel = 'courses';
