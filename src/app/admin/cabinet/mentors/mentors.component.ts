@@ -62,7 +62,7 @@ export class MentorsComponent implements OnInit {
       formData.append('teacherImage', teacherImage);
 
       this._apiService.createMentor(formData)
-         .subscribe((res) => {
+         .subscribe(() => {
             this.getTeachersList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {

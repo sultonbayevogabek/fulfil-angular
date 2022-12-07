@@ -76,7 +76,7 @@ export class CoursesComponent implements OnInit {
 
    getCourses() {
       this._apiService.getCourses()
-         .subscribe((res: any) => {
+         .subscribe((res) => {
             this.coursesList = res.data;
          });
    }

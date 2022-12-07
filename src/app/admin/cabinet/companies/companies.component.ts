@@ -44,7 +44,7 @@ export class CompaniesComponent implements OnInit {
       formData.append('company-logo', this.companyForm.value['company-logo']);
 
       this._apiService.createCompany(formData)
-         .subscribe((res) => {
+         .subscribe(() => {
             this.getCompaniesList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
@@ -54,7 +54,7 @@ export class CompaniesComponent implements OnInit {
 
    getCompaniesList() {
       this._apiService.getCompanies()
-         .subscribe((res: any) => {
+         .subscribe((res) => {
             this.companiesList = res.data;
          }, () => {
             this._toasterService.error();

@@ -51,7 +51,7 @@ export class HeaderComponent implements OnInit {
 
       if (this.created) {
          this._adminApiService.updateHeader(this.form.value)
-            .subscribe(_ => {
+            .subscribe(() => {
                this._toasterService.success();
             }, () => {
                this._toasterService.error();

@@ -74,7 +74,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
       });
 
       this._apiService.createRecordedIntroLesson(formData)
-         .subscribe((res) => {
+         .subscribe(() => {
             this.getRecorderIntroLessonsList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {

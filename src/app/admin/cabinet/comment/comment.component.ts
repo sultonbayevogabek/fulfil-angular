@@ -32,7 +32,7 @@ export class CommentComponent implements OnInit {
          'courseId': new FormControl(null, Validators.required),
          'commentTitle': new FormControl(`Bu kurs hayotimni o'zgartirdi`, Validators.required),
          'name': new FormControl(`Abdullayev Abdulla`, Validators.required),
-         'phone': new FormControl(`999639773`, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
+         'phone': new FormControl(`998999639773`, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
          'image': new FormControl(null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
          'commentDescription': new FormControl(`O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim,
          Fulfil telegram kanalida suniy intellekt kursini ko’rib qoldim va shu kursda o’qishga niyat qildim,
@@ -51,10 +51,9 @@ export class CommentComponent implements OnInit {
          return;
       }
 
-      const {courseId, commentTitle, name, phone, image, commentDescription} = this.commentForm.value;
+      const { courseId, commentTitle, name, phone, image, commentDescription } = this.commentForm.value;
 
       const formData = new FormData();
-
       formData.append('commentTitle', commentTitle);
       formData.append('name', name);
       formData.append('phone', phone);

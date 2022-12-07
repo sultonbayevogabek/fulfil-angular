@@ -38,7 +38,7 @@ export class FaqComponent implements OnInit {
       }
 
       this._apiService.createFaq(this.faqForm.value)
-         .subscribe((res) => {
+         .subscribe(() => {
             this.getFaqList();
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
