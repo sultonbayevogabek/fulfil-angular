@@ -23,4 +23,8 @@ export class EmployedStudentsComponent implements OnInit {
          this.employedStudentsList = data['employedStudents'].data;
       });
    }
+
+   pageChange(page: number) {
+      console.log(page);
+   }
 }

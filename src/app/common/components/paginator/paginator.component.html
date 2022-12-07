@@ -1,26 +1,5 @@
 <ul class="pagination" *ngIf="total > 6">
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
-   </li>
-   <li class="pagination__item">
-      1
+   <li class="pagination__item" *ngFor="let i of items" (click)="changePage(i + 1)">
+      {{ i + 1 }}
    </li>
 </ul>

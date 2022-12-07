@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
    selector: 'app-paginator',
@@ -6,6 +6,16 @@ import { Component, Input } from '@angular/core';
    styleUrls: ['./paginator.component.scss']
 })
 
-export class PaginatorComponent {
-   @Input() total: number = 10;
+export class PaginatorComponent implements OnInit {
+   @Output() onPageChange: EventEmitter<number> = new EventEmitter<number>();
+   @Input() total: number = 0;
+   items: number[] = [];
+
+   ngOnInit() {
+      this.items = Array(this.total).fill(0).map((x, i) => i);
+   }
+
+   changePage(i: number) {
+      this.onPageChange.emit(i);
+   }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
-import { NgIf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 
 @NgModule({
    declarations: [
@@ -9,7 +9,8 @@ import { NgIf } from '@angular/common';
       PaginatorComponent
    ],
    imports: [
-      NgIf
+      NgIf,
+      NgForOf
    ],
    exports: [
       LoaderComponent,

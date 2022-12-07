@@ -46,6 +46,9 @@
             </div>
          </div>
       </div>
-      <app-paginator [total]="10"></app-paginator>
+      <app-paginator
+         [total]="10"
+         (onPageChange)="pageChange($event)"
+      ></app-paginator>
    </div>
 </section>
