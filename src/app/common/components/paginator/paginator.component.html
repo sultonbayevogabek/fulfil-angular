@@ -1,5 +1,5 @@
 <ul class="pagination" *ngIf="total > 6">
-   <li class="pagination__item" *ngFor="let i of items" (click)="changePage(i + 1)">
+   <li class="pagination__item" [class.active]="page === i + 1" *ngFor="let i of items" (click)="changePage(i + 1)">
       {{ i + 1 }}
    </li>
 </ul>

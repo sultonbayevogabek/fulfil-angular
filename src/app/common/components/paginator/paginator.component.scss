@@ -22,7 +22,7 @@
       color: white;
    }
 
-   &:hover {
+   &:not(.active):hover {
       background-color: #EEF8F7;
    }
 }
