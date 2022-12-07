@@ -96,10 +96,6 @@ export class HeaderComponent implements OnInit {
          this.bottomPanel = 'intro-lessons';
          return;
       }
-      if (url.includes('about/course-registrations')) {
-         this.bottomPanel = 'course-registrations';
-         return;
-      }
       if (url.includes('about/students-projects')) {
          this.bottomPanel = 'students-projects';
          return;
