@@ -73,7 +73,7 @@ export class IntroComponent implements OnInit {
 
          setTimeout(() => {
             this.successModalOpen = false;
-         }, 4000)
+         }, 10000)
       })
    }
 }

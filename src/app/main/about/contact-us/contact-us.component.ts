@@ -50,7 +50,7 @@ export class ContactUsComponent implements OnInit {
 
             setTimeout(() => {
                this.successModalOpen = false;
-            }, 4000);
+            }, 10000);
          });
    }
 }
