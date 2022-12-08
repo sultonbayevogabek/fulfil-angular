@@ -31,7 +31,7 @@ export class MainComponent implements OnInit {
    ngOnInit() {
       this._route.data.subscribe(data => {
          this._dataService.courses = data['courses'].data;
-         this._dataService.header = data['header'].data;
+         this._dataService.header = data['header'];
       });
    }
 }

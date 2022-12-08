@@ -26,9 +26,6 @@
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    grid-gap: 30px;
-   background-image: url('/assets/bg-images/bg-blur.png');
-   background-repeat: repeat-x;
-   background-position: 0 50%;
 }
 
 .our-courses__card {

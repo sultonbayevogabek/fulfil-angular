@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
-import { ICourse } from '../../../../common/models/models';
+import { ICourse, IHeader } from '../../../../common/models/models';
 import { environment } from '../../../../../environments/environment';
 import { filter } from 'rxjs';
 
@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
    courses: ICourse[] = [];
    sliceIndex: number;
    coursesCount: number;
+   header: IHeader;
 
    @HostListener('document: keydown', ['$event']) onKeyUp(event: KeyboardEvent) {
       if (event.key === 'Escape') {
@@ -57,6 +58,7 @@ export class HeaderComponent implements OnInit {
       this.courses = this._dataService.courses;
       this.coursesCount = this.courses.length;
       this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
+      this.header = this._dataService.header;
    }
 
    toggleDropdown(courses: 'courses' | 'about') {
