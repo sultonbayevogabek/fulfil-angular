@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../common/services/api.service';
 import { ICourse } from '../../../../common/models/models';
@@ -10,7 +10,7 @@ import { DataService } from '../../services/data.service';
    styleUrls: ['./enroll-form.component.scss']
 })
 
-export class EnrollFormComponent implements OnInit {
+export class EnrollFormComponent implements OnInit, OnChanges {
    courses: ICourse[] = [];
    @Input() currentCourse?: ICourse;
    enrollForm: FormGroup;
@@ -32,17 +32,19 @@ export class EnrollFormComponent implements OnInit {
          'course': new FormControl('', Validators.required)
       });
 
-      if (this.currentCourse) {
-         this.enrollForm.patchValue({
-            'course': this.currentCourse.courseName
-         });
-         return
-      }
-
       if (this.courses.length) {
          this.enrollForm.patchValue({
             'course': this.courses[0].courseName
          });
+      }
+   }
+
+   ngOnChanges(changes: SimpleChanges) {
+      if (this.currentCourse) {
+         this.enrollForm.patchValue({
+            'course': this.currentCourse.courseName
+         });
+         return;
       }
    }
 
@@ -66,14 +68,14 @@ export class EnrollFormComponent implements OnInit {
 
 export const validatePhoneUsername = (control: AbstractControl) => {
    if (control.value.toString().replace(/ /g, '').length < 4) {
-      return { invalidPhoneUsername: true };
+      return {invalidPhoneUsername: true};
    }
    return null;
-}
+};
 
 export const validateName = (control: AbstractControl) => {
    if (!control.value.trim().length) {
-      return { invalidName: true };
+      return {invalidName: true};
    }
    return null;
-}
+};

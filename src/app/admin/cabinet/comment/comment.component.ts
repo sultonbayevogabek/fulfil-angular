@@ -19,6 +19,7 @@ export class CommentComponent implements OnInit {
    homePageCommentList: IComment[] = [];
    courses: ICourse[] = [];
    commentType = 'course';
+   courseId = 'all';
 
    constructor(
       private _apiService: ApiService,
@@ -32,8 +33,8 @@ export class CommentComponent implements OnInit {
          'courseId': new FormControl(null, Validators.required),
          'commentTitle': new FormControl(`Bu kurs hayotimni o'zgartirdi`, Validators.required),
          'name': new FormControl(`Abdullayev Abdulla`, Validators.required),
-         'phone': new FormControl(`998999639773`, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
-         'image': new FormControl(null, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]),
+         'phone': new FormControl(`+998901234567`, [Validators.required, Validators.minLength(13), Validators.maxLength(13)]),
+         'image': new FormControl(null, Validators.required),
          'commentDescription': new FormControl(`O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim,
          Fulfil telegram kanalida suniy intellekt kursini ko’rib qoldim va shu kursda o’qishga niyat qildim,
          to’grisini aytsam natija bunday bo’ladi deb kutmagan edim, chunki hozirgi zamonda be’mani kurslar ko’payib ketgan,
@@ -51,7 +52,7 @@ export class CommentComponent implements OnInit {
          return;
       }
 
-      const { courseId, commentTitle, name, phone, image, commentDescription } = this.commentForm.value;
+      const {courseId, commentTitle, name, phone, image, commentDescription} = this.commentForm.value;
 
       const formData = new FormData();
       formData.append('commentTitle', commentTitle);
@@ -133,5 +134,20 @@ export class CommentComponent implements OnInit {
          this.commentForm.controls['courseId'].addValidators(Validators.required);
       }
       this.commentForm.controls['courseId'].updateValueAndValidity();
+   }
+
+   filterByCourse() {
+      if (this.courseId === 'all') {
+         this._apiService.getComments()
+            .subscribe(res => {
+               this.commentList = res.data;
+            });
+         return;
+      }
+
+      this._apiService.getCommentsByCourseId(this.courseId)
+         .subscribe(res => {
+            this.commentList = res.data;
+         });
    }
 }

@@ -9,12 +9,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class PaginatorComponent implements OnInit {
    @Output() onPageChange: EventEmitter<number> = new EventEmitter<number>();
    @Input() total: number = 0;
+   @Input() limit?: number = 6;
    @Input() currentPage?: number;
    items: number[] = [];
    page: number = 1;
 
    ngOnInit() {
-      this.items = Array(this.total).fill(0).map((x, i) => i);
+      this.items = Array(Math.ceil(this.total / this.limit)).fill(0).map((x, i) => i);
 
       if (this.currentPage) {
          this.page = this.currentPage

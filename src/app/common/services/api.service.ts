@@ -188,6 +188,10 @@ export class ApiService {
       return this.http.get<{ status: number; data: IComment[] }>(environment.host + `/api/v1/comment`);
    }
 
+   getCommentsByCourseId(id: string) {
+      return this.http.get<{ status: number; data: IComment[] }>(environment.host + `/api/v1/comment/${id}`);
+   }
+
    deleteComment(id: string) {
       return this.http.delete<{ status: number; data: {} }>(environment.host + `/api/v1/comment/${id}`);
    }

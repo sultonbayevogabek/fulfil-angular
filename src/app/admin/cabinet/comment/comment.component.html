@@ -42,7 +42,7 @@
       </label>
       <label class="form-label">
          <span>Izoh egasining raqami</span>
-         <input class="form-control" type="text" placeholder="000000000" formControlName="phone">
+         <input class="form-control" type="text" placeholder="+998901234567" formControlName="phone">
       </label>
       <label class="form-label">
          <span>Izoh egasining rasmi(kvadrat rasm)</span>
@@ -104,7 +104,14 @@
    </tbody>
 </table>
 
-<h3 class="fw-500 mb-30">Kurslarga berilgan o'quvchilarning izohlari</h3>
+<h3 class="grid grid-3 gap-col-20 mb-30 fw-500 ">
+   <span>Kurslarga berilgan o'quvchilarning izohlari</span>
+   <span></span>
+   <select class="form-control" [(ngModel)]="courseId" (ngModelChange)="filterByCourse()">
+      <option value="all">Barchasi</option>
+      <option value="{{ course.id }}" *ngFor="let course of courses">{{ course.courseName }}</option>
+   </select>
+</h3>
 <hr class="mb-20">
 
 <table>
@@ -121,7 +128,7 @@
    </tr>
    </thead>
    <tbody>
-   <ng-container *ngIf="commentList.length; else noData">
+   <ng-container *ngIf="commentList.length; else noData2">
       <tr *ngFor="let comment of commentList; let i = index;">
          <td>{{ i + 1 }}</td>
          <td>{{ comment.name }}</td>
@@ -143,7 +150,7 @@
          </td>
       </tr>
    </ng-container>
-   <ng-template #noData>
+   <ng-template #noData2>
       <tr>
          <td align="center" colspan="8">Ma'lumot topilmadi</td>
       </tr>
