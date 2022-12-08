@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICourse } from '../../../../common/models/models';
-import { CoursesService } from '../../services/courses.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
    selector: 'app-footer',
@@ -12,11 +12,11 @@ export class FooterComponent implements OnInit {
    courses: ICourse[] = [];
 
    constructor(
-      private _coursesService: CoursesService
+      private _dataService: DataService
    ) {
    }
 
    ngOnInit() {
-      this.courses = this._coursesService.courses;
+      this.courses = this._dataService.courses;
    }
 }

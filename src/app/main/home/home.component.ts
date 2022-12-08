@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IComment, ICompany, ICourse, IHeader } from '../../common/models/models';
 import { ApiService } from '../../common/services/api.service';
 import { environment } from '../../../environments/environment';
-import { ActivatedRoute } from '@angular/router';
-import { CoursesService } from '../shared/services/courses.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DataService } from '../shared/services/data.service';
 
 @Component({
    selector: 'app-home',
@@ -21,16 +19,11 @@ export class HomeComponent implements OnInit {
 
    constructor(
       private _apiService: ApiService,
-      private _route: ActivatedRoute,
-      private _coursesService: CoursesService,
-      private _sanitizer: DomSanitizer
+      private _dataService: DataService,
    ) {
    }
 
    ngOnInit() {
-      this._route.data.subscribe(data => {
-         this.header = data['header'];
-      });
       this._apiService.getCompanies()
          .subscribe(res => {
             this.companies = res.data;
@@ -39,10 +32,7 @@ export class HomeComponent implements OnInit {
          .subscribe(res => {
             this.comments = res.data;
          });
-      this.courses = this._coursesService.courses;
-   }
-
-   iframeURL(url: string) {
-      return this._sanitizer.bypassSecurityTrustResourceUrl(url);
+      this.courses = this._dataService.courses;
+      this.header = this._dataService.header;
    }
 }

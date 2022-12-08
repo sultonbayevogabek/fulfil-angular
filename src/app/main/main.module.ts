@@ -5,7 +5,7 @@ import { MainComponent } from './main.component';
 import { SharedModule } from './shared/shared.module';
 import { NgForOf, NgIf } from '@angular/common';
 import { CoursesResolver, HeaderResolver } from '../app.resolvers';
-import { CoursesService } from './shared/services/courses.service';
+import { DataService } from './shared/services/data.service';
 
 const routes: Routes = [
    {
@@ -15,9 +15,6 @@ const routes: Routes = [
          {
             path: '',
             component: HomeComponent,
-            resolve: {
-               header: HeaderResolver
-            }
          },
          {
             path: 'course',
@@ -29,7 +26,8 @@ const routes: Routes = [
          }
       ],
       resolve: {
-         courses: CoursesResolver
+         courses: CoursesResolver,
+         header: HeaderResolver
       }
    }
 ];
@@ -46,7 +44,7 @@ const routes: Routes = [
       NgForOf
    ],
    providers: [
-      CoursesService
+      DataService
    ]
 })
 

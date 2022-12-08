@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from './shared/services/courses.service';
+import { DataService } from './shared/services/data.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -23,13 +23,15 @@ import { ActivatedRoute } from '@angular/router';
 
 export class MainComponent implements OnInit {
    constructor(
-      private _coursesService: CoursesService,
+      private _dataService: DataService,
       private _route: ActivatedRoute
    ) {
    }
+
    ngOnInit() {
       this._route.data.subscribe(data => {
-         this._coursesService.courses = data['courses'].data;
-      })
+         this._dataService.courses = data['courses'].data;
+         this._dataService.header = data['header'].data;
+      });
    }
 }

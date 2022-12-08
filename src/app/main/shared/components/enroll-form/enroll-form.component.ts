@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../common/services/api.service';
 import { ICourse } from '../../../../common/models/models';
-import { CoursesService } from '../../services/courses.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
    selector: 'app-enroll-form',
@@ -19,12 +19,12 @@ export class EnrollFormComponent implements OnInit {
 
    constructor(
       private _apiService: ApiService,
-      private _coursesService: CoursesService
+      private _dataService: DataService
    ) {
    }
 
    ngOnInit() {
-      this.courses = this._coursesService.courses;
+      this.courses = this._dataService.courses;
 
       this.enrollForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),

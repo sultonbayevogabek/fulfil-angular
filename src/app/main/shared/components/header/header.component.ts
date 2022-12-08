@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { CoursesService } from '../../services/courses.service';
+import { DataService } from '../../services/data.service';
 import { ICourse } from '../../../../common/models/models';
 import { environment } from '../../../../../environments/environment';
 import { filter } from 'rxjs';
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
 
    constructor(
       private _router: Router,
-      private _coursesService: CoursesService
+      private _dataService: DataService
    ) {
       this._router.events
          .pipe(filter(event => event instanceof NavigationEnd))
@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
    }
 
    ngOnInit() {
-      this.courses = this._coursesService.courses;
+      this.courses = this._dataService.courses;
       this.coursesCount = this.courses.length;
       this.coursesCount % 2 === 0 ? this.sliceIndex = this.coursesCount / 2 : this.sliceIndex = Math.trunc(this.coursesCount / 2) + 1;
    }
@@ -102,6 +102,7 @@ export class HeaderComponent implements OnInit {
          this.bottomPanel = 'students-projects';
          return;
       }
+
       this.bottomPanel = null;
    }
 }

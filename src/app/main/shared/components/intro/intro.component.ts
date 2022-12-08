@@ -2,7 +2,7 @@ import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { validateName, validatePhoneUsername } from '../enroll-form/enroll-form.component';
 import { ICourse } from '../../../../common/models/models';
-import { CoursesService } from '../../services/courses.service';
+import { DataService } from '../../services/data.service';
 import { ApiService } from '../../../../common/services/api.service';
 
 @Component({
@@ -32,13 +32,13 @@ export class IntroComponent implements OnInit {
    }
 
    constructor(
-      private _coursesService: CoursesService,
+      private _dataService: DataService,
       private _apiService: ApiService
    ) {
    }
 
    ngOnInit() {
-      this.courses = this._coursesService.courses;
+      this.courses = this._dataService.courses;
 
       this.startForm = new FormGroup({
          'name': new FormControl('', [Validators.required, validateName]),
