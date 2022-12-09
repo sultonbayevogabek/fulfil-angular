@@ -8,14 +8,16 @@
    flex-grow: 1;
    overflow-x: scroll;
 }
-
 .registrations__inner {
-   min-width: 2000px;
+   display: flex;
+   min-width: 2240px;
    height: 100%;
    align-items: stretch;
 }
 
 .registrations__col {
+   flex-shrink: 0;
+   width: calc(100% / 7);
    height: 100%;
 
    &:not(:last-child) {
@@ -32,14 +34,66 @@
 }
 
 .registrations__cards {
+   height: calc(100% - 25px);
    padding: 10px;
    flex-grow: 1;
    overflow: auto;
 }
 
 .registrations__card {
-   height: 100px;
+   position: relative;
    margin-bottom: 10px;
+   padding: 10px;
    border: 1px dashed #dddddd;
    border-radius: 4px;
+   font-size: 12px;
+
+   select {
+      padding: 5px;
+      border: 1px solid #ddd;
+   }
+
+   &:hover .actions {
+      display: flex;
+   }
+}
+
+.d-flex {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.secondary {
+   color: #7d7f8e;
+}
+
+.mr-5 {
+   margin-right: 5px;
+}
+
+.mb-7 {
+   margin-bottom: 7px;
+}
+
+.actions {
+   display: none;
+   position: absolute;
+   top: 5px;
+   right: 5px;
+}
+
+.actions__item {
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   cursor: pointer;
+   background-color: #EAEAEA;
+
+   svg {
+      width: 50%;
+   }
 }

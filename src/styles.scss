@@ -73,13 +73,14 @@ select::-ms-expand {
 
 table {
    width: 100%;
-   border: 1px solid #BACFC6;
+   border: 1px solid #ddd;
    border-collapse: collapse;
 }
 
 th, td {
    border: 1px solid #BACFC6;
-   padding: 16px 12px;
+   padding: 14px 10px;
+   font-size: 14px;
    vertical-align: top;
 }
 
@@ -103,7 +104,7 @@ th {
    display: grid;
 }
 
-@for $i from 1 through 7 {
+@for $i from 1 through 6 {
    .grid-#{$i} {
       grid-template-columns: repeat($i, 1fr);
    }
