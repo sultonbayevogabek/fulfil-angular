@@ -53,9 +53,9 @@ const routes: Routes = [
          {
             path: 'course-registrations',
             component: CourseRegistrationsComponent,
-            resolve: {
-               courseRegistrations: CourseRegistrationsResolver
-            }
+            // resolve: {
+            //       courseRegistrations: CourseRegistrationsResolver
+            // }
          },
          {
             path: 'employed-students',

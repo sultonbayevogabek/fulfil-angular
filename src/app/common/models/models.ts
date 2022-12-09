@@ -1,5 +1,3 @@
-import * as url from 'url';
-
 export interface IHeader {
    id: string;
    phoneNumber: number;

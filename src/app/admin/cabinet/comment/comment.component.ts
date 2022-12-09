@@ -52,7 +52,7 @@ export class CommentComponent implements OnInit {
          return;
       }
 
-      const {courseId, commentTitle, name, phone, image, commentDescription} = this.commentForm.value;
+      const { courseId, commentTitle, name, phone, image, commentDescription } = this.commentForm.value;
 
       const formData = new FormData();
       formData.append('commentTitle', commentTitle);

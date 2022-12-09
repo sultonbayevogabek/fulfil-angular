@@ -18,7 +18,7 @@ export class PaginatorComponent implements OnInit {
       this.items = Array(Math.ceil(this.total / this.limit)).fill(0).map((x, i) => i);
 
       if (this.currentPage) {
-         this.page = this.currentPage
+         this.page = this.currentPage;
       }
    }
 

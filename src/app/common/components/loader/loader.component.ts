@@ -12,11 +12,12 @@ export class LoaderComponent implements OnInit {
 
    constructor(
       private _loaderService: LoaderService
-   ) {}
+   ) {
+   }
 
    ngOnInit() {
       this._loaderService.loader.subscribe(status => {
-         this.show = status
-      })
+         this.show = status;
+      });
    }
 }

@@ -103,7 +103,7 @@ th {
    display: grid;
 }
 
-@for $i from 1 through 6 {
+@for $i from 1 through 7 {
    .grid-#{$i} {
       grid-template-columns: repeat($i, 1fr);
    }

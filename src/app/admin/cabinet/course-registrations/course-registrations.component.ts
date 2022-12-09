@@ -6,7 +6,8 @@ import { IEnrollCourse } from '../../shared/models/models';
 
 @Component({
    selector: 'app-admin-course-registrations',
-   templateUrl: './course-registrations.component.html'
+   templateUrl: './course-registrations.component.html',
+   styleUrls: ['./course-registrations.component.scss']
 })
 
 export class CourseRegistrationsComponent implements OnInit {
@@ -20,9 +21,9 @@ export class CourseRegistrationsComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      this._route.data.subscribe(data => {
-         this.courseRegistrationsList = data['courseRegistrations'].data;
-      });
+      // this._route.data.subscribe(data => {
+      //    this.courseRegistrationsList = data['courseRegistrations'].data;
+      // });
    }
 
    deleteRegistration(id: string) {

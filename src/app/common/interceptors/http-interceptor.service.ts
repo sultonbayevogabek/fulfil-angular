@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoaderService } from '../services/loader.service';
-import * as events from 'events';
 
 @Injectable()
 

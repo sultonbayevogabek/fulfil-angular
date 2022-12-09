@@ -1,0 +1,45 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.registrations {
+   flex-grow: 1;
+   overflow-x: scroll;
+}
+
+.registrations__inner {
+   min-width: 2000px;
+   height: 100%;
+   align-items: stretch;
+}
+
+.registrations__col {
+   height: 100%;
+
+   &:not(:last-child) {
+      border-right: 1px dashed #ddd;
+   }
+}
+
+.registrations__status {
+   text-align: center;
+   padding-bottom: 10px;
+   background-color: #fff;
+   border-bottom: 1px solid #dddddd;
+   font-size: 14px;
+}
+
+.registrations__cards {
+   padding: 10px;
+   flex-grow: 1;
+   overflow: auto;
+}
+
+.registrations__card {
+   height: 100px;
+   margin-bottom: 10px;
+   border: 1px dashed #dddddd;
+   border-radius: 4px;
+}

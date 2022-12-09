@@ -25,9 +25,6 @@ export class AuthService {
    }
 
    getAdmin() {
-      this._adminApiService.getAdmin().subscribe(
-         res => this._admin = res, _ => {
-         }
-      );
+      this._adminApiService.getAdmin().subscribe(res => this._admin = res);
    }
 }
