@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       this._adminApiService.login(this.loginForm.value)
          .subscribe(res => {
             localStorage.setItem('token', res.token);
-            this._router.navigate(['admin', 'cabinet', 'header']).then();
+            this._router.navigate(['admin', 'cabinet', 'course-registrations']).then();
          }, () => {
             this.pending = false;
             this._toasterService.error(`Login yoki parol noto'g'ri`);
