@@ -105,7 +105,7 @@ export class CommentComponent implements OnInit {
             this._apiService.deleteComment(id)
                .subscribe(() => {
                   this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-                  this.getCommentsList();
+                  this.filterByCourse();
                });
             return;
          }
