@@ -1,0 +1,23 @@
+.registrations__inner {
+   display: flex;
+   min-width: 1280px;
+   height: 100%;
+   align-items: stretch;
+}
+
+.registrations__col {
+   flex-shrink: 0;
+   width: 25%;
+   height: 100%;
+
+   &:not(:last-child) {
+      border-right: 1px dashed #ddd;
+   }
+}
+
+.task-text {
+   padding: 10px;
+   border: 1px dashed #dddddd;
+   border-radius: 4px;
+   text-align: justify;
+}
