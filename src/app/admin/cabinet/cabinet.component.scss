@@ -9,6 +9,10 @@
    overflow: auto;
    flex-shrink: 0;
    background-color: #193C3F;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
 }
 
 .cabinet__nav {

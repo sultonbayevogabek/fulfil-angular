@@ -7,7 +7,21 @@
 .registrations {
    flex-grow: 1;
    overflow-x: scroll;
+
+   &::-webkit-scrollbar {
+      height: 6px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: #EAEAEA;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: #7d7f8e;
+      border-radius: 3px;
+   }
 }
+
 .registrations__inner {
    display: flex;
    min-width: 2240px;
@@ -38,6 +52,20 @@
    padding: 10px;
    flex-grow: 1;
    overflow: auto;
+
+   &::-webkit-scrollbar {
+      width: 6px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: #EAEAEA;
+   }
+
+   /* Handle */
+   &::-webkit-scrollbar-thumb {
+      background-color: #7d7f8e;
+      border-radius: 3px;
+   }
 }
 
 .registrations__card {
