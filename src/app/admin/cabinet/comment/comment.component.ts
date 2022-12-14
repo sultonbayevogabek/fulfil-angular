@@ -31,8 +31,8 @@ export class CommentComponent implements OnInit {
    ngOnInit(): void {
       this.commentForm = new FormGroup({
          'courseId': new FormControl(null, Validators.required),
-         'commentTitle': new FormControl(`Bu kurs hayotimni o'zgartirdi`, Validators.required),
-         'name': new FormControl(`Abdullayev Abdulla`, Validators.required),
+         'commentTitle': new FormControl(`Fulfil to'g'ri tanlov bo'lgan ekan )`, Validators.required),
+         'name': new FormControl(`Boltaboyev Teshaboy`, Validators.required),
          'phone': new FormControl(`+998901234567`, [Validators.required, Validators.minLength(13), Validators.maxLength(13)]),
          'image': new FormControl(null, Validators.required),
          'commentDescription': new FormControl(`O’qishga kira olmaganim uchun, oiladagilarni oldida uyalib qoldim,
@@ -65,7 +65,7 @@ export class CommentComponent implements OnInit {
          this._apiService.createComment(courseId, formData)
             .subscribe(() => {
                this.getCommentsList();
-               this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
+               this._toasterService.success(`Kurs haqida yangi izoh muvaffaqqiyatli qo'shildi`);
             }, (err: HttpErrorResponse) => {
                this._toasterService.error(err.error.errors[0].message);
             });
@@ -74,7 +74,7 @@ export class CommentComponent implements OnInit {
       this._apiService.createHomePageComment(formData)
          .subscribe(() => {
             this.getHomePageCommentsList();
-            this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
+            this._toasterService.success(`Asosiy sahifa uchun yangi izoh muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });

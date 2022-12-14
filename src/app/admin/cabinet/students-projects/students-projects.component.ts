@@ -62,9 +62,9 @@ export class StudentsProjectsComponent implements OnInit {
 
    getStudentsProjectsList() {
       this._apiService.getStudentsProjects()
-         .subscribe((res: any) => {
+         .subscribe(res => {
             this.studentsProjectsList = res.data;
-         }, err => {
+         }, () => {
             this._toasterService.error();
          });
    }

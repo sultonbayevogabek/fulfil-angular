@@ -84,7 +84,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
 
    getRecorderIntroLessonsList() {
       this._apiService.getRecordedIntroLessons()
-         .subscribe((res: any) => {
+         .subscribe(res => {
             this.recordedIntroLessons = res.data;
          }, () => {
             this._toasterService.error();
