@@ -112,7 +112,7 @@ const routes: Routes = [
             }
          },
          {
-            path: 'edit-course/:id',
+            path: 'edit-course/:slug',
             component: CourseEditComponent,
             resolve: {
                course: CourseResolver

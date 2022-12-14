@@ -82,6 +82,7 @@ export interface ICourse {
    whyThisCourseTitle: string;
    whyThisCourse: string[];
    courseProjectsList: string[];
+   slug: string;
    id: string;
    comments: IComment[];
 }

@@ -92,8 +92,8 @@ export class CourseResolver implements Resolve<{ status: number; data: ICourse }
    }
 
    resolve(route: ActivatedRouteSnapshot): Observable<{ status: number; data: ICourse }> {
-      const id = route.params['id'];
-      return this._apiService.getCourseById(id);
+      const id = route.params['slug'];
+      return this._apiService.getCourseBySlug(id);
    }
 }
 

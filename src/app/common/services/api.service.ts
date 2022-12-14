@@ -168,8 +168,8 @@ export class ApiService {
       return this.http.get<{ status: number; data: ICourse[] }>(environment.host + '/api/v1/course');
    }
 
-   getCourseById(id: string) {
-      return this.http.get<{ status: number; data: ICourse }>(environment.host + `/api/v1/course/${id}`);
+   getCourseBySlug(slug: string) {
+      return this.http.get<{ status: number; data: ICourse }>(environment.host + `/api/v1/course/${slug}`);
    }
 
    editCourse(id: string, payload: FormData) {
