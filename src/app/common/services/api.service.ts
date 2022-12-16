@@ -96,8 +96,8 @@ export class ApiService {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/student/${id}`);
    }
 
-   getEmployedStudents() {
-      return this.http.get<{ status: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student');
+   getEmployedStudents(page: number = 1, limit: number = 9) {
+      return this.http.post<{ status: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student/page', { page, limit });
    }
 
    createCompany(payload: FormData) {
