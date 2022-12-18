@@ -16,6 +16,8 @@ export class EmployedStudentsComponent implements OnInit {
    host = environment.host;
    employedStudentForm: FormGroup;
    employedStudentsList: IEmployedStudent[] = [];
+   pages = 0;
+   page = 1;
 
    constructor(
       private _apiService: ApiService,
@@ -34,13 +36,15 @@ export class EmployedStudentsComponent implements OnInit {
       });
       this._route.data.subscribe(data => {
          this.employedStudentsList = data['employedStudents'].data;
+         this.pages = data['employedStudents'].allPages;
       });
    }
 
-   getEmployedStudents() {
-      this._apiService.getEmployedStudents()
+   getEmployedStudents(page: number = 1) {
+      this._apiService.getEmployedStudents(page)
          .subscribe(res => {
             this.employedStudentsList = res.data;
+            this.pages = res.allPages;
          });
    }
 
@@ -59,7 +63,7 @@ export class EmployedStudentsComponent implements OnInit {
 
       this._apiService.createEmployedStudent(formData)
          .subscribe(() => {
-            this.getEmployedStudents();
+            this.getEmployedStudents(this.page);
             this._toasterService.success(`O'quvchi muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0]);
@@ -78,9 +82,18 @@ export class EmployedStudentsComponent implements OnInit {
    deleteEmployedStudent(id: string) {
       if (window.confirm(`Rostan ham bu o'quvchini o'chirmoqchimisiz?`)) {
          this._apiService.deleteEmployedStudent(id).subscribe(() => {
-            this.getEmployedStudents();
+            this.getEmployedStudents(this.page);
             this._toasterService.success(`O'quvchi muvaffaqiyatli o'chirildi`);
          });
       }
+   }
+
+   pageChange(page: number) {
+      this.page = page;
+      this._apiService.getEmployedStudents(page)
+         .subscribe(res => {
+            this.employedStudentsList = res.data;
+            this.pages = res.allPages;
+         })
    }
 }

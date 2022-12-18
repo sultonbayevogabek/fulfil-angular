@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 
 @Component({
    selector: 'app-paginator',
@@ -6,24 +6,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
    styleUrls: ['./paginator.component.scss']
 })
 
-export class PaginatorComponent implements OnInit {
+export class PaginatorComponent implements OnChanges {
    @Output() onPageChange: EventEmitter<number> = new EventEmitter<number>();
-   @Input() total: number = 0;
-   @Input() limit?: number = 6;
-   @Input() currentPage?: number;
+   @Input() pages: number = 0;
    items: number[] = [];
    page: number = 1;
 
-   ngOnInit() {
-      this.items = Array(Math.ceil(this.total / this.limit)).fill(0).map((x, i) => i);
-
-      if (this.currentPage) {
-         this.page = this.currentPage;
-      }
+   ngOnChanges() {
+      this.items = Array(this.pages).fill(0).map((x, i) => i);
    }
 
    changePage(i: number) {
-      this.page = i;
-      this.onPageChange.emit(i);
+      if (i !== this.page) {
+         this.page = i;
+         this.onPageChange.emit(i);
+      }
    }
 }

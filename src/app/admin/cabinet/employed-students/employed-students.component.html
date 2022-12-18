@@ -55,7 +55,7 @@
          <td>{{ student.profession }}</td>
          <td>{{ student.comment }}</td>
          <td>
-            <img style="max-width: 40px" src="{{ host + student.image.slice(2) }}" alt="{{ student.name }} image">
+            <img style="max-width: 40px; min-height: 40px" src="{{ host + student.image.slice(2) }}" alt="{{ student.name }} image">
          </td>
          <td>
             <svg (click)="deleteEmployedStudent(student.id)" class="cursor-pointer" width="18" height="20"
@@ -72,5 +72,13 @@
          <td align="center" colspan="7">Ma'lumot topilmadi</td>
       </tr>
    </ng-template>
+   <tr>
+      <td colspan="7">
+         <app-paginator
+            [pages]="pages"
+            (onPageChange)="pageChange($event)"
+         ></app-paginator>
+      </td>
+   </tr>
    </tbody>
 </table>

@@ -30,6 +30,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CommentComponent } from './comment/comment.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { CommonModule } from '../../common/common.module';
 
 const routes: Routes = [
    {
@@ -154,7 +155,8 @@ const routes: Routes = [
       ReactiveFormsModule,
       NgIf,
       NgForOf,
-      FormsModule
+      FormsModule,
+      CommonModule
    ],
    exports: [RouterModule],
    providers: [

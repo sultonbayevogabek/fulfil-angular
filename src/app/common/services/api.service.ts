@@ -97,7 +97,7 @@ export class ApiService {
    }
 
    getEmployedStudents(page: number = 1, limit: number = 9) {
-      return this.http.post<{ status: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student/page', { page, limit });
+      return this.http.post<{ status: number; allPages: number, count: number, page: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student/page', { page, limit });
    }
 
    createCompany(payload: FormData) {
