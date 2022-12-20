@@ -16,6 +16,8 @@ export class StudentsProjectsComponent implements OnInit {
    host = environment.host;
    studentProjectForm: FormGroup;
    studentsProjectsList: IStudentProject[] = [];
+   pages = 0;
+   page = 1;
 
    constructor(
       private _apiService: ApiService,
@@ -34,6 +36,7 @@ export class StudentsProjectsComponent implements OnInit {
       });
       this._route.data.subscribe(data => {
          this.studentsProjectsList = data['studentsProjects'].data;
+         this.pages = data['studentsProjects'].allPages;
       });
    }
 
@@ -53,15 +56,15 @@ export class StudentsProjectsComponent implements OnInit {
 
       this._apiService.createStudentProject(formData)
          .subscribe((res) => {
-            this.getStudentsProjectsList();
+            this.getStudentsProjectsList(this.page);
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });
    }
 
-   getStudentsProjectsList() {
-      this._apiService.getStudentsProjects()
+   getStudentsProjectsList(page: number = 1) {
+      this._apiService.getStudentsProjects(page)
          .subscribe(res => {
             this.studentsProjectsList = res.data;
          }, () => {
@@ -74,7 +77,7 @@ export class StudentsProjectsComponent implements OnInit {
          this._apiService.deleteStudentProject(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this.getStudentsProjectsList();
+               this.getStudentsProjectsList(this.page);
             });
       }
    }
@@ -92,5 +95,14 @@ export class StudentsProjectsComponent implements OnInit {
             'projectImage': files[0]
          });
       }
+   }
+
+   pageChange(page: number) {
+      this.page = page;
+      this._apiService.getStudentsProjects(page)
+         .subscribe(res => {
+            this.studentsProjectsList = res.data;
+            this.pages = res.allPages;
+         })
    }
 }

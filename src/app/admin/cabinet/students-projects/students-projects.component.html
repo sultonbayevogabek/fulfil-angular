@@ -35,7 +35,7 @@
       <th>N</th>
       <th>O'quvchining ismi</th>
       <th>O'quvchi o'qigan guruh</th>
-      <th>O'quvchining rasmi (kvadrat shakldagi rasm)</th>
+      <th>O'quvchining rasmi</th>
       <th>Loyiha linki</th>
       <th>Loyihaning rasmi</th>
       <th>O'chirish</th>
@@ -48,11 +48,11 @@
          <td>{{ item.name }}</td>
          <td>{{ item.group }}</td>
          <td>
-            <img style="max-width: 80px" src="{{ host + item.studentImage.slice(2) }}" alt="{{ item.name }} image">
+            <img style="min-height: 40px" src="{{ host + item.studentImage.slice(2) }}" alt="{{ item.name }} image">
          </td>
          <td>{{ item.projectLink }}</td>
          <td>
-            <img style="max-width: 80px" src="{{ host + item.projectImage.slice(2) }}" alt="">
+            <img style="max-width: 80px; min-height: 80px" src="{{ host + item.projectImage.slice(2) }}" alt="">
          </td>
          <td>
             <svg (click)="deleteStudentProject(item.id)" class="cursor-pointer" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,5 +68,13 @@
          <td align="center" colspan="7">Ma'lumot topilmadi</td>
       </tr>
    </ng-template>
+   <tr>
+      <td colspan="7">
+         <app-paginator
+            [pages]="pages"
+            (onPageChange)="pageChange($event)"
+         ></app-paginator>
+      </td>
+   </tr>
    </tbody>
 </table>

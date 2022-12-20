@@ -16,6 +16,8 @@ export class RecordedIntroLessonsComponent implements OnInit {
    host = environment.host;
    recordedIntroLessonForm: FormGroup;
    recordedIntroLessons: IRecordedIntroLesson[] = [];
+   pages = 0;
+   page = 1;
 
    constructor(
       private _apiService: ApiService,
@@ -43,6 +45,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
       });
       this._route.data.subscribe(data => {
          this.recordedIntroLessons = data['recordedIntroLessons'].data;
+         this.pages = data['recordedIntroLessons'].allPages;
       });
    }
 
@@ -75,17 +78,18 @@ export class RecordedIntroLessonsComponent implements OnInit {
 
       this._apiService.createRecordedIntroLesson(formData)
          .subscribe(() => {
-            this.getRecorderIntroLessonsList();
+            this.getRecorderIntroLessonsList(this.page);
             this._toasterService.success(`Muvaffaqqiyatli qo'shildi`);
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });
    }
 
-   getRecorderIntroLessonsList() {
+   getRecorderIntroLessonsList(page: number = 1) {
       this._apiService.getRecordedIntroLessons()
          .subscribe(res => {
             this.recordedIntroLessons = res.data;
+            this.pages = res.allPages;
          }, () => {
             this._toasterService.error();
          });
@@ -96,7 +100,7 @@ export class RecordedIntroLessonsComponent implements OnInit {
          this._apiService.deleteRecordedIntroLesson(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this.getRecorderIntroLessonsList();
+               this.getRecorderIntroLessonsList(this.page);
             });
       }
    }
@@ -123,5 +127,14 @@ export class RecordedIntroLessonsComponent implements OnInit {
             'teacherImage': files[0]
          });
       }
+   }
+
+   pageChange(page: number) {
+      this.page = page;
+      this._apiService.getRecordedIntroLessons(page)
+         .subscribe(res => {
+            this.recordedIntroLessons = res.data;
+            this.pages = res.allPages;
+         })
    }
 }

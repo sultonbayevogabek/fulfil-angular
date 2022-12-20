@@ -97,7 +97,10 @@ export class ApiService {
    }
 
    getEmployedStudents(page: number = 1, limit: number = 9) {
-      return this.http.post<{ status: number; allPages: number, count: number, page: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student/page', { page, limit });
+      return this.http.post<{ status: number; allPages: number, count: number, page: number; data: IEmployedStudent[] }>(environment.host + '/api/v1/student/page', {
+         page,
+         limit
+      });
    }
 
    createCompany(payload: FormData) {
@@ -128,8 +131,10 @@ export class ApiService {
       return this.http.post<{ status: number; data: IStudentProject }>(environment.host + `/api/v1/student-project`, payload);
    }
 
-   getStudentsProjects() {
-      return this.http.get<{ status: number; data: IStudentProject[] }>(environment.host + '/api/v1/student-project');
+   getStudentsProjects(page: number = 1, limit: number = 9) {
+      return this.http.post<{ status: number; allPages: number, count: number, page: number; data: IStudentProject[] }>(environment.host + '/api/v1/student-project/page', {
+         page, limit
+      });
    }
 
    deleteStudentProject(id: string) {
@@ -140,8 +145,10 @@ export class ApiService {
       return this.http.post<{ status: number; data: IRecordedIntroLesson }>(environment.host + `/api/v1/free-lesson`, payload);
    }
 
-   getRecordedIntroLessons() {
-      return this.http.get<{ status: number; data: IRecordedIntroLesson[] }>(environment.host + '/api/v1/free-lesson');
+   getRecordedIntroLessons(page: number = 1, limit: number = 9) {
+      return this.http.post<{ status: number; allPages: number, count: number, page: number; data: IRecordedIntroLesson[] }>(environment.host + '/api/v1/free-lesson/page', {
+         limit, page
+      });
    }
 
    deleteRecordedIntroLesson(id: string) {
