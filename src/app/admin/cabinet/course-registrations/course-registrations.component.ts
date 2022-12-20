@@ -21,9 +21,10 @@ export class CourseRegistrationsComponent implements OnInit {
    }
 
    ngOnInit(): void {
-      // this._route.data.subscribe(data => {
-      //    this.courseRegistrationsList = data['courseRegistrations'].data;
-      // });
+      this._route.data.subscribe(data => {
+         // this.courseRegistrationsList = data['courseRegistrations'].data;
+         console.log(data['courseRegistrations']);
+      });
    }
 
    deleteRegistration(id: string) {

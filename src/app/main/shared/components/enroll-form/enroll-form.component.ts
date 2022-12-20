@@ -62,20 +62,22 @@ export class EnrollFormComponent implements OnInit, OnChanges {
             setTimeout(() => {
                this.successModalOpen = false;
             }, 10000);
+         }, () => {
+            this.pending = false;
          });
    }
 }
 
 export const validatePhoneUsername = (control: AbstractControl) => {
    if (control.value.toString().replace(/ /g, '').length < 4) {
-      return {invalidPhoneUsername: true};
+      return { invalidPhoneUsername: true };
    }
    return null;
 };
 
 export const validateName = (control: AbstractControl) => {
    if (!control.value.trim().length) {
-      return {invalidName: true};
+      return { invalidName: true };
    }
    return null;
 };

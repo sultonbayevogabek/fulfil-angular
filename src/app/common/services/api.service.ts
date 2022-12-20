@@ -77,15 +77,15 @@ export class ApiService {
    }
 
    enrollCourse(payload: IEnrollCourse) {
-      return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson`, payload);
+      return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register`, { ...payload, username: '@username' });
    }
 
    getCourseRegistrations() {
-      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/api/v1/register-free-lesson');
+      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/api/v1/register');
    }
 
    deleteCourseRegistration(id: string) {
-      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register-free-lesson/${id}`);
+      return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register/${id}`);
    }
 
    createEmployedStudent(payload: FormData) {
