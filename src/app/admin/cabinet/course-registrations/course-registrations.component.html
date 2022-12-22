@@ -17,21 +17,26 @@
                   </div>
                   <div class="d-flex mb-7">
                      <div class="secondary mr-5">Ismi:</div>
-                     <div>Abdullayev Alijon</div>
+                     <div>{{ registration.name }}</div>
                   </div>
                   <div class="d-flex mb-7">
                      <div class="secondary mr-5">Kontakti:</div>
-                     <div>@alijon</div>
+                     <div>{{ registration.contact }}</div>
                   </div>
                   <div class="d-flex mb-7">
                      <div class="secondary mr-5">Kurs:</div>
-                     <div>Android</div>
+                     <div>{{ registration.course }}</div>
                   </div>
                   <div class="d-flex">
                      <div class="secondary mr-5">Statusni o'zgartirish:</div>
-                     <select>
-                        <option>Saralanmagan</option>
-                        <option>Qayta aloqa</option>
+                     <select (change)="changeStatus($event, registration.status)">
+                        <option [value]="registrationStatuses.saralanmagan">{{ registrationStatuses.saralanmagan }}</option>
+                        <option [value]="registrationStatuses.qaytaaloqa">{{ registrationStatuses.qaytaaloqa }}</option>
+                        <option [value]="registrationStatuses.qoshildi">{{ registrationStatuses.qoshildi }}</option>
+                        <option [value]="registrationStatuses.ikkinchi_tarif">{{ registrationStatuses.ikkinchi_tarif }}</option>
+                        <option [value]="registrationStatuses.probniy">{{ registrationStatuses.probniy }}</option>
+                        <option [value]="registrationStatuses.probniy">{{ registrationStatuses.probniy }}</option>
+                        <option [value]="registrationStatuses.tolovqilgan">{{ registrationStatuses.tolovqilgan }}</option>
                      </select>
                   </div>
                   <div class="actions">
@@ -43,7 +48,7 @@
                               fill="#828882"/>
                         </svg>
                      </div>
-                     <div class="actions__item" title="O'chirish">
+                     <div class="actions__item" title="O'chirish" (click)="deleteRegistration(registration.id)">
                         <svg class="cursor-pointer" width="13" height="15"
                              viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path

@@ -38,4 +38,15 @@ export class CourseRegistrationsComponent implements OnInit {
             });
       }
    }
+
+   changeStatus(event: Event, currentStatus: string): void {
+      const newStatus = (event.currentTarget as HTMLSelectElement).value;
+
+      if (window.confirm(`Rostan ham o'zgartirmoqchimisiz?`)) {
+         (event.currentTarget as HTMLSelectElement).value = newStatus;
+         return;
+      }
+
+      (event.currentTarget as HTMLSelectElement).value = currentStatus;
+   }
 }

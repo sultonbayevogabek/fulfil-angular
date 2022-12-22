@@ -37,8 +37,7 @@ export interface IEnrollCourse {
 export interface IRegistration {
    idNumber: number;
    name: string;
-   username: string;
-   phone: number;
+   contact: string;
    course: string;
    status: string;
    createdDate: string;
