@@ -30,6 +30,28 @@ export interface IEnrollCourse {
    id?: string;
    createdAt?: string;
    name: string;
-   phone: string;
+   contact: string;
    course: string;
+}
+
+export interface IRegistration {
+   idNumber: number;
+   name: string;
+   username: string;
+   phone: number;
+   course: string;
+   status: string;
+   createdDate: string;
+   createdTime: string;
+   task: any[];
+   id: string;
+}
+
+export enum ERegistrationStatus {
+   saralanmagan = 'saralanmagan',
+   qaytaaloqa = 'qaytaaloqa',
+   qoshildi = 'qoshildi',
+   ikkinchi_tarif = '2-tarif',
+   probniy = 'probniy',
+   tolovqilgan = `to'lovqilgan`
 }

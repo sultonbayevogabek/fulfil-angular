@@ -7,105 +7,13 @@
                Saralanmagan
             </div>
             <div class="registrations__cards">
-               <div class="registrations__card">
+               <div class="registrations__card" *ngFor="let registration of courseRegistrationsList | filter: registrationStatuses.saralanmagan">
                   <div class="d-flex mb-7">
                      <div class="d-flex">
                         <div class="secondary mr-5">Murojaat raqami:</div>
-                        <div>80192</div>
+                        <div>{{ registration.idNumber }}</div>
                      </div>
-                     <div>08.12.2022 13:44</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Ismi:</div>
-                     <div>Abdullayev Alijon</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Kontakti:</div>
-                     <div>@alijon</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Kurs:</div>
-                     <div>Android</div>
-                  </div>
-                  <div class="d-flex">
-                     <div class="secondary mr-5">Statusni o'zgartirish:</div>
-                     <select>
-                        <option>Saralanmagan</option>
-                        <option>Qayta aloqa</option>
-                     </select>
-                  </div>
-                  <div class="actions">
-                     <div class="actions__item mr-5" title="Eslatma yaratish">
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M8 20C6.89543 20 6 19.1046 6 18H10C10 19.1046 9.10457 20 8 20ZM16 17H0V15L2 14V8.5C2 5.038 3.421 2.793 6 2.18V0H10V2.18C12.579 2.792 14 5.036 14 8.5V14L16 15V17ZM8 3.75C6.77967 3.6712 5.60278 4.21728 4.875 5.2C4.25255 6.18456 3.94714 7.33638 4 8.5V15H12V8.5C12.0528 7.33639 11.7474 6.18458 11.125 5.2C10.3972 4.21728 9.22033 3.6712 8 3.75Z"
-                              fill="#828882"/>
-                        </svg>
-                     </div>
-                     <div class="actions__item" title="O'chirish">
-                        <svg class="cursor-pointer" width="13" height="15"
-                             viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                              fill="#828882"/>
-                        </svg>
-                     </div>
-                  </div>
-               </div>
-               <div class="registrations__card">
-                  <div class="d-flex mb-7">
-                     <div class="d-flex">
-                        <div class="secondary mr-5">Murojaat raqami:</div>
-                        <div>80192</div>
-                     </div>
-                     <div>08.12.2022 13:44</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Ismi:</div>
-                     <div>Abdullayev Alijon</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Kontakti:</div>
-                     <div>@alijon</div>
-                  </div>
-                  <div class="d-flex mb-7">
-                     <div class="secondary mr-5">Kurs:</div>
-                     <div>Android</div>
-                  </div>
-                  <div class="d-flex">
-                     <div class="secondary mr-5">Statusni o'zgartirish:</div>
-                     <select>
-                        <option>Saralanmagan</option>
-                        <option>Qayta aloqa</option>
-                     </select>
-                  </div>
-                  <div class="actions">
-                     <div class="actions__item mr-5" title="Eslatma yaratish">
-                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none"
-                             xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M8 20C6.89543 20 6 19.1046 6 18H10C10 19.1046 9.10457 20 8 20ZM16 17H0V15L2 14V8.5C2 5.038 3.421 2.793 6 2.18V0H10V2.18C12.579 2.792 14 5.036 14 8.5V14L16 15V17ZM8 3.75C6.77967 3.6712 5.60278 4.21728 4.875 5.2C4.25255 6.18456 3.94714 7.33638 4 8.5V15H12V8.5C12.0528 7.33639 11.7474 6.18458 11.125 5.2C10.3972 4.21728 9.22033 3.6712 8 3.75Z"
-                              fill="#828882"/>
-                        </svg>
-                     </div>
-                     <div class="actions__item" title="O'chirish">
-                        <svg class="cursor-pointer" width="13" height="15"
-                             viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path
-                              d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                              fill="#828882"/>
-                        </svg>
-                     </div>
-                  </div>
-               </div>
-               <div class="registrations__card">
-                  <div class="d-flex mb-7">
-                     <div class="d-flex">
-                        <div class="secondary mr-5">Murojaat raqami:</div>
-                        <div>80192</div>
-                     </div>
-                     <div>08.12.2022 13:44</div>
+                     <div>{{ registration.createdDate }} {{ registration.createdTime }}</div>
                   </div>
                   <div class="d-flex mb-7">
                      <div class="secondary mr-5">Ismi:</div>

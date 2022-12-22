@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute } from '@angular/router';
-import { IEnrollCourse } from '../../shared/models/models';
+import { ERegistrationStatus, IRegistration } from '../../shared/models/models';
 
 @Component({
    selector: 'app-admin-course-registrations',
@@ -11,7 +11,8 @@ import { IEnrollCourse } from '../../shared/models/models';
 })
 
 export class CourseRegistrationsComponent implements OnInit {
-   courseRegistrationsList: IEnrollCourse[] = [];
+   registrationStatuses = ERegistrationStatus;
+   courseRegistrationsList: IRegistration[] = [];
 
    constructor(
       private _apiService: ApiService,
@@ -22,8 +23,7 @@ export class CourseRegistrationsComponent implements OnInit {
 
    ngOnInit(): void {
       this._route.data.subscribe(data => {
-         // this.courseRegistrationsList = data['courseRegistrations'].data;
-         console.log(data['courseRegistrations']);
+         this.courseRegistrationsList = data['courseRegistrations'].data;
       });
    }
 

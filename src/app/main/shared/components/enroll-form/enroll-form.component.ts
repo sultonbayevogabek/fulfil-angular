@@ -27,8 +27,8 @@ export class EnrollFormComponent implements OnInit, OnChanges {
       this.courses = this._dataService.courses;
 
       this.enrollForm = new FormGroup({
-         'name': new FormControl('', [Validators.required, validateName]),
-         'phone': new FormControl('', [Validators.required, validatePhoneUsername]),
+         'name': new FormControl('', [ Validators.required, validateName ]),
+         'contact': new FormControl('', [ Validators.required, validatePhoneUsername ]),
          'course': new FormControl('', Validators.required)
       });
 

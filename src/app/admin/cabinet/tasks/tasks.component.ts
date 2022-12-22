@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute } from '@angular/router';
-import { IEnrollCourse } from '../../shared/models/models';
+import { IRegistration } from '../../shared/models/models';
 
 @Component({
    selector: 'app-admin-tasks',
@@ -11,7 +11,7 @@ import { IEnrollCourse } from '../../shared/models/models';
 })
 
 export class TasksComponent implements OnInit {
-   courseRegistrationsList: IEnrollCourse[] = [];
+   courseRegistrationsList: IRegistration[] = [];
 
    constructor(
       private _apiService: ApiService,

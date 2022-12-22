@@ -31,6 +31,7 @@ import { CourseEditComponent } from './course-edit/course-edit.component';
 import { CommentComponent } from './comment/comment.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { CommonModule } from '../../common/common.module';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const routes: Routes = [
    {
@@ -148,7 +149,8 @@ const routes: Routes = [
       CoursesComponent,
       CourseEditComponent,
       CommentComponent,
-      TasksComponent
+      TasksComponent,
+      FilterPipe
    ],
    imports: [
       RouterModule.forChild(routes),

@@ -3,10 +3,9 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {
    IChangePassword,
-   ICurrentUser,
-   IEnrollCourse,
+   ICurrentUser, IEnrollCourse,
    ILoginRequest,
-   ILoginResponse
+   ILoginResponse, IRegistration
 } from '../../admin/shared/models/models';
 import { map } from 'rxjs';
 import {
@@ -77,11 +76,11 @@ export class ApiService {
    }
 
    enrollCourse(payload: IEnrollCourse) {
-      return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register`, { ...payload, username: '@username' });
+      return this.http.post<{ success: boolean }>(environment.host + `/api/v1/register`, payload);
    }
 
    getCourseRegistrations() {
-      return this.http.get<{ status: number; data: IEnrollCourse[] }>(environment.host + '/api/v1/register');
+      return this.http.get<{ status: number; data: IRegistration[] }>(environment.host + '/api/v1/register');
    }
 
    deleteCourseRegistration(id: string) {

@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IComment, ICompany, IContact, IFaq } from '../../common/models/models';
 import { ApiService } from '../../common/services/api.service';
-import { IEnrollCourse } from '../shared/models/models';
+import { IRegistration } from '../shared/models/models';
 
 @Injectable()
 export class FaqResolver implements Resolve<{ status: number; data: IFaq[] }> {
@@ -18,13 +18,13 @@ export class FaqResolver implements Resolve<{ status: number; data: IFaq[] }> {
 }
 
 @Injectable()
-export class CourseRegistrationsResolver implements Resolve<{ status: number; data: IEnrollCourse[] }> {
+export class CourseRegistrationsResolver implements Resolve<{ status: number; data: IRegistration[] }> {
    constructor(
       private _apiService: ApiService
    ) {
    }
 
-   resolve(): Observable<{ status: number; data: IEnrollCourse[] }> {
+   resolve(): Observable<{ status: number; data: IRegistration[] }> {
       return this._apiService.getCourseRegistrations();
    }
 }
