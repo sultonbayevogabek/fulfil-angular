@@ -3,6 +3,7 @@ import { ApiService } from '../../../common/services/api.service';
 import { ToasterService } from '../../shared/services/toaster.service';
 import { ActivatedRoute } from '@angular/router';
 import { ERegistrationStatus, IRegistration } from '../../shared/models/models';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
    selector: 'app-admin-course-registrations',
@@ -27,26 +28,36 @@ export class CourseRegistrationsComponent implements OnInit {
       });
    }
 
+   getCourseRegistrations() {
+      this._apiService.getCourseRegistrations().subscribe(res => {
+         this.courseRegistrationsList = res.data;
+      });
+   }
+
    deleteRegistration(id: string) {
       if (window.confirm(`Rostan ham o'chirmoqchimisiz?`)) {
          this._apiService.deleteCourseRegistration(id)
             .subscribe(() => {
                this._toasterService.success(`Muvaffaqqiyatli o'chirildi`);
-               this._apiService.getCourseRegistrations().subscribe(res => {
-                  this.courseRegistrationsList = res.data;
-               });
+               this.getCourseRegistrations();
             });
       }
    }
 
-   changeStatus(event: Event, currentStatus: string): void {
+   changeStatus(event: Event, registration: IRegistration): void {
       const newStatus = (event.currentTarget as HTMLSelectElement).value;
 
-      if (window.confirm(`Rostan ham o'zgartirmoqchimisiz?`)) {
-         (event.currentTarget as HTMLSelectElement).value = newStatus;
+      if (!window.confirm(`Rostan ham statusni "${ newStatus }" ga o'zgartirmoqchimisiz?`)) {
+         (event.currentTarget as HTMLSelectElement).value = registration.status;
          return;
       }
 
-      (event.currentTarget as HTMLSelectElement).value = currentStatus;
+      this._apiService.updateCourseRegistrationStatus(registration.id, newStatus)
+         .subscribe(() => {
+            this._toasterService.success(`Status ${newStatus} ga o'zgartirildi`);
+            this.getCourseRegistrations();
+         }, (err: HttpErrorResponse) => {
+            this._toasterService.error(err.error.errors[0].message);
+         });
    }
 }

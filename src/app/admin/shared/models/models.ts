@@ -52,5 +52,5 @@ export enum ERegistrationStatus {
    qoshildi = 'qoshildi',
    ikkinchi_tarif = '2-tarif',
    probniy = 'probniy',
-   tolovqilgan = `to'lovqilgan`
+   tolovqilgan = '' + `to'lovqilgan`
 }

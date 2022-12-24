@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import {
+   ERegistrationStatus,
    IChangePassword,
    ICurrentUser, IEnrollCourse,
    ILoginRequest,
@@ -85,6 +86,10 @@ export class ApiService {
 
    deleteCourseRegistration(id: string) {
       return this.http.delete<{ success: boolean }>(environment.host + `/api/v1/register/${id}`);
+   }
+
+   updateCourseRegistrationStatus(id: string, status: string) {
+      return this.http.put<{ status: number, data: IRegistration }>(environment.host + `/api/v1/register/${id}`, { status });
    }
 
    createEmployedStudent(payload: FormData) {
