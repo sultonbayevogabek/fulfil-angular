@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-admin-faq',
-   templateUrl: './faq.component.html'
+   templateUrl: './faq.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class FaqComponent implements OnInit {

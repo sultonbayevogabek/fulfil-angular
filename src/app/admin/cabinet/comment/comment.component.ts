@@ -9,7 +9,8 @@ import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-comment',
-   templateUrl: './comment.component.html'
+   templateUrl: './comment.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class CommentComponent implements OnInit {

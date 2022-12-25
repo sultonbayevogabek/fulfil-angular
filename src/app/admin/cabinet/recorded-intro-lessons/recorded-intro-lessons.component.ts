@@ -9,7 +9,8 @@ import { IRecordedIntroLesson } from '../../../common/models/models';
 
 @Component({
    selector: 'app-admin-mentors',
-   templateUrl: './recorded-intro-lessons.component.html'
+   templateUrl: './recorded-intro-lessons.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class RecordedIntroLessonsComponent implements OnInit {

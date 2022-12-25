@@ -9,7 +9,8 @@ import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-students-projects',
-   templateUrl: './students-projects.component.html'
+   templateUrl: './students-projects.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class StudentsProjectsComponent implements OnInit {

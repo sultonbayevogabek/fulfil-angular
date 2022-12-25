@@ -9,7 +9,8 @@ import { ICourse } from '../../../common/models/models';
 
 @Component({
    selector: 'app-admin-edit-course',
-   templateUrl: './course-edit.component.html'
+   templateUrl: './course-edit.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class CourseEditComponent implements OnInit {

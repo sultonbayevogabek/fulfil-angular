@@ -1,38 +1,38 @@
-<h3 class="fw-500 mb-30">Kurs qo'shish</h3>
+<h4 class="fw-500 mb-10">Kurs qo'shish</h4>
 <hr class="mb-20">
 
 <form class="mb-40" [formGroup]="courseForm" (ngSubmit)="createCourse()">
-   <div class="grid grid-2 gap-20 mb-20">
-      <label class="form-label">
+   <div class="grid grid-2 column-gap-10 row-gap-20 mb-20">
+      <label class="admin-form-label">
          <span>Kursning nomi</span>
-         <input class="form-control" type="text" placeholder="Andorid" formControlName="courseName">
+         <input class="admin-form-control" type="text" placeholder="Andorid" formControlName="courseName">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Kursning sahifadagi sarlavhasi</span>
-         <input class="form-control" type="text" placeholder="Angliya tajribasi asosisa Android dasturlash"
+         <input class="admin-form-control" type="text" placeholder="Angliya tajribasi asosisa Android dasturlash"
                 formControlName="courseTitle">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Kursning sahifadagi nimsarlavhasi</span>
-         <input class="form-control" type="text" placeholder="Angliya" formControlName="courseSubtitle">
+         <input class="admin-form-control" type="text" placeholder="Angliya" formControlName="courseSubtitle">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Kurs haqida izoh</span>
-         <input class="form-control" type="text" placeholder="Har qanday o’z mobil dasturlaringizni ishlab chiqing"
+         <input class="admin-form-control" type="text" placeholder="Har qanday o’z mobil dasturlaringizni ishlab chiqing"
                 formControlName="courseDescription">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Nega bu kurs sarlavhasi?</span>
-         <input class="form-control" type="text" placeholder="Nega Androidni o'rganishim kerak?"
+         <input class="admin-form-control" type="text" placeholder="Nega Androidni o'rganishim kerak?"
                 formControlName="whyThisCourseTitle">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Kursning ikonkasi (svg rasm)</span>
-         <input class="form-control" type="file" accept=".svg" (change)="onImageSelected($event, 'courseImage')">
+         <input class="admin-form-control" type="file" accept=".svg" (change)="onImageSelected($event, 'courseImage')">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Kursning sahifadagi rasmi</span>
-         <input class="form-control" type="file" accept=".jpg, .png, .webp"
+         <input class="admin-form-control" type="file" accept=".jpg, .png, .webp"
                 (change)="onImageSelected($event, 'coursePageImage')">
       </label>
    </div>
@@ -40,9 +40,9 @@
       <legend>Kurs detallari</legend>
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of courseForm.controls['courseDetails']['controls']; let i = index">
-         <label class="form-label mr-20" style="flex-grow: 1">
+         <label class="admin-form-label mr-20" style="flex-grow: 1">
             <span>{{ i + 1 }}</span>
-            <textarea class="form-control" type="text" formControlName="{{ i }}"></textarea>
+            <textarea class="admin-form-control" type="text" formControlName="{{ i }}"></textarea>
          </label>
          <svg (click)="removeControl(i, 'courseDetails')" class="cursor-pointer" width="20" height="20"
               viewBox="0 0 20 20"
@@ -66,9 +66,9 @@
       <legend>Bu kursni o'qish uchun sabablar</legend>
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of courseForm.controls['whyThisCourse']['controls']; let i = index">
-         <label class="form-label mr-20" style="flex-grow: 1">
+         <label class="admin-form-label mr-20" style="flex-grow: 1">
             <span>{{ i + 1 }}</span>
-            <textarea class="form-control" type="text" formControlName="{{ i }}"></textarea>
+            <textarea class="admin-form-control" type="text" formControlName="{{ i }}"></textarea>
          </label>
          <svg (click)="removeControl(i, 'whyThisCourse')" class="cursor-pointer" width="20" height="20"
               viewBox="0 0 20 20"
@@ -93,9 +93,9 @@
 
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of courseForm.controls['courseSkills']['controls']; let i = index">
-         <label class="form-label mr-20" style="flex-grow: 1">
+         <label class="admin-form-label mr-20" style="flex-grow: 1">
             <span>{{ i + 1 }}</span>
-            <textarea class="form-control" type="text" formControlName="{{ i }}"></textarea>
+            <textarea class="admin-form-control" type="text" formControlName="{{ i }}"></textarea>
          </label>
          <svg (click)="removeControl(i, 'courseSkills')" class="cursor-pointer" width="20" height="20"
               viewBox="0 0 20 20"
@@ -121,9 +121,9 @@
 
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of courseForm.controls['listOfTopics']['controls']; let i = index">
-         <label class="form-label mr-20" style="flex-grow: 1">
+         <label class="admin-form-label mr-20" style="flex-grow: 1">
             <span>{{ i + 1 }}</span>
-            <textarea class="form-control" type="text" formControlName="{{ i }}"></textarea>
+            <textarea class="admin-form-control" type="text" formControlName="{{ i }}"></textarea>
          </label>
          <svg (click)="removeControl(i, 'listOfTopics')" class="cursor-pointer" width="20" height="20"
               viewBox="0 0 20 20"
@@ -148,9 +148,9 @@
       <legend>Kursda bajariladigan loyihalar</legend>
       <div class="mb-20" style="display: flex; align-items: flex-end"
            *ngFor="let control of courseForm.controls['courseProjectsList']['controls']; let i = index">
-         <label class="form-label mr-20" style="flex-grow: 1">
+         <label class="admin-form-label mr-20" style="flex-grow: 1">
             <span>{{ i + 1 }}</span>
-            <textarea class="form-control" type="text" formControlName="{{ i }}"></textarea>
+            <textarea class="admin-form-control" type="text" formControlName="{{ i }}"></textarea>
          </label>
          <svg (click)="removeControl(i, 'courseProjectsList')" class="cursor-pointer" width="20"
               height="20" viewBox="0 0 20 20"

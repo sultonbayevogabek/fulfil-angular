@@ -7,7 +7,7 @@ import { IRegistration } from '../../shared/models/models';
 @Component({
    selector: 'app-admin-tasks',
    templateUrl: './tasks.component.html',
-   styleUrls: ['../course-registrations/course-registrations.component.scss', './tasks.component.scss']
+   styleUrls: ['../course-registrations/course-registrations.component.scss', './tasks.component.scss', '../../admin.component.scss']
 })
 
 export class TasksComponent implements OnInit {

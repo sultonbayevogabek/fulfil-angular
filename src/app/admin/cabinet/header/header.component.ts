@@ -5,7 +5,8 @@ import { ToasterService } from '../../shared/services/toaster.service';
 
 @Component({
    selector: 'app-admin-header',
-   templateUrl: './header.component.html'
+   templateUrl: './header.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class HeaderComponent implements OnInit {

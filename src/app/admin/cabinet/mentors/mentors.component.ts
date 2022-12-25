@@ -9,7 +9,8 @@ import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-mentors',
-   templateUrl: './mentors.component.html'
+   templateUrl: './mentors.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class MentorsComponent implements OnInit {

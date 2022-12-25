@@ -6,7 +6,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
    selector: 'app-admin-settings',
-   templateUrl: './settings.component.html'
+   templateUrl: './settings.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class SettingsComponent implements OnInit {

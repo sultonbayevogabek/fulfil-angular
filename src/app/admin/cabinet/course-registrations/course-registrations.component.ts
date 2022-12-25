@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
    selector: 'app-admin-course-registrations',
    templateUrl: './course-registrations.component.html',
-   styleUrls: ['./course-registrations.component.scss']
+   styleUrls: ['./course-registrations.component.scss', '../../admin.component.scss']
 })
 
 export class CourseRegistrationsComponent implements OnInit {

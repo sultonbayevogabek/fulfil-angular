@@ -6,7 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
    selector: 'app-admin-contacts',
-   templateUrl: './contact.component.html'
+   templateUrl: './contact.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class ContactComponent implements OnInit {

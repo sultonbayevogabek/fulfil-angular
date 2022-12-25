@@ -9,7 +9,8 @@ import { environment } from '../../../../environments/environment';
 
 @Component({
    selector: 'app-admin-companies',
-   templateUrl: './companies.component.html'
+   templateUrl: './companies.component.html',
+   styleUrls: ['../../admin.component.scss']
 })
 
 export class CompaniesComponent implements OnInit {
