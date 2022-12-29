@@ -47,9 +47,9 @@ table {
 }
 
 th, td {
-   border: 1px solid #BACFC6;
-   padding: 14px 10px;
-   font-size: 14px;
+   border: 1px solid #ddd;
+   padding: 10px 5px;
+   font-size: 13px;
    vertical-align: top;
 }
 
@@ -61,7 +61,7 @@ th {
 .admin-form-control {
    display: block;
    width: 100%;
-   height: 27px;
+   height: 35px;
    padding: 10px 5px;
    border: 1px solid #dddddd;
    font-weight: 400;
@@ -74,29 +74,18 @@ th {
 }
 
 .admin-button {
-   height: 27px;
+   height: 35px;
    padding-left: 77px;
    padding-right: 77px;
-   background-color: #09A964;
+   background-color: #aaa;
    border: none;
-   border-radius: 4px;
    cursor: pointer;
    font-weight: 600;
-   font-size: 1rem;
+   font-size: 13px;
    color: #FFFFFF;
-   outline-offset: 2px;
-
-   &:hover {
-      background-color: #098D54;
-   }
-
-   &:focus {
-      background-color: #056A3F;
-      outline: 1px solid rgba(60, 178, 127, 0.5);
-   }
 
    &[disabled] {
-      background-color: rgba(#09A964, 0.2);
+      background-color: rgba(#aaa, 0.2);
       cursor: no-drop;
    }
 
@@ -126,4 +115,16 @@ th {
 textarea.admin-form-control {
    padding-top: 5px;
    resize: vertical;
+}
+
+fieldset {
+   border: 1px solid #ddd;
+
+   .admin-form-control {
+      font-family: "Poppins", Arial, sans-serif;
+   }
+}
+
+legend {
+   font-size: 14px;
 }

@@ -25,9 +25,9 @@ export class ContactUsComponent implements OnInit {
 
    ngOnInit() {
       this.contactForm = new FormGroup({
-         name: new FormControl('', [Validators.required, validateName]),
-         phone: new FormControl('', [Validators.required, validatePhoneUsername]),
-         message: new FormControl('', [Validators.required, validateName])
+         name: new FormControl('Abdulla', [Validators.required, validateName]),
+         phone: new FormControl('998999639773', [Validators.required, validatePhoneUsername]),
+         message: new FormControl('Nimadirlar demoqchiman xalos (', [Validators.required, validateName])
       });
    }
 
@@ -41,7 +41,7 @@ export class ContactUsComponent implements OnInit {
       this.pending = true;
       this._apiService.sendContact({
          name: name.trim(),
-         phone: phone.trim(),
+         phone: +phone.trim(),
          message: message.trim()
       })
          .subscribe(() => {
@@ -51,6 +51,8 @@ export class ContactUsComponent implements OnInit {
             setTimeout(() => {
                this.successModalOpen = false;
             }, 10000);
+         }, () => {
+            this.pending = false;
          });
    }
 }

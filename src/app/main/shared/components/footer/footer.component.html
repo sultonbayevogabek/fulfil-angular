@@ -42,7 +42,7 @@
             <h3>Kurslar</h3>
             <ul class="info__list" *ngIf="courses.length">
                <li class="info__item" *ngFor="let course of courses">
-                  <a routerLink="/course/{{ course.id }}">{{ course.courseName }}</a>
+                  <a routerLink="/course/{{ course.slug }}">{{ course.courseName }}</a>
                </li>
             </ul>
          </div>
