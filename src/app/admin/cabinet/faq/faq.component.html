@@ -1,21 +1,21 @@
-<h3 class="fw-500 mb-30">FAQ - qo'shish</h3>
+<h4 class="fw-500 mb-10">FAQ - qo'shish</h4>
 <hr class="mb-20">
 <form class="grid grid-3 column-gap-20 mb-40" [formGroup]="faqForm" (ngSubmit)="createFaq()">
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Savol matni</span>
-      <input class="form-control" type="text" placeholder="Kursga qanday yozilsam bo'ladi?" formControlName="question">
+      <input class="admin-form-control" type="text" placeholder="Kursga qanday yozilsam bo'ladi?" formControlName="question">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Javob matni</span>
-      <textarea class="form-control" placeholder="Admin bilan aloqaga chiqing: @Abdivaliyevich"
+      <textarea class="admin-form-control" placeholder="Admin bilan aloqaga chiqing: @Abdivaliyevich"
                 formControlName="answer"></textarea>
    </label>
-   <div style="padding-top: 32.4px">
-      <button class="button button-full" [disabled]="faqForm.invalid">Qo'shish</button>
+   <div style="padding-top: 18px">
+      <button class="admin-button admin-button-full" [disabled]="faqForm.invalid">Qo'shish</button>
    </div>
 </form>
 
-<h3 class="fw-500 mb-30">Ko'p beriladigan savollar ro'yxati</h3>
+<h4 class="fw-500 mb-10">Ko'p beriladigan savollar ro'yxati</h4>
 <hr class="mb-20">
 
 <table>
@@ -38,7 +38,7 @@
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                  fill="#FE7062"/>
+                  fill="#ddd"/>
             </svg>
          </td>
       </tr>

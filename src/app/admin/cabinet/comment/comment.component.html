@@ -1,6 +1,6 @@
-<h3 class="fw-500 mb-30">Izoh - qo'shish</h3>
+<h4 class="fw-500 mb-10">Izoh - qo'shish</h4>
 <hr class="mb-20">
-<div class="grid grid-4 gap-20 mb-20">
+<div class="grid grid-4 column-gap-10 mb-20">
    <label>
       <input
          class="mr-10"
@@ -24,42 +24,42 @@
 </div>
 
 <form class="mb-40" [formGroup]="commentForm" (ngSubmit)="createComment()">
-   <div class="grid grid-3 gap-20 mb-20">
-      <label class="form-label" *ngIf="commentType === 'course'">
+   <div class="grid grid-3 column-gap-10 row-gap-20 mb-20">
+      <label class="admin-form-label" *ngIf="commentType === 'course'">
          <span>Kurs</span>
-         <select class="form-control" formControlName="courseId">
+         <select class="admin-form-control" formControlName="courseId">
             <option *ngFor="let course of courses" value="{{ course.id }}">{{ course.courseName }}</option>
          </select>
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Izoh sarlavhasi</span>
-         <input class="form-control" type="text" placeholder="Bu kurs hayotimni o'zgartirdi"
+         <input class="admin-form-control" type="text" placeholder="Bu kurs hayotimni o'zgartirdi"
                 formControlName="commentTitle">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Izoh egasining ismi</span>
-         <input class="form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
+         <input class="admin-form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Izoh egasining raqami</span>
-         <input class="form-control" type="text" placeholder="+998901234567" formControlName="phone">
+         <input class="admin-form-control" type="text" placeholder="+998901234567" formControlName="phone">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Izoh egasining rasmi(kvadrat rasm)</span>
-         <input class="form-control" type="file" accept=".jpg, .png, .webp" (change)="onImageSelected($event)">
+         <input class="admin-form-control" type="file" accept=".jpg, .png, .webp" (change)="onImageSelected($event)">
       </label>
    </div>
-   <label class="form-label mb-20">
+   <label class="admin-form-label mb-20">
       <span>Izoh matni</span>
-      <textarea class="form-control" style="min-height: 200px" placeholder="Fulfil zo'r..."
+      <textarea class="admin-form-control" style="min-height: 200px" placeholder="Fulfil zo'r..."
                 formControlName="commentDescription"></textarea>
    </label>
    <div>
-      <button class="button button-full" [disabled]="commentForm.invalid">Qo'shish</button>
+      <button class="admin-button admin-button-full" [disabled]="commentForm.invalid">Qo'shish</button>
    </div>
 </form>
 
-<h3 class="fw-500 mb-30">Asosiy sahifadagi izohlar</h3>
+<h4 class="fw-500 mb-10">Asosiy sahifadagi izohlar</h4>
 <hr class="mb-20">
 
 <table class="mb-40">
@@ -91,7 +91,7 @@
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                  fill="#FE7062"/>
+                  fill="#ddd"/>
             </svg>
          </td>
       </tr>
@@ -104,14 +104,14 @@
    </tbody>
 </table>
 
-<h3 class="grid grid-3 gap-col-20 mb-30 fw-500 ">
+<h4 class="grid grid-3 gap-col-20 mb-10 fw-500 ">
    <span>Kurslarga berilgan o'quvchilarning izohlari</span>
    <span></span>
-   <select class="form-control" [(ngModel)]="courseId" (ngModelChange)="filterByCourse()">
+   <select class="admin-form-control" [(ngModel)]="courseId" (ngModelChange)="filterByCourse()">
       <option value="all">Barchasi</option>
       <option value="{{ course.id }}" *ngFor="let course of courses">{{ course.courseName }}</option>
    </select>
-</h3>
+</h4>
 <hr class="mb-20">
 
 <table>
@@ -145,7 +145,7 @@
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                  fill="#FE7062"/>
+                  fill="#ddd"/>
             </svg>
          </td>
       </tr>

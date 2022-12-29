@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 export class PaginatorComponent implements OnChanges {
    @Output() onPageChange: EventEmitter<number> = new EventEmitter<number>();
    @Input() pages: number = 0;
+   @Input() black?: boolean = false;
    items: number[] = [];
    page: number = 1;
 

@@ -26,3 +26,12 @@
       background-color: #EEF8F7;
    }
 }
+
+.pagination__item.black {
+   border: 1px solid #333;
+
+   &.active {
+      background-color: #333;
+      color: white;
+   }
+}

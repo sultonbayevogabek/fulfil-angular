@@ -1,32 +1,32 @@
-<h3 class="fw-500 mb-30">O'quvchi bajargan loyihani qo'shish</h3>
+<h4 class="fw-500 mb-10">O'quvchi bajargan loyihani qo'shish</h4>
 <hr class="mb-20">
-<form class="grid grid-3 gap-20 mb-40" [formGroup]="studentProjectForm" (ngSubmit)="createStudentProject()">
-   <label class="form-label">
+<form class="grid grid-3 column-gap-10 row-gap-20 mb-40" [formGroup]="studentProjectForm" (ngSubmit)="createStudentProject()">
+   <label class="admin-form-label">
       <span>O'quvchining ismi va familiyasi</span>
-      <input class="form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
+      <input class="admin-form-control" type="text" placeholder="Abdullayev Abdulla" formControlName="name">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>O'qigan guruhi</span>
-      <input class="form-control" type="text" placeholder="F-11 (Front End) guruh o'quvchisi" formControlName="group">
+      <input class="admin-form-control" type="text" placeholder="F-11 (Front End) guruh o'quvchisi" formControlName="group">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Loyihaning linki</span>
-      <input class="form-control" type="url" placeholder="https://link.com" formControlName="projectLink">
+      <input class="admin-form-control" type="url" placeholder="https://link.com" formControlName="projectLink">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>O'quvchining rasmi (kvadrat shakldagi rasm)</span>
-      <input class="form-control" type="file" (change)="onImageSelected($event, 'studentImage')">
+      <input class="admin-form-control" type="file" (change)="onImageSelected($event, 'studentImage')">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Loyihaning rasmi</span>
-      <input class="form-control" type="file" (change)="onImageSelected($event, 'projectImage')">
+      <input class="admin-form-control" type="file" (change)="onImageSelected($event, 'projectImage')">
    </label>
-   <div style="padding-top: 32.4px">
-      <button class="button button-full" [disabled]="studentProjectForm.invalid">Qo'shish</button>
+   <div style="padding-top: 18px">
+      <button class="admin-button admin-button-full" [disabled]="studentProjectForm.invalid">Qo'shish</button>
    </div>
 </form>
 
-<h3 class="fw-500 mb-30">O'quvchilar bajargan loyihalar ro'yxati</h3>
+<h4 class="fw-500 mb-10">O'quvchilar bajargan loyihalar ro'yxati</h4>
 <hr class="mb-20">
 
 <table>
@@ -72,6 +72,7 @@
       <td colspan="7">
          <app-paginator
             [pages]="pages"
+            [black]="true"
             (onPageChange)="pageChange($event)"
          ></app-paginator>
       </td>

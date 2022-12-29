@@ -1,37 +1,37 @@
 <div class="header">
-   <h3 class="fw-500 mb-30">Telefon raqam, statistika va YouTube videoning havolasi</h3>
+   <h4 class="fw-500 mb-10">Telefon raqam, statistika va YouTube videoning havolasi</h4>
    <hr class="mb-20">
    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="grid grid-4 column-gap-20 mb-20">
-         <label class="form-label">
+      <div class="grid grid-4 column-gap-10 row-gap-20 mb-20">
+         <label class="admin-form-label">
             <span>Telefon raqam (998991234567)</span>
-            <input class="form-control" type="text" placeholder="998999639773" maxlength="12"
+            <input class="admin-form-control" type="text" placeholder="998999639773" maxlength="12"
                    formControlName="phoneNumber">
          </label>
-         <label class="form-label">
+         <label class="admin-form-label">
             <span>O'qituvchilar soni</span>
-            <input class="form-control" type="number" placeholder="12" formControlName="teachers">
+            <input class="admin-form-control" type="number" placeholder="12" formControlName="teachers">
          </label>
-         <label class="form-label">
+         <label class="admin-form-label">
             <span>O'quvchilar soni</span>
-            <input class="form-control" type="number" placeholder="150" formControlName="students">
+            <input class="admin-form-control" type="number" placeholder="150" formControlName="students">
          </label>
-         <label class="form-label">
+         <label class="admin-form-label">
             <span>Dars soatlari soni</span>
-            <input class="form-control" type="number" placeholder="200" formControlName="lessons">
+            <input class="admin-form-control" type="number" placeholder="200" formControlName="lessons">
          </label>
       </div>
       <div class="grid grid-1 mb-20">
-         <label class="form-label">
+         <label class="admin-form-label">
             <span>YouTube videoning ID si</span>
-            <input class="form-control" type="url" placeholder="XqZsoesa55w" formControlName="youtube">
+            <input class="admin-form-control" type="url" placeholder="XqZsoesa55w" formControlName="youtube">
          </label>
       </div>
       <div class="grid grid-4 column-gap-20">
          <div></div>
          <div></div>
          <div></div>
-         <button class="button" [disabled]="form.invalid">{{ created ? 'Yangilash' : 'Yaratish' }}</button>
+         <button class="admin-button" [disabled]="form.invalid">{{ created ? 'Yangilash' : 'Yaratish' }}</button>
       </div>
    </form>
 </div>

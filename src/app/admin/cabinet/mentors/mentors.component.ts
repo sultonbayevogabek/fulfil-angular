@@ -38,7 +38,7 @@ export class MentorsComponent implements OnInit {
             new FormControl('Hozirda Buyuk Britaniyaning “Infinity group” kompaniyasida faoliyat ko\'rsatmoqda', Validators.required),
             new FormControl('Fulfil educationda Android dasturlash ustozi', Validators.required)
          ]),
-         'teacherImage': new FormControl('null', Validators.required)
+         'teacherImage': new FormControl(null, Validators.required)
       });
       this._route.data.subscribe(data => {
          this.mentorsList = data['mentors'].data;
