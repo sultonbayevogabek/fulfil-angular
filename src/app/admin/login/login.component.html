@@ -1,13 +1,13 @@
 <div class="login">
    <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Email</span>
-         <input class="form-control" type="email" formControlName="email">
+         <input class="admin-form-control" type="email" formControlName="email">
       </label>
-      <label class="form-label">
+      <label class="admin-form-label">
          <span>Parol</span>
-         <input class="form-control" type="email" formControlName="password">
+         <input class="admin-form-control" type="email" formControlName="password">
       </label>
-      <button class="button" [disabled]="loginForm.invalid || pending">Kirish</button>
+      <button class="admin-button" [disabled]="loginForm.invalid || pending">Kirish</button>
    </form>
 </div>

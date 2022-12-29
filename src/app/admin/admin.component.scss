@@ -42,15 +42,18 @@ hr {
 
 table {
    width: 100%;
-   border: 1px solid #ddd;
    border-collapse: collapse;
 }
 
 th, td {
-   border: 1px solid #ddd;
-   padding: 10px 5px;
+   border-bottom: 1px solid #ddd;
+   padding: 15px 10px;
    font-size: 13px;
    vertical-align: top;
+}
+
+th {
+   border-bottom-width: 2px;
 }
 
 th {

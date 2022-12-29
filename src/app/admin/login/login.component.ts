@@ -7,7 +7,7 @@ import { ToasterService } from '../shared/services/toaster.service';
 @Component({
    selector: 'app-login',
    templateUrl: './login.component.html',
-   styleUrls: ['./login.component.scss']
+   styleUrls: ['../admin.component.scss', './login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
