@@ -65,7 +65,7 @@ export interface IContact {
    createdDate?: string;
    createdTime?: string;
    name: string;
-   phone: number;
+   contact: string;
    message: string;
 }
 

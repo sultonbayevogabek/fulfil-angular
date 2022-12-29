@@ -39,7 +39,7 @@
                      </select>
                   </div>
                   <div class="actions">
-                     <div class="actions__item mr-5" title="Eslatma yaratish">
+                     <div class="actions__item mr-5" title="Vazifa yaratish" (click)="registrationId = registration.id">
                         <svg width="16" height="20" viewBox="0 0 16 20" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                            <path
@@ -344,6 +344,34 @@
                </div>
             </div>
          </div>
+      </div>
+   </div>
+</div>
+
+<div class="task-backdrop" *ngIf="registrationId" (click)="registrationId = null">
+   <div class="task-content" (click)="$event.stopPropagation()">
+      <h4 class="mb-10">Vazifa yaratish</h4>
+      <hr>
+      <div class="grid grid-3 column-gap-10 mb-10">
+         <label class="admin-form-label">
+            <span>Sana:</span>
+            <input class="admin-form-control" type="date" [(ngModel)]="date">
+         </label>
+         <label class="admin-form-label">
+            <span>Soat(dan):</span>
+            <input class="admin-form-control" type="time" [(ngModel)]="fromHour">
+         </label>
+         <label class="admin-form-label">
+            <span>Soat(gacha):</span>
+            <input class="admin-form-control" type="time" [(ngModel)]="toHour">
+         </label>
+      </div>
+      <label class="admin-form-label mb-10">
+         <span>Vazifa uchun eslatma</span>
+         <textarea class="admin-form-control" placeholder="Eslatma uchun matn..." [(ngModel)]="taskText"></textarea>
+      </label>
+      <div class="d-flex justify-end">
+         <button class="admin-button" (click)="createTask()">Qo'shish</button>
       </div>
    </div>
 </div>

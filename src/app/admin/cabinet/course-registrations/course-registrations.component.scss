@@ -93,6 +93,10 @@
    justify-content: space-between;
 }
 
+.justify-end {
+   justify-content: end;
+}
+
 .secondary {
    color: #7d7f8e;
 }
@@ -124,5 +128,36 @@
 
    svg {
       width: 50%;
+   }
+}
+
+.task-backdrop {
+   position: fixed;
+   z-index: 3;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.task-content {
+   width: 450px;
+   margin: 50px auto;
+   padding: 15px;
+   background-color: #fff;
+   border-radius: 4px;
+
+   h4 {
+      font-size: 14px;
+      font-weight: 400;
+   }
+
+   hr {
+      margin-bottom: 15px;
+   }
+
+   textarea {
+      min-height: 100px;
    }
 }

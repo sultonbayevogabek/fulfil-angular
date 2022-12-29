@@ -15,6 +15,12 @@ export class CourseRegistrationsComponent implements OnInit {
    registrationStatuses = ERegistrationStatus;
    courseRegistrationsList: IRegistration[] = [];
 
+   registrationId: string;
+   date: string;
+   fromHour: string;
+   toHour: string;
+   taskText: string = 'Vazifa matni';
+
    constructor(
       private _apiService: ApiService,
       private _toasterService: ToasterService,
@@ -59,5 +65,13 @@ export class CourseRegistrationsComponent implements OnInit {
          }, (err: HttpErrorResponse) => {
             this._toasterService.error(err.error.errors[0].message);
          });
+   }
+
+   createTask() {
+      if (!this.date || !this.fromHour || !this.toHour || !this.taskText) {
+         this._toasterService.error(`Hamma ma'lumotlarni to'g'ri kiriting!`)
+         return;
+      }
+      console.log('Success');
    }
 }
