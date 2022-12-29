@@ -1,16 +1,16 @@
 <h4 class="fw-500 mb-10">FAQ - qo'shish</h4>
 <hr class="mb-20">
-<form class="grid grid-3 column-gap-20 mb-40" [formGroup]="companyForm" (ngSubmit)="createCompany()">
-   <label class="form-label">
+<form class="grid grid-3 column-gap-10 row-gap-20 mb-20" [formGroup]="companyForm" (ngSubmit)="createCompany()">
+   <label class="admin-form-label">
       <span>Kompaniya veb-sayti</span>
-      <input class="form-control" type="text" placeholder="https://company-website.com" formControlName="link">
+      <input class="admin-form-control" type="text" placeholder="https://company-website.com" formControlName="link">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Kompaniya logotipi</span>
-      <input class="form-control" type="file" accept=".png, .svg, .jpg" (change)="onImageSelected($event)">
+      <input class="admin-form-control" type="file" accept=".png, .svg, .jpg" (change)="onImageSelected($event)">
    </label>
-   <div style="padding-top: 32.4px">
-      <button class="button button-full" [disabled]="companyForm.invalid">Qo'shish</button>
+   <div style="padding-top: 18px">
+      <button class="admin-button admin-button-full" [disabled]="companyForm.invalid">Qo'shish</button>
    </div>
 </form>
 
@@ -39,7 +39,7 @@
                  fill="none" xmlns="http://www.w3.org/2000/svg">
                <path
                   d="M14 20H4C2.89543 20 2 19.1046 2 18V5H0V3H4V2C4 0.89543 4.89543 0 6 0H12C13.1046 0 14 0.89543 14 2V3H18V5H16V18C16 19.1046 15.1046 20 14 20ZM4 5V18H14V5H4ZM6 2V3H12V2H6ZM12 16H10V7H12V16ZM8 16H6V7H8V16Z"
-                  fill="#FE7062"/>
+                  fill="#ddd"/>
             </svg>
          </td>
       </tr>

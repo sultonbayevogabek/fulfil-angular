@@ -1,22 +1,22 @@
 <h4 class="fw-500 mb-10">Parolni almashtirish</h4>
 <hr class="mb-20">
-<form class="grid grid-4 column-gap-20" [formGroup]="passwordForm" (ngSubmit)="changePassword()">
-   <label class="form-label">
+<form class="grid grid-4 column-gap-10" [formGroup]="passwordForm" (ngSubmit)="changePassword()">
+   <label class="admin-form-label">
       <span>Eski parolni kiriting</span>
-      <input class="form-control" type="password" placeholder="********"
+      <input class="admin-form-control" type="password" placeholder="********"
              formControlName="currentPassword">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Yangi parolni kiriting</span>
-      <input class="form-control" type="password" placeholder="********"
+      <input class="admin-form-control" type="password" placeholder="********"
              formControlName="newPassword">
    </label>
-   <label class="form-label">
+   <label class="admin-form-label">
       <span>Yangi parolni takrorlang</span>
-      <input class="form-control" type="password" placeholder="********"
+      <input class="admin-form-control" type="password" placeholder="********"
              formControlName="repeatPassword">
    </label>
-   <div style="padding-top: 32.4px">
-      <button class="button button-full" [disabled]="passwordForm.invalid">Parolni yangilash</button>
+   <div style="padding-top: 18px">
+      <button class="admin-button admin-button-full" [disabled]="passwordForm.invalid">Parolni yangilash</button>
    </div>
 </form>
