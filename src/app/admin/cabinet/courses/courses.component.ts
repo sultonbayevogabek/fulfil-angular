@@ -155,10 +155,11 @@ export class CoursesComponent implements OnInit {
 
    addControl(control: string) {
       (this.courseForm.controls[control] as FormArray).push(new FormControl(null, Validators.required));
+      this.courseForm.updateValueAndValidity();
    }
 
    removeControl(i: number, control: string) {
       (this.courseForm.controls[control] as FormArray).controls.splice(i, 1);
-      this.courseForm.controls[control].updateValueAndValidity();
+      this.courseForm.get(control).updateValueAndValidity();
    }
 }

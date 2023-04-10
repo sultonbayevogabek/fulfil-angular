@@ -10,8 +10,7 @@ export class AdminGuardService implements CanActivate {
       private _authService: AuthService,
       private _adminApiService: ApiService,
       private _router: Router
-   ) {
-   }
+   ) {}
 
    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
       if (!this._authService.token) {
