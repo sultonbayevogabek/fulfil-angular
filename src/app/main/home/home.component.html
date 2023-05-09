@@ -37,7 +37,7 @@
          <h2 class="section__title">Bizning zamonaviy <span class="highlight decorated">kurslarimiz</span></h2>
       </div>
       <div class="section__body our-courses__cards">
-         <a routerLink="/course/{{ course.id }}" class="our-courses__card" *ngFor="let course of courses">
+         <a routerLink="/course/{{ course.slug }}" class="our-courses__card" *ngFor="let course of courses">
             <img src="{{ host + course.courseImage.slice(2) }}" alt="{{ course.courseName }} image">
             <p>{{ course.courseName }}</p>
          </a>
