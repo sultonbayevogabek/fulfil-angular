@@ -19,8 +19,9 @@
                <input class="form-control" type="text" placeholder="Abdullajon" maxlength="30" formControlName="name">
             </label>
             <label class="form-label">
-               <span>Telefon raqamingiz yoki telegram</span>
-               <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" maxlength="30"
+               <span>Telefon raqamingiz</span>
+               <input class="form-control" type="text" [prefix]="'+998 '"
+                      mask="00-000-00-00"
                       formControlName="contact">
             </label>
             <label class="form-label">
