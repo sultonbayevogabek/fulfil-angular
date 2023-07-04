@@ -18,7 +18,6 @@ import {
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '../../common/common.module';
-import { NgxMaskModule } from 'ngx-mask';
 
 const routes: Routes = [
    {
@@ -88,8 +87,7 @@ const routes: Routes = [
       ReactiveFormsModule,
       SharedModule,
       SharedModule,
-      CommonModule,
-      NgxMaskModule.forRoot()
+      CommonModule
    ],
    exports: [RouterModule]
 })

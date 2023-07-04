@@ -72,8 +72,9 @@
             </select>
          </label>
          <label class="form-label">
-            <span>Telefon raqam yoki telegram</span>
-            <input class="form-control" type="text" placeholder="+998901234567 yoki @abdullajon" maxlength="30" formControlName="phone">
+            <span>Telefon raqam</span>
+            <input class="form-control" type="text" formControlName="phone" [prefix]="'+998 '"
+                   mask="00-000-00-00">
          </label>
 
          <p class="start__text">
@@ -85,4 +86,4 @@
    </div>
 </div>
 
-<app-success-modal *ngIf="successModalOpen"></app-success-modal>
+<app-success-modal *ngIf="successModalOpen" (onCloseSuccessModal)="successModalOpen = false"></app-success-modal>

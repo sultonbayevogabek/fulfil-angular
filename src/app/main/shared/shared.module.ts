@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { YoutubePlayer } from './components/youtube-player/youtube-player.component';
 import { SuccessModalComponent } from './components/success-modal/success-modal.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
    declarations: [
@@ -30,7 +31,8 @@ import { SuccessModalComponent } from './components/success-modal/success-modal.
       ReactiveFormsModule,
       RouterLink,
       RouterLinkActive,
-      YouTubePlayerModule
+      YouTubePlayerModule,
+      NgxMaskModule.forRoot()
    ],
    exports: [
       HeaderComponent,
@@ -39,7 +41,8 @@ import { SuccessModalComponent } from './components/success-modal/success-modal.
       CarouselComponent,
       EnrollFormComponent,
       YoutubePlayer,
-      SuccessModalComponent
+      SuccessModalComponent,
+      NgxMaskModule
    ]
 })
 
